@@ -13,6 +13,7 @@
 using namespace ci;
 using namespace ci::app;
 
+
 /*
  *  Constructor including reflection mask.
  */
@@ -148,6 +149,33 @@ bool VideoPlayer::isDone()
 void VideoPlayer::SetVolume(float aVolume)
 {
     mVolume = aVolume;
+}
+
+float VideoPlayer::GetTimeLeft()
+{
+    if(!mMovie)
+    {
+        return 0.f;
+    }
+    
+    if(mDuration > 0.f)
+    {
+        return mTimeToPlay;
+    }
+    else
+    {
+        return mMovie->getDuration() - mMovie->getCurrentTime();
+    }
+}
+
+float VideoPlayer::GetTimeCurrent()
+{
+    if(!mMovie)
+    {
+        return 0.f;
+    }
+    
+    return mMovie->getCurrentTime();
 }
 
 void VideoPlayer::drawFrontReflection(Vec2i aSize)

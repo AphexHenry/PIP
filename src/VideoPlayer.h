@@ -25,6 +25,10 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+
+/*
+ *  Video player.
+ */
 class VideoPlayer {
 public:
     
@@ -50,7 +54,15 @@ public:
      *  set the front mask image.
      */
     void setFront(fs::path imgFront);
+    
+    /*
+     *  draw front mask image.
+     */
     void drawFront(Vec2i aSize);
+    
+    /*
+     *  draw reflections mask image.
+     */
     void drawFrontReflection(Vec2i aSize);
     
     virtual void play();
@@ -58,6 +70,9 @@ public:
     virtual bool isDone();
     virtual void SetVolume(float aVolume);
     virtual void SetDuration(float aDurationS){mDuration = aDurationS;};
+    
+    virtual float GetTimeLeft();
+    virtual float GetTimeCurrent();
     
     static bool IsMovie(std::string aPath);
     
@@ -78,6 +93,8 @@ public:
     fs::path mMoviePath;
     
 private:
+
+    
     void setup(fs::path aPath);
     Surface8u TextureToSurface(gl::Texture aTexture);
 };

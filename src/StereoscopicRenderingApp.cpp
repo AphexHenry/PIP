@@ -1,5 +1,6 @@
 /*
- Copyright (c) 2012, Paul Houx
+ Copyright (c) 2015, Baptiste Bohelay.
+ Based on the steroscopic renderer by Paul Houx.
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without modification, are permitted provided that
@@ -20,36 +21,17 @@
  POSSIBILITY OF SUCH DAMAGE.
 */
 
-/*
-	This sample will show how to use the CameraStereo class to setup and render stereoscopic images.
-	The camera contains different matrices for the left and right eye of the viewer. By rendering the scene
-	twice, once for each eye, we can view the scene in 3D on monitors or televisions that support 3D.
-
-	Here, we divide the window into a left and right half and render the scene to each half. This is called
-	side-by-side stereoscopic and is supported by most 3D televisions. Simply connect your computer to
-	such a television, run the sample in full screen and enable the TV's 3D mode.
-
-	When creating your own stereoscopic application, be careful how you choose your convergence.
-	An excellent article can be found here:
-	http://paulbourke.net/miscellaneous/stereographics/stereorender/
-
-	The CameraStereo class is based on the Off-Axis method described in this article. 
-*/
-// TODO: redecouper le rock 2, faire passer les particules derriere le rocher de droite.
-// refaire les front ground de le truc sombre et du lac.
-// reparer rock.
-// reparter casse 2
-// reparer trees, parts are from behind.
 #include "StereoscopicRenderingApp.h"
 #include "KinectManager.h"
 #include "CaptureManager.h"
 #include "CursorManager.h"
-
+#include "TransitionManager.h"
 #include "Shared.h"
 
 using namespace ci;
 using namespace ci::app;
 using namespace std;
+
 
 void StereoscopicRenderingApp::prepareSettings( Settings *settings )
 {
@@ -64,13 +46,7 @@ void StereoscopicRenderingApp::prepareSettings( Settings *settings )
 
 void StereoscopicRenderingApp::setup()
 {
-    console() << "setup" << endl;
-	// enable stereoscopic rendering
-#ifdef MY_APP
-    mRenderMethod = ANAGLYPH_RED_CYAN;
-#else
 	mRenderMethod = TV_SIDE_2;
-#endif
     
     app::addAssetDirectory	(	app::getAppPath().string() + "/../Assets/"	 );
 
@@ -385,6 +361,8 @@ void StereoscopicRenderingApp::draw()
         gl::color(Color::white());
         gl::drawString("Calibrating", getWindowCenter());
     }
+    
+    TransitionManager::draw();
 }
 
 
@@ -446,6 +424,9 @@ void StereoscopicRenderingApp::keyDown( KeyEvent event )
 	}
 }
 
+/* 
+ *  Load next scene and apply all its settings.
+ */
 void StereoscopicRenderingApp::LoadNextScene()
 {
     Set::NextScene();
@@ -456,9 +437,12 @@ void StereoscopicRenderingApp::LoadNextScene()
 void StereoscopicRenderingApp::ApplySceneSettings()
 {
     SceneData * lScene = Set::getScene();
-    mVideoPlayer = lScene->video;
-    mPartNiv1 = lScene->particles;
-    mCamera.setEyeSeparation( lScene->eyesSeparation );
+    if(lScene)
+    {
+        mVideoPlayer = lScene->video;
+        mPartNiv1 = lScene->particles;
+        mCamera.setEyeSeparation( lScene->eyesSeparation );
+    }
 }
 
 void StereoscopicRenderingApp::resize()

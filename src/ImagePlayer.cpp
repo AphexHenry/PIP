@@ -86,6 +86,16 @@ void ImagePlayer::stop()
     }
 }
 
+float ImagePlayer::GetTimeCurrent()
+{
+    return mDuration - mTimeToPlay;
+}
+
+float ImagePlayer::GetTimeLeft()
+{
+    return mTimeToPlay;
+}
+
 bool ImagePlayer::isDone()
 {
 //#ifdef MY_APP

@@ -11,6 +11,7 @@
 #include "Resources.h"
 #include "ParticleBillBoardTree.h"
 #include "ImagePlayer.h"
+#include "TransitionManager.h"
 
 #include "cinder/Xml.h"
 
@@ -78,6 +79,15 @@ void Set::setup(SensorType aSensorType)
                     sSoundPlayer = new SoundPlayer(lFile);
                     sSoundPlayer->play();
                     sSoundPlayer->setVolume(lVolume);
+                }
+            }
+            else if(child->getTag() == "transition")
+            {
+                string lTransitionType = child->getAttributeValue<string>( "type", "none" );
+                float lDuration = child->getAttributeValue<float>("duration", 0.7f);
+                if(lTransitionType == "FadeToBlack")
+                {
+                    TransitionManager::SetTransition(TRANSITION_TYPE_FADE_TO_BLACK, lDuration);
                 }
             }
         }
@@ -170,6 +180,10 @@ void Set::draw()
 
 SceneData * Set::getScene()
 {
+    if(scenes.size() <= 0)
+    {
+        return NULL;
+    }
     return &scenes[currentScene];
 }
 

@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <Ambient>
     <audio file="Sounds/H2HMUSIC_SHORT.wav" volume="0.5"></audio>
+    <transition type="FadeToBlack" duration="0.6"></transition>
 </Ambient>
 
 <Composition>

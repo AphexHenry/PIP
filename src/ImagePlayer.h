@@ -30,6 +30,9 @@ public:
     void stop();
     bool isDone();
     
+    float GetTimeLeft();
+    float GetTimeCurrent();
+    
     void SetVolume(float aVolume);
     
     SoundPlayer * mSoundPlayer;
