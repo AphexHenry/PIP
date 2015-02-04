@@ -11,51 +11,53 @@
 #include "Resources.h"
 #include "cinder/Utilities.h"
 
+#include "cinder/audio/Context.h"
+#include "cinder/audio/NodeEffects.h"
+#include "cinder/audio/SamplePlayerNode.h"
+
 using namespace ci;
 using namespace ci::app;
 
-ImagePlayer::ImagePlayer(fs::path img, fs::path imgFront, float aDuration)
+ImagePlayer::ImagePlayer(fs::path img, fs::path imgFront)
 {
-    console() << "imgFront " << img << endl;
-    console() << imgFront << endl;
-    mFrameTexture = gl::Texture(loadImage( App::getResourcePath(img)));
-    if(!imgFront.empty())
-    {
-        mImageFront = gl::Texture(loadImage( App::getResourcePath(imgFront)));
-    }
-    mSurface = Surface(mFrameTexture);
-    mTimeToPlay = aDuration;
-    mDuration = aDuration;
-#ifdef MY_APP
-    mDuration *= 0.75f;
-#endif
+    SetupImages(img, imgFront );
 
+    mSoundPlayer = NULL;
+    
 }
 
-ImagePlayer::ImagePlayer(fs::path img, fs::path imgFront, std::string aSoundFile, float aDuration)
+ImagePlayer::ImagePlayer(fs::path img, fs::path imgFront, std::string aSoundFile)
+{
+    SetupImages(img, imgFront );
+    
+    if(aSoundFile.length() > 0)
+    {
+        mSoundPlayer = new SoundPlayer(aSoundFile);
+    }
+}
+
+void ImagePlayer::SetupImages(fs::path img, fs::path imgFront)
 {
     console() << "img " << img << endl;
     console() << imgFront << endl;
     //add the audio track the default audio output
-	mTrack = audio::Output::addTrack( audio::load( loadResource( aSoundFile ) ), false );
-    mTrack->setLooping(true);
     
-    mFrameTexture = gl::Texture(loadImage( App::getResourcePath(img)));
+    mFrameTexture = gl::Texture(loadImage( Tools::GetOutResourcePath(img)));
     if(!imgFront.empty())
     {
-        mImageFront = gl::Texture(loadImage( App::getResourcePath(imgFront)));
+        mImageFront = gl::Texture(loadImage( Tools::GetOutResourcePath(imgFront)));
     }
     mSurface = Surface(mFrameTexture);
-    mTimeToPlay = aDuration;
-    mDuration = aDuration;
-#ifdef MY_APP
-    mDuration *= 0.75f;
-#endif
+    mTimeToPlay = -1.f;
+    mDuration = 10.f;
 }
 
 void ImagePlayer::SetVolume(float aVolume)
 {
-    mTrack->setVolume(aVolume);
+    if(mSoundPlayer)
+    {
+        mSoundPlayer->setVolume( aVolume );
+    }
 }
 
 void ImagePlayer::update(float aTimeInterval)
@@ -69,17 +71,18 @@ void ImagePlayer::update(float aTimeInterval)
 void ImagePlayer::play()
 {
     mTimeToPlay = mDuration;
-    if(mTrack)
+    
+    if(mSoundPlayer)
     {
-        mTrack->play();
+        mSoundPlayer->play( );
     }
 }
 
 void ImagePlayer::stop()
 {
-    if(mTrack)
+    if(mSoundPlayer)
     {
-        mTrack->stop();
+        mSoundPlayer->stop( );
     }
 }
 

@@ -71,6 +71,8 @@ void StereoscopicRenderingApp::setup()
 #else
 	mRenderMethod = TV_SIDE_2;
 #endif
+    
+    app::addAssetDirectory	(	app::getAppPath().string() + "/../Assets/"	 );
 
 	// enable auto-focussing
     mFocusMethod = SET_CONVERGENCE;
@@ -158,7 +160,7 @@ void StereoscopicRenderingApp::update()
 #ifdef MY_APP
                     Set::LoadScene(SCENE_INTRO);
 #else
-                    Set::LoadScene(SCENE_TUTO);
+//                    Set::LoadScene(SCENE_TUTO);
 #endif
                     
                     ApplySceneSettings();
@@ -236,6 +238,7 @@ void StereoscopicRenderingApp::update()
     mSensorManager->update(lTimeElapsed);
     mSensorManager->UpdateAnchors();
     
+    if(mPartNiv1)
     for(int i = 0; i < mPartNiv1->size(); i++)
     {
         mPartNiv1->at(i)->update(lTimeElapsed);
@@ -255,6 +258,7 @@ void StereoscopicRenderingApp::UpdateSubdivisions(float aTimeInterval)
         lSubdivision->AddAnchor(Shared::sAnchors[i]);
     }
     
+    if(mPartNiv1)
     for(int i = 0; i < mPartNiv1->size(); i++)
     {
         lSubdivision->Add(mPartNiv1->at(i));
@@ -282,7 +286,7 @@ void StereoscopicRenderingApp::draw()
     Vec2i canvasSize;
     Vec2i partSize;
     
-    if(mRenderMethod == ANAGLYPH_RED_CYAN || mRenderMethod == TV_SIDE)
+    if(mRenderMethod == ANAGLYPH_RED_CYAN)
     {
         // bind the FBO and clear its buffer
         mFbo.bindFramebuffer();
@@ -305,7 +309,7 @@ void StereoscopicRenderingApp::draw()
 
     mVideoPlayer->draw(canvasSize);
     
-    if(mRenderMethod == ANAGLYPH_RED_CYAN || mRenderMethod == TV_SIDE)
+    if(mRenderMethod == ANAGLYPH_RED_CYAN)
     {
         gl::setViewport( getWindowBounds() );
     }
@@ -314,14 +318,14 @@ void StereoscopicRenderingApp::draw()
     gl::enableAlphaBlending();
     DrawParticles(partSize);
     
-    if(mRenderMethod == ANAGLYPH_RED_CYAN || mRenderMethod == TV_SIDE)
+    if(mRenderMethod == ANAGLYPH_RED_CYAN)
     {
         gl::setViewport( mFbo.getBounds() );
     }
     
     mVideoPlayer->drawFrontReflection(canvasSize);
     
-    if(mRenderMethod == ANAGLYPH_RED_CYAN || mRenderMethod == TV_SIDE)
+    if(mRenderMethod == ANAGLYPH_RED_CYAN)
     {
         gl::setViewport( getWindowBounds() );
     }
@@ -329,14 +333,14 @@ void StereoscopicRenderingApp::draw()
     Particle::SetReflection(false);
     DrawParticles(partSize);
     
-    if(mRenderMethod == ANAGLYPH_RED_CYAN || mRenderMethod == TV_SIDE)
+    if(mRenderMethod == ANAGLYPH_RED_CYAN)
     {
         gl::setViewport( mFbo.getBounds() );
     }
     
     mVideoPlayer->drawFront(canvasSize);
     
-    if(mRenderMethod == ANAGLYPH_RED_CYAN || mRenderMethod == TV_SIDE)
+    if(mRenderMethod == ANAGLYPH_RED_CYAN)
     {
         // unbind the FBO
         mFbo.unbindFramebuffer();
@@ -373,6 +377,14 @@ void StereoscopicRenderingApp::draw()
         }
     }
     gl::popMatrices();
+    
+    if(!mSensorManager->isCalibrated())
+    {
+        gl::color(Color::black());
+        gl::drawSolidRect(getWindowBounds());
+        gl::color(Color::white());
+        gl::drawString("Calibrating", getWindowCenter());
+    }
 }
 
 
@@ -387,7 +399,6 @@ void StereoscopicRenderingApp::DrawParticles(Vec2i aSize)
             render();
             break;
         case TV_SIDE_2:
-        case TV_SIDE:
         case ANAGLYPH_RED_CYAN:
             renderSideBySide( aSize );
             break;
@@ -426,10 +437,6 @@ void StereoscopicRenderingApp::keyDown( KeyEvent event )
 		createFbo();
 		break;
     case KeyEvent::KEY_F4:
-        mRenderMethod = TV_SIDE;
-        createFbo();
-        break;
-    case KeyEvent::KEY_F5:
         mRenderMethod = TV_SIDE_2;
         createFbo();
         break;
@@ -480,9 +487,6 @@ void StereoscopicRenderingApp::createFbo()
     case TV_SIDE_2:
         Set::compression = 0.5f;
         mFbo = gl::Fbo( size.x * 2.f, size.y, fmt );
-        break;
-    case TV_SIDE:
-        mFbo = gl::Fbo( size.x * 1.5f, size.y * 0.75f, fmt );
         break;
 	case ANAGLYPH_RED_CYAN: 
 		// by doubling the horizontal resolution, we can effectively render
@@ -562,8 +566,7 @@ void StereoscopicRenderingApp::render()
 //    mShaderPhong.bind();	
     
     // draw part
-//    gl::enableAdditiveBlending();
-//    glEnable( GL_ALPHA_TEST );	
+    if(mPartNiv1)
     for(int i = 0; i < mPartNiv1->size(); i++)
     {
         mPartNiv1->at(i)->drawDebug(0);

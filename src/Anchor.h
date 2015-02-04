@@ -17,7 +17,7 @@ public:
     void SetPosition(ci::Vec3f aPosition){mPosition = aPosition;};
     ci::Vec3f mPosition;
     float   mSize;
-    ci::Color   mColor;
+    ci::ColorA   mColor;
     
 private:
     int     mUser;

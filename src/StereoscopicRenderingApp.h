@@ -25,7 +25,7 @@
 class StereoscopicRenderingApp : public AppBasic {
   public:
 	typedef enum { SET_CONVERGENCE, SET_FOCUS, AUTO_FOCUS } FocusMethod;
-	typedef enum { MONO, ANAGLYPH_RED_CYAN, SIDE_BY_SIDE, TV_SIDE, TV_SIDE_2 } RenderMethod;
+	typedef enum { MONO, ANAGLYPH_RED_CYAN, SIDE_BY_SIDE, TV_SIDE_2 } RenderMethod;
 public:
 	void prepareSettings( Settings *settings );
 

@@ -37,6 +37,8 @@ public:
     void UpdateAnchors();
     void UpdateOSC();
     
+    bool isCalibrated(){return mCalibCount <= 0;};
+    
     float mCalibrationDelay;
     
 private:

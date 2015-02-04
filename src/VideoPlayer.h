@@ -28,14 +28,27 @@ using namespace std;
 class VideoPlayer {
 public:
     
+    /*
+     *  Constructor including reflection mask.
+     */
     VideoPlayer(fs::path movie, fs::path img);
-    VideoPlayer(fs::path movie);
-    VideoPlayer(){};
     
-	void setup();
+    /*
+     *  Constructor, will only load the movie file.
+     */
+    VideoPlayer(fs::path movie);
+    
+    /*
+     *  Constructor, will load nothing.
+     */
+    VideoPlayer(){};
     
 	virtual void update(float aTimeInterval);
 	virtual void draw(Vec2i aSize);
+    
+    /*
+     *  set the front mask image.
+     */
     void setFront(fs::path imgFront);
     void drawFront(Vec2i aSize);
     void drawFrontReflection(Vec2i aSize);
@@ -44,6 +57,9 @@ public:
     virtual void stop();
     virtual bool isDone();
     virtual void SetVolume(float aVolume);
+    virtual void SetDuration(float aDurationS){mDuration = aDurationS;};
+    
+    static bool IsMovie(std::string aPath);
     
     void setImage( gl::Texture &aTexture );
 	void loadMovieFile( const fs::path &path );
@@ -55,8 +71,10 @@ public:
     gl::Texture             mImageFront;
     
     float mTimeToPlay;
+    float mDuration;
     
 private:
+    void setup(fs::path aPath);
     Surface8u TextureToSurface(gl::Texture aTexture);
 };
 

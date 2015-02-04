@@ -21,6 +21,8 @@ public:
 	virtual void drawDebug(float x, float y, float w, float h){};
     virtual bool isReady(){return true;};
     
+    virtual bool isCalibrated(){return true;};
+    
 	virtual void Calibrate(){};
 	virtual void UpdateAnchors() = 0;
     Surface    mPixelsCalib;

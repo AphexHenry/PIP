@@ -9,13 +9,14 @@ bool Particle::sReflection = false;
 Particle::Particle():Anchor(0)
 {
     mImmuneTimer = 0.f;
-    Reset();
-    mLifeTime = Rand::randFloat(0., 7.) * 0.3f * Set::getScene()->particleDuration;
+//    Reset();
+    
     mSize = 0.f;
 }
 
 void Particle::Reset()
 {
+    mLifeTime = Rand::randFloat(0., 7.) * 0.3f * Set::getScene()->particleDuration;
     mPositionLast = GetPositionScene();
     int lIndex = (int)Rand::randInt(Shared::sAnchors.size() * 0.99);
     mPosition = Shared::sAnchors.at(lIndex)->mPosition;
@@ -46,7 +47,7 @@ void Particle::Reset()
     }
     
     mColor = mColor * Rand::randFloat(lScene->intensityMin, lScene->intensityMax);
-
+    mColor.a = lScene->opacity;
 }
 
 void Particle::updateGrid()

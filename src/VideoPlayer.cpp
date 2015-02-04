@@ -13,35 +13,35 @@
 using namespace ci;
 using namespace ci::app;
 
+/*
+ *  Constructor including reflection mask.
+ */
 VideoPlayer::VideoPlayer(fs::path movie, fs::path img)
 {
-    fs::path moviePath = App::getResourcePath( movie ) ;
-    loadMovieFile( moviePath );
-    mImageFrontReflection = gl::Texture(loadImage( App::getResourcePath(img)));
-    
-    mTimeToPlay = 25.f;
+    mImageFrontReflection = gl::Texture(loadImage( Tools::GetOutResourcePath(img)));
+    setup(movie);
 }
 
 VideoPlayer::VideoPlayer(fs::path movie)
 {
-    fs::path moviePath = App::getResourcePath( movie ) ;
-    loadMovieFile( moviePath );
-    
-    mTimeToPlay = 25.f;
+    setup(movie);
 }
 
+/*
+ *  set the front mask image.
+ */
 void VideoPlayer::setFront(fs::path aImgFront)
 {
-    mImageFront = gl::Texture(loadImage( App::getResourcePath(aImgFront)));
+    mImageFront = gl::Texture(loadImage( Tools::GetOutResourcePath(aImgFront)));
 }
 
-void VideoPlayer::setup()
+void VideoPlayer::setup(fs::path movie)
 {
-    //	fs::path moviePath = getOpenFilePath();
-    //	if( ! moviePath.empty() )
-    //		loadMovieFile( moviePath );
-//    fs::path moviePath = ci::getResourcePath( FILM_1 ) ;
-//    loadMovieFile( moviePath );
+    fs::path moviePath = Tools::GetOutResourcePath( movie ) ;
+    loadMovieFile( moviePath );
+    
+    mTimeToPlay = -1.f;
+    mDuration = -1.f;
 }
 
 void VideoPlayer::setImage( gl::Texture &aTexture )
@@ -75,13 +75,6 @@ void VideoPlayer::update(float aTimeInterval)
         {
             mFrameTexture = mMovie->getTexture();
         }
-//        mSurface = copyWindowSurface();//TextureToSurface(mFrameTexture).clone();
-//        mFrameTexture = gl::Texture(mSurface);
-//        }
-//        else
-//        {
-//            mFrameTexture.update(mSurface);
-//        }
 #ifndef MY_APP
         if(!mSurface)
         {
@@ -117,7 +110,7 @@ void VideoPlayer::play()
     mMovie->seekToStart();
     mMovie->play();
     
-    mTimeToPlay = 45.f;
+    mTimeToPlay = mDuration;
 }
 
 void VideoPlayer::stop()
@@ -128,11 +121,7 @@ void VideoPlayer::stop()
 
 bool VideoPlayer::isDone()
 {
-//#ifdef MY_APP
-    return mTimeToPlay < 0.f || mMovie->isDone();
-//#else
-//    return ;
-//#endif
+    return ((mDuration > 0.f) && (mTimeToPlay < 0.f)) || mMovie->isDone();
 }
 
 void VideoPlayer::SetVolume(float aVolume)
@@ -179,4 +168,26 @@ Surface8u VideoPlayer::TextureToSurface(gl::Texture aTexture)
     lFbo.unbindFramebuffer();
     
     return fboSurf;
+}
+
+bool VideoPlayer::IsMovie(string aPath)
+{
+    vector<string> lListExtensionMovie;
+    lListExtensionMovie.push_back("avi");
+    lListExtensionMovie.push_back("AVI");
+    lListExtensionMovie.push_back("mov");
+    lListExtensionMovie.push_back("MOV");
+    lListExtensionMovie.push_back("mp4");
+    lListExtensionMovie.push_back("MP4");
+    lListExtensionMovie.push_back("m4v");
+    lListExtensionMovie.push_back("M4V");
+    string lMediaExtension = getPathExtension(aPath);
+    for(int i = 0; i < lListExtensionMovie.size(); i++)
+    {
+        if(lMediaExtension == lListExtensionMovie[i])
+        {
+            return true;
+        }
+    }
+    return false;
 }

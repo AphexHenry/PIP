@@ -18,22 +18,22 @@
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		9C41A0431A80CA8F00BE4CED /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C41A0411A80CA8F00BE4CED /* SoundPlayer.cpp */; };
-		9C5BA2851A71999B00A29EE1 /* Anchor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2631A71999B00A29EE1 /* Anchor.cpp */; };
-		9C5BA2871A71999B00A29EE1 /* CaptureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2671A71999B00A29EE1 /* CaptureManager.cpp */; };
-		9C5BA2881A71999B00A29EE1 /* CursorManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2691A71999B00A29EE1 /* CursorManager.cpp */; };
-		9C5BA28A1A71999B00A29EE1 /* ImagePlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA26C1A71999B00A29EE1 /* ImagePlayer.cpp */; };
-		9C5BA28B1A71999B00A29EE1 /* IntroManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA26E1A71999B00A29EE1 /* IntroManager.cpp */; };
-		9C5BA28C1A71999B00A29EE1 /* KinectManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2701A71999B00A29EE1 /* KinectManager.cpp */; };
-		9C5BA28D1A71999B00A29EE1 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2721A71999B00A29EE1 /* Particle.cpp */; };
-		9C5BA28E1A71999B00A29EE1 /* ParticleBillBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2741A71999B00A29EE1 /* ParticleBillBoard.cpp */; };
-		9C5BA28F1A71999B00A29EE1 /* ParticleBillBoardTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2761A71999B00A29EE1 /* ParticleBillBoardTree.cpp */; };
-		9C5BA2901A71999B00A29EE1 /* Set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2791A71999B00A29EE1 /* Set.cpp */; };
-		9C5BA2911A71999B00A29EE1 /* shared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA27B1A71999B00A29EE1 /* shared.cpp */; };
-		9C5BA2921A71999B00A29EE1 /* StereoscopicRenderingApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA27D1A71999B00A29EE1 /* StereoscopicRenderingApp.cpp */; };
-		9C5BA2931A71999B00A29EE1 /* Subdivision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA27F1A71999B00A29EE1 /* Subdivision.cpp */; };
-		9C5BA2941A71999B00A29EE1 /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2811A71999B00A29EE1 /* Tools.cpp */; };
-		9C5BA2951A71999B00A29EE1 /* VideoPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2831A71999B00A29EE1 /* VideoPlayer.cpp */; };
+		9C3751B51A823EFB00489DB3 /* Anchor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751911A823EFB00489DB3 /* Anchor.cpp */; };
+		9C3751B71A823EFB00489DB3 /* CaptureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751951A823EFB00489DB3 /* CaptureManager.cpp */; };
+		9C3751B81A823EFB00489DB3 /* CursorManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751971A823EFB00489DB3 /* CursorManager.cpp */; };
+		9C3751BA1A823EFB00489DB3 /* ImagePlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C37519A1A823EFB00489DB3 /* ImagePlayer.cpp */; };
+		9C3751BB1A823EFB00489DB3 /* IntroManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C37519C1A823EFB00489DB3 /* IntroManager.cpp */; };
+		9C3751BC1A823EFB00489DB3 /* KinectManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C37519E1A823EFB00489DB3 /* KinectManager.cpp */; };
+		9C3751BD1A823EFB00489DB3 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751A01A823EFB00489DB3 /* Particle.cpp */; };
+		9C3751BE1A823EFB00489DB3 /* ParticleBillBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751A21A823EFB00489DB3 /* ParticleBillBoard.cpp */; };
+		9C3751BF1A823EFB00489DB3 /* ParticleBillBoardTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751A41A823EFB00489DB3 /* ParticleBillBoardTree.cpp */; };
+		9C3751C01A823EFB00489DB3 /* Set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751A71A823EFB00489DB3 /* Set.cpp */; };
+		9C3751C11A823EFB00489DB3 /* shared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751A91A823EFB00489DB3 /* shared.cpp */; };
+		9C3751C21A823EFB00489DB3 /* SoundPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751AB1A823EFB00489DB3 /* SoundPlayer.cpp */; };
+		9C3751C31A823EFB00489DB3 /* StereoscopicRenderingApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751AD1A823EFB00489DB3 /* StereoscopicRenderingApp.cpp */; };
+		9C3751C41A823EFB00489DB3 /* Subdivision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751AF1A823EFB00489DB3 /* Subdivision.cpp */; };
+		9C3751C51A823EFB00489DB3 /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751B11A823EFB00489DB3 /* Tools.cpp */; };
+		9C3751C61A823EFB00489DB3 /* VideoPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751B31A823EFB00489DB3 /* VideoPlayer.cpp */; };
 		9C5BA2AD1A7199CD00A29EE1 /* CinderFreenect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA29C1A7199CD00A29EE1 /* CinderFreenect.cpp */; };
 		9C5BA2AE1A7199CD00A29EE1 /* cameras.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA29F1A7199CD00A29EE1 /* cameras.c */; };
 		9C5BA2AF1A7199CD00A29EE1 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2A11A7199CD00A29EE1 /* core.c */; };
@@ -79,39 +79,39 @@
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* StereoscopicRendering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StereoscopicRendering.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C41A0411A80CA8F00BE4CED /* SoundPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SoundPlayer.cpp; path = ../src/SoundPlayer.cpp; sourceTree = "<group>"; };
-		9C41A0421A80CA8F00BE4CED /* SoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundPlayer.h; path = ../src/SoundPlayer.h; sourceTree = "<group>"; };
-		9C5BA2631A71999B00A29EE1 /* Anchor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Anchor.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/Anchor.cpp"; sourceTree = "<group>"; };
-		9C5BA2641A71999B00A29EE1 /* Anchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Anchor.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/Anchor.h"; sourceTree = "<group>"; };
-		9C5BA2671A71999B00A29EE1 /* CaptureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CaptureManager.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/CaptureManager.cpp"; sourceTree = "<group>"; };
-		9C5BA2681A71999B00A29EE1 /* CaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureManager.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/CaptureManager.h"; sourceTree = "<group>"; };
-		9C5BA2691A71999B00A29EE1 /* CursorManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CursorManager.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/CursorManager.cpp"; sourceTree = "<group>"; };
-		9C5BA26A1A71999B00A29EE1 /* CursorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CursorManager.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/CursorManager.h"; sourceTree = "<group>"; };
-		9C5BA26C1A71999B00A29EE1 /* ImagePlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImagePlayer.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/ImagePlayer.cpp"; sourceTree = "<group>"; };
-		9C5BA26D1A71999B00A29EE1 /* ImagePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePlayer.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/ImagePlayer.h"; sourceTree = "<group>"; };
-		9C5BA26E1A71999B00A29EE1 /* IntroManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IntroManager.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/IntroManager.cpp"; sourceTree = "<group>"; };
-		9C5BA26F1A71999B00A29EE1 /* IntroManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroManager.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/IntroManager.h"; sourceTree = "<group>"; };
-		9C5BA2701A71999B00A29EE1 /* KinectManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KinectManager.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/KinectManager.cpp"; sourceTree = "<group>"; };
-		9C5BA2711A71999B00A29EE1 /* KinectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KinectManager.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/KinectManager.h"; sourceTree = "<group>"; };
-		9C5BA2721A71999B00A29EE1 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/Particle.cpp"; sourceTree = "<group>"; };
-		9C5BA2731A71999B00A29EE1 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/Particle.h"; sourceTree = "<group>"; };
-		9C5BA2741A71999B00A29EE1 /* ParticleBillBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleBillBoard.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/ParticleBillBoard.cpp"; sourceTree = "<group>"; };
-		9C5BA2751A71999B00A29EE1 /* ParticleBillBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleBillBoard.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/ParticleBillBoard.h"; sourceTree = "<group>"; };
-		9C5BA2761A71999B00A29EE1 /* ParticleBillBoardTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleBillBoardTree.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/ParticleBillBoardTree.cpp"; sourceTree = "<group>"; };
-		9C5BA2771A71999B00A29EE1 /* ParticleBillBoardTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleBillBoardTree.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/ParticleBillBoardTree.h"; sourceTree = "<group>"; };
-		9C5BA2781A71999B00A29EE1 /* SensorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorManager.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/SensorManager.h"; sourceTree = "<group>"; };
-		9C5BA2791A71999B00A29EE1 /* Set.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Set.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/Set.cpp"; sourceTree = "<group>"; };
-		9C5BA27A1A71999B00A29EE1 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Set.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/Set.h"; sourceTree = "<group>"; };
-		9C5BA27B1A71999B00A29EE1 /* shared.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shared.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/shared.cpp"; sourceTree = "<group>"; };
-		9C5BA27C1A71999B00A29EE1 /* shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shared.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/shared.h"; sourceTree = "<group>"; };
-		9C5BA27D1A71999B00A29EE1 /* StereoscopicRenderingApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StereoscopicRenderingApp.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/StereoscopicRenderingApp.cpp"; sourceTree = "<group>"; };
-		9C5BA27E1A71999B00A29EE1 /* StereoscopicRenderingApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StereoscopicRenderingApp.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/StereoscopicRenderingApp.h"; sourceTree = "<group>"; };
-		9C5BA27F1A71999B00A29EE1 /* Subdivision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Subdivision.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/Subdivision.cpp"; sourceTree = "<group>"; };
-		9C5BA2801A71999B00A29EE1 /* Subdivision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Subdivision.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/Subdivision.h"; sourceTree = "<group>"; };
-		9C5BA2811A71999B00A29EE1 /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tools.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/Tools.cpp"; sourceTree = "<group>"; };
-		9C5BA2821A71999B00A29EE1 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tools.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/Tools.h"; sourceTree = "<group>"; };
-		9C5BA2831A71999B00A29EE1 /* VideoPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VideoPlayer.cpp; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/VideoPlayer.cpp"; sourceTree = "<group>"; };
-		9C5BA2841A71999B00A29EE1 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoPlayer.h; path = "../../../../cinder_0.8.5_mac/samples/-ArtUndergroundStereoscopic/src/VideoPlayer.h"; sourceTree = "<group>"; };
+		9C3751911A823EFB00489DB3 /* Anchor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Anchor.cpp; path = ../src/Anchor.cpp; sourceTree = "<group>"; };
+		9C3751921A823EFB00489DB3 /* Anchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Anchor.h; path = ../src/Anchor.h; sourceTree = "<group>"; };
+		9C3751951A823EFB00489DB3 /* CaptureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CaptureManager.cpp; path = ../src/CaptureManager.cpp; sourceTree = "<group>"; };
+		9C3751961A823EFB00489DB3 /* CaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureManager.h; path = ../src/CaptureManager.h; sourceTree = "<group>"; };
+		9C3751971A823EFB00489DB3 /* CursorManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CursorManager.cpp; path = ../src/CursorManager.cpp; sourceTree = "<group>"; };
+		9C3751981A823EFB00489DB3 /* CursorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CursorManager.h; path = ../src/CursorManager.h; sourceTree = "<group>"; };
+		9C37519A1A823EFB00489DB3 /* ImagePlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImagePlayer.cpp; path = ../src/ImagePlayer.cpp; sourceTree = "<group>"; };
+		9C37519B1A823EFB00489DB3 /* ImagePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePlayer.h; path = ../src/ImagePlayer.h; sourceTree = "<group>"; };
+		9C37519C1A823EFB00489DB3 /* IntroManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IntroManager.cpp; path = ../src/IntroManager.cpp; sourceTree = "<group>"; };
+		9C37519D1A823EFB00489DB3 /* IntroManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroManager.h; path = ../src/IntroManager.h; sourceTree = "<group>"; };
+		9C37519E1A823EFB00489DB3 /* KinectManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KinectManager.cpp; path = ../src/KinectManager.cpp; sourceTree = "<group>"; };
+		9C37519F1A823EFB00489DB3 /* KinectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KinectManager.h; path = ../src/KinectManager.h; sourceTree = "<group>"; };
+		9C3751A01A823EFB00489DB3 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
+		9C3751A11A823EFB00489DB3 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../src/Particle.h; sourceTree = "<group>"; };
+		9C3751A21A823EFB00489DB3 /* ParticleBillBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleBillBoard.cpp; path = ../src/ParticleBillBoard.cpp; sourceTree = "<group>"; };
+		9C3751A31A823EFB00489DB3 /* ParticleBillBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleBillBoard.h; path = ../src/ParticleBillBoard.h; sourceTree = "<group>"; };
+		9C3751A41A823EFB00489DB3 /* ParticleBillBoardTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleBillBoardTree.cpp; path = ../src/ParticleBillBoardTree.cpp; sourceTree = "<group>"; };
+		9C3751A51A823EFB00489DB3 /* ParticleBillBoardTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleBillBoardTree.h; path = ../src/ParticleBillBoardTree.h; sourceTree = "<group>"; };
+		9C3751A61A823EFB00489DB3 /* SensorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorManager.h; path = ../src/SensorManager.h; sourceTree = "<group>"; };
+		9C3751A71A823EFB00489DB3 /* Set.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Set.cpp; path = ../src/Set.cpp; sourceTree = "<group>"; };
+		9C3751A81A823EFB00489DB3 /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Set.h; path = ../src/Set.h; sourceTree = "<group>"; };
+		9C3751A91A823EFB00489DB3 /* shared.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shared.cpp; path = ../src/shared.cpp; sourceTree = "<group>"; };
+		9C3751AA1A823EFB00489DB3 /* shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shared.h; path = ../src/shared.h; sourceTree = "<group>"; };
+		9C3751AB1A823EFB00489DB3 /* SoundPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SoundPlayer.cpp; path = ../src/SoundPlayer.cpp; sourceTree = "<group>"; };
+		9C3751AC1A823EFB00489DB3 /* SoundPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundPlayer.h; path = ../src/SoundPlayer.h; sourceTree = "<group>"; };
+		9C3751AD1A823EFB00489DB3 /* StereoscopicRenderingApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StereoscopicRenderingApp.cpp; path = ../src/StereoscopicRenderingApp.cpp; sourceTree = "<group>"; };
+		9C3751AE1A823EFB00489DB3 /* StereoscopicRenderingApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StereoscopicRenderingApp.h; path = ../src/StereoscopicRenderingApp.h; sourceTree = "<group>"; };
+		9C3751AF1A823EFB00489DB3 /* Subdivision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Subdivision.cpp; path = ../src/Subdivision.cpp; sourceTree = "<group>"; };
+		9C3751B01A823EFB00489DB3 /* Subdivision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Subdivision.h; path = ../src/Subdivision.h; sourceTree = "<group>"; };
+		9C3751B11A823EFB00489DB3 /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tools.cpp; path = ../src/Tools.cpp; sourceTree = "<group>"; };
+		9C3751B21A823EFB00489DB3 /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tools.h; path = ../src/Tools.h; sourceTree = "<group>"; };
+		9C3751B31A823EFB00489DB3 /* VideoPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VideoPlayer.cpp; path = ../src/VideoPlayer.cpp; sourceTree = "<group>"; };
+		9C3751B41A823EFB00489DB3 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoPlayer.h; path = ../src/VideoPlayer.h; sourceTree = "<group>"; };
 		9C5BA29C1A7199CD00A29EE1 /* CinderFreenect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CinderFreenect.cpp; sourceTree = "<group>"; };
 		9C5BA29D1A7199CD00A29EE1 /* CinderFreenect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinderFreenect.h; sourceTree = "<group>"; };
 		9C5BA29F1A7199CD00A29EE1 /* cameras.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cameras.c; sourceTree = "<group>"; };
@@ -165,39 +165,39 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				9C5BA2631A71999B00A29EE1 /* Anchor.cpp */,
-				9C5BA2641A71999B00A29EE1 /* Anchor.h */,
-				9C5BA2671A71999B00A29EE1 /* CaptureManager.cpp */,
-				9C5BA2681A71999B00A29EE1 /* CaptureManager.h */,
-				9C5BA2691A71999B00A29EE1 /* CursorManager.cpp */,
-				9C5BA26A1A71999B00A29EE1 /* CursorManager.h */,
-				9C5BA26C1A71999B00A29EE1 /* ImagePlayer.cpp */,
-				9C5BA26D1A71999B00A29EE1 /* ImagePlayer.h */,
-				9C5BA26E1A71999B00A29EE1 /* IntroManager.cpp */,
-				9C5BA26F1A71999B00A29EE1 /* IntroManager.h */,
-				9C5BA2701A71999B00A29EE1 /* KinectManager.cpp */,
-				9C5BA2711A71999B00A29EE1 /* KinectManager.h */,
-				9C5BA2721A71999B00A29EE1 /* Particle.cpp */,
-				9C5BA2731A71999B00A29EE1 /* Particle.h */,
-				9C5BA2741A71999B00A29EE1 /* ParticleBillBoard.cpp */,
-				9C5BA2751A71999B00A29EE1 /* ParticleBillBoard.h */,
-				9C5BA2761A71999B00A29EE1 /* ParticleBillBoardTree.cpp */,
-				9C5BA2771A71999B00A29EE1 /* ParticleBillBoardTree.h */,
-				9C5BA2781A71999B00A29EE1 /* SensorManager.h */,
-				9C5BA2791A71999B00A29EE1 /* Set.cpp */,
-				9C5BA27A1A71999B00A29EE1 /* Set.h */,
-				9C5BA27B1A71999B00A29EE1 /* shared.cpp */,
-				9C5BA27C1A71999B00A29EE1 /* shared.h */,
-				9C5BA27D1A71999B00A29EE1 /* StereoscopicRenderingApp.cpp */,
-				9C5BA27E1A71999B00A29EE1 /* StereoscopicRenderingApp.h */,
-				9C5BA27F1A71999B00A29EE1 /* Subdivision.cpp */,
-				9C5BA2801A71999B00A29EE1 /* Subdivision.h */,
-				9C5BA2811A71999B00A29EE1 /* Tools.cpp */,
-				9C5BA2821A71999B00A29EE1 /* Tools.h */,
-				9C5BA2831A71999B00A29EE1 /* VideoPlayer.cpp */,
-				9C5BA2841A71999B00A29EE1 /* VideoPlayer.h */,
-				9C41A0411A80CA8F00BE4CED /* SoundPlayer.cpp */,
-				9C41A0421A80CA8F00BE4CED /* SoundPlayer.h */,
+				9C3751911A823EFB00489DB3 /* Anchor.cpp */,
+				9C3751921A823EFB00489DB3 /* Anchor.h */,
+				9C3751951A823EFB00489DB3 /* CaptureManager.cpp */,
+				9C3751961A823EFB00489DB3 /* CaptureManager.h */,
+				9C3751971A823EFB00489DB3 /* CursorManager.cpp */,
+				9C3751981A823EFB00489DB3 /* CursorManager.h */,
+				9C37519A1A823EFB00489DB3 /* ImagePlayer.cpp */,
+				9C37519B1A823EFB00489DB3 /* ImagePlayer.h */,
+				9C37519C1A823EFB00489DB3 /* IntroManager.cpp */,
+				9C37519D1A823EFB00489DB3 /* IntroManager.h */,
+				9C37519E1A823EFB00489DB3 /* KinectManager.cpp */,
+				9C37519F1A823EFB00489DB3 /* KinectManager.h */,
+				9C3751A01A823EFB00489DB3 /* Particle.cpp */,
+				9C3751A11A823EFB00489DB3 /* Particle.h */,
+				9C3751A21A823EFB00489DB3 /* ParticleBillBoard.cpp */,
+				9C3751A31A823EFB00489DB3 /* ParticleBillBoard.h */,
+				9C3751A41A823EFB00489DB3 /* ParticleBillBoardTree.cpp */,
+				9C3751A51A823EFB00489DB3 /* ParticleBillBoardTree.h */,
+				9C3751A61A823EFB00489DB3 /* SensorManager.h */,
+				9C3751A71A823EFB00489DB3 /* Set.cpp */,
+				9C3751A81A823EFB00489DB3 /* Set.h */,
+				9C3751A91A823EFB00489DB3 /* shared.cpp */,
+				9C3751AA1A823EFB00489DB3 /* shared.h */,
+				9C3751AB1A823EFB00489DB3 /* SoundPlayer.cpp */,
+				9C3751AC1A823EFB00489DB3 /* SoundPlayer.h */,
+				9C3751AD1A823EFB00489DB3 /* StereoscopicRenderingApp.cpp */,
+				9C3751AE1A823EFB00489DB3 /* StereoscopicRenderingApp.h */,
+				9C3751AF1A823EFB00489DB3 /* Subdivision.cpp */,
+				9C3751B01A823EFB00489DB3 /* Subdivision.h */,
+				9C3751B11A823EFB00489DB3 /* Tools.cpp */,
+				9C3751B21A823EFB00489DB3 /* Tools.h */,
+				9C3751B31A823EFB00489DB3 /* VideoPlayer.cpp */,
+				9C3751B41A823EFB00489DB3 /* VideoPlayer.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -449,28 +449,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3751C31A823EFB00489DB3 /* StereoscopicRenderingApp.cpp in Sources */,
+				9C3751BA1A823EFB00489DB3 /* ImagePlayer.cpp in Sources */,
+				9C3751BD1A823EFB00489DB3 /* Particle.cpp in Sources */,
+				9C3751B71A823EFB00489DB3 /* CaptureManager.cpp in Sources */,
 				9C5BA2AF1A7199CD00A29EE1 /* core.c in Sources */,
-				9C5BA2911A71999B00A29EE1 /* shared.cpp in Sources */,
+				9C3751C41A823EFB00489DB3 /* Subdivision.cpp in Sources */,
+				9C3751C51A823EFB00489DB3 /* Tools.cpp in Sources */,
 				9C5BA2B01A7199CD00A29EE1 /* registration.c in Sources */,
-				9C5BA28B1A71999B00A29EE1 /* IntroManager.cpp in Sources */,
-				9C41A0431A80CA8F00BE4CED /* SoundPlayer.cpp in Sources */,
-				9C5BA28D1A71999B00A29EE1 /* Particle.cpp in Sources */,
-				9C5BA2921A71999B00A29EE1 /* StereoscopicRenderingApp.cpp in Sources */,
+				9C3751BE1A823EFB00489DB3 /* ParticleBillBoard.cpp in Sources */,
+				9C3751B81A823EFB00489DB3 /* CursorManager.cpp in Sources */,
+				9C3751BB1A823EFB00489DB3 /* IntroManager.cpp in Sources */,
 				9C5BA2AD1A7199CD00A29EE1 /* CinderFreenect.cpp in Sources */,
+				9C3751C61A823EFB00489DB3 /* VideoPlayer.cpp in Sources */,
+				9C3751C11A823EFB00489DB3 /* shared.cpp in Sources */,
+				9C3751C21A823EFB00489DB3 /* SoundPlayer.cpp in Sources */,
 				9C5BA2B11A7199CD00A29EE1 /* tilt.c in Sources */,
-				9C5BA28A1A71999B00A29EE1 /* ImagePlayer.cpp in Sources */,
+				9C3751BF1A823EFB00489DB3 /* ParticleBillBoardTree.cpp in Sources */,
+				9C3751C01A823EFB00489DB3 /* Set.cpp in Sources */,
+				9C3751BC1A823EFB00489DB3 /* KinectManager.cpp in Sources */,
+				9C3751B51A823EFB00489DB3 /* Anchor.cpp in Sources */,
 				9C5BA2B21A7199CD00A29EE1 /* usb_libusb10.c in Sources */,
-				9C5BA2951A71999B00A29EE1 /* VideoPlayer.cpp in Sources */,
 				9C5BA2AE1A7199CD00A29EE1 /* cameras.c in Sources */,
-				9C5BA2851A71999B00A29EE1 /* Anchor.cpp in Sources */,
-				9C5BA28F1A71999B00A29EE1 /* ParticleBillBoardTree.cpp in Sources */,
-				9C5BA28C1A71999B00A29EE1 /* KinectManager.cpp in Sources */,
-				9C5BA2871A71999B00A29EE1 /* CaptureManager.cpp in Sources */,
-				9C5BA28E1A71999B00A29EE1 /* ParticleBillBoard.cpp in Sources */,
-				9C5BA2901A71999B00A29EE1 /* Set.cpp in Sources */,
-				9C5BA2881A71999B00A29EE1 /* CursorManager.cpp in Sources */,
-				9C5BA2931A71999B00A29EE1 /* Subdivision.cpp in Sources */,
-				9C5BA2941A71999B00A29EE1 /* Tools.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

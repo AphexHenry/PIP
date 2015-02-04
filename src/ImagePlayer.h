@@ -10,8 +10,7 @@
 #define __StereoscopicRendering__ImagePlayer__
 
 #include "VideoPlayer.h"
-#include "cinder/audio/Output.h"
-#include "cinder/audio/Io.h"
+#include "SoundPlayer.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -20,8 +19,10 @@ using namespace std;
 class ImagePlayer : public VideoPlayer {
 public:
     
-    ImagePlayer(fs::path img, fs::path imgFront, float aDuration);
-    ImagePlayer(fs::path img, fs::path imgFront, std::string aSoundFile, float aDuration);
+    ImagePlayer(fs::path img, fs::path imgFront);
+    ImagePlayer(fs::path img, fs::path imgFront, std::string aSoundFile);
+    
+    void SetupImages(fs::path img, fs::path imgFront);
     
 	void update(float aTimeInterval);
     
@@ -31,10 +32,7 @@ public:
     
     void SetVolume(float aVolume);
     
-    float mTimeToPlay;
-    float mDuration;
-    
-    ci::audio::TrackRef mTrack;
+    SoundPlayer * mSoundPlayer;
 };
 
 #endif /* defined(__StereoscopicRendering__ImagePlayer__) */

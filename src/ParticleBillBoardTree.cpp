@@ -39,7 +39,7 @@ void ParticleBillboardTree::drawDebug(int aCoeffLifeColor)
     if(!lScene->reflection && sReflection)
         return;
     
-    gl::color(mColor.r, mColor.g, mColor.b, mAlpha);
+    gl::color(mColor.r, mColor.g, mColor.b, mAlpha * lScene->opacity);
     gl::pushMatrices();
     
     if(sReflection)
@@ -51,7 +51,6 @@ void ParticleBillboardTree::drawDebug(int aCoeffLifeColor)
 
     Vec3f lPos = GetPositionScene();
     lPos.z -= mSize * 0.01;
-//    lPos.y = lPos.y / Set::compression;
     
     sTextures[mTextureIndex].enableAndBind();
     

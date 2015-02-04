@@ -105,7 +105,7 @@ void KinectManager::UpdateCalibrate(float aTimeInterval)
     if(mCalibrationDelay < 0)
     {
         mCalibCount--;
-        if(mCalibCount == 0)
+        if(mCalibCount <= 0)
         {
             console() << "calibration done" << endl;
         }
@@ -143,7 +143,10 @@ void KinectManager::UpdateCalibrate(float aTimeInterval)
 void KinectManager::draw(){
     
     //    mBackground.draw(0, 0,Tools::getWindowWidth(), Tools::getWindowHeight());
-    
+    if(!isCalibrated())
+    {
+        gl::drawString("CALIBRATING", Vec2f(Tools::getWindowWidth(),Tools::getWindowHeight()) * 0.5f);
+    }
     drawDebug(0,0,Tools::getWindowWidth(),Tools::getWindowHeight());
     
     Set::draw();

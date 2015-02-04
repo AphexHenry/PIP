@@ -19,8 +19,6 @@ SoundPlayer::SoundPlayer(std::string aFilePath)
     auto ctx = audio::Context::master();
     
     // create a SourceFile and set its output samplerate to match the Context.
-    app::addAssetDirectory	(	app::getAppPath().string() + "/../Assets/"	 );
-//    std::string lResource = app::getAppPath().string() + "/../Assets/" + aFilePath;
     DataSourceRef lRef = app::loadAsset(  aFilePath);
     app::console() << lRef->getFilePath().string() << endl;
     audio::SourceFileRef sourceFile = audio::load(lRef , ctx->getSampleRate() );
