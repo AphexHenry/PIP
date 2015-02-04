@@ -73,6 +73,10 @@ public:
     float mTimeToPlay;
     float mDuration;
     
+    float mVolume;
+    
+    fs::path mMoviePath;
+    
 private:
     void setup(fs::path aPath);
     Surface8u TextureToSurface(gl::Texture aTexture);

@@ -180,6 +180,11 @@ bool Set::IsFirst()
 
 void Set::LoadScene(int aScene)
 {
+    if(scenes.size() <= 0)
+    {
+        return;
+    }
+    
     aScene = (aScene == scenes.size() ? 0 : aScene);
     scenes[currentScene].video->stop();
     currentScene = aScene;

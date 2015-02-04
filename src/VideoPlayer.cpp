@@ -35,26 +35,37 @@ void VideoPlayer::setFront(fs::path aImgFront)
     mImageFront = gl::Texture(loadImage( Tools::GetOutResourcePath(aImgFront)));
 }
 
+/*
+ *  common setup function for both constructors.
+ */
 void VideoPlayer::setup(fs::path movie)
 {
     fs::path moviePath = Tools::GetOutResourcePath( movie ) ;
-    loadMovieFile( moviePath );
+    mMoviePath = moviePath;
     
     mTimeToPlay = -1.f;
     mDuration = -1.f;
+    mVolume = 1.f;
 }
 
+/*
+ *  set the reflection mask image.
+ */
 void VideoPlayer::setImage( gl::Texture &aTexture )
 {
     mImageFrontReflection = aTexture;
 }
 
+/*
+ *  load movie into memory.
+ */
 void VideoPlayer::loadMovieFile( const fs::path &moviePath )
 {
 	try {
 		// load up the movie, set it to loop, and begin playing
 //		mMovie = qtime::MovieSurface( moviePath );
         mMovie = qtime::MovieGl::create( moviePath );
+//        mMovie->setActiveSegment( 0.f, 1.f );
 //        mMovie->setLoop();
 	}
 	catch( ... ) {
@@ -106,16 +117,26 @@ void VideoPlayer::draw(Vec2i aSize)
 
 void VideoPlayer::play()
 {
-    mMovie->stop();
-    mMovie->seekToStart();
-    mMovie->play();
+    loadMovieFile(mMoviePath);
+    if(mMovie->checkPlayable())
+    {
+//        mMovie->stop();
+        mMovie->seekToStart();
+        mMovie->play();
+        mMovie->setVolume(mVolume);
+    }
+    else
+    {
+        console() << "movie not playable" << endl;
+    }
     
     mTimeToPlay = mDuration;
 }
 
 void VideoPlayer::stop()
 {
-    mMovie->stop();
+//    mMovie->stop();
+    mMovie->reset();
     mFrameTexture = gl::Texture();
 }
 
@@ -126,7 +147,7 @@ bool VideoPlayer::isDone()
 
 void VideoPlayer::SetVolume(float aVolume)
 {
-    mMovie->setVolume(aVolume);
+    mVolume = aVolume;
 }
 
 void VideoPlayer::drawFrontReflection(Vec2i aSize)
