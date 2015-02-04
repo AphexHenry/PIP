@@ -24,6 +24,10 @@ void TransitionManager::draw()
     }
 }
 
+
+/*
+ *  Draw the fade to black transition.
+ */
 void TransitionManager::drawFadeToBlack()
 {
     float lTransitionDuration = sDuration;
@@ -34,12 +38,10 @@ void TransitionManager::drawFadeToBlack()
     if(lTimeLeft < lTransitionDuration)
     {
         lBlack = 1.f - (lTimeLeft / lTransitionDuration);
-        ci::app::console() << "out " <<  lBlack << " " <<  lTimeLeft << endl;
     }
     else if (lTimeSinceStart < lTransitionDuration)
     {
         lBlack = (1.f - (lTimeSinceStart / lTransitionDuration));
-        ci::app::console() << "in " << lBlack << " " <<  lTimeSinceStart << endl;
     }
     
     if(lBlack > -0.00001f)

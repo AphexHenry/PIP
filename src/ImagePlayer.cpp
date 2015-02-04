@@ -91,6 +91,9 @@ float ImagePlayer::GetTimeCurrent()
     return mDuration - mTimeToPlay;
 }
 
+/*
+ *  Return the time left before the end of the media.
+ */
 float ImagePlayer::GetTimeLeft()
 {
     return mTimeToPlay;
@@ -98,16 +101,5 @@ float ImagePlayer::GetTimeLeft()
 
 bool ImagePlayer::isDone()
 {
-//#ifdef MY_APP
    return mTimeToPlay < 0.f;
-//#else
-//    if(mTrack)
-//    {
-//        return !mTrack->isPlaying();
-//    }
-//    else
-//    {
-//        return mTimeToPlay < 0.f;
-//    }
-//#endif
 }
