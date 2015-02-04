@@ -21,6 +21,8 @@
 #include "cinder/Rand.h"
 #include "shared.h"
 
+#include "ThreadLoader.h"
+
 using namespace ci;
 using namespace ci::app;
 using namespace std;
@@ -91,6 +93,8 @@ public:
     float mVolume;
     
     fs::path mMoviePath;
+    
+    static ThreadLoader mLoader;
     
 private:
 

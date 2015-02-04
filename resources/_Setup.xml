@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Ambient>
-    <audio file="Sounds/H2HMUSIC_SHORT.wav" volume="0.5"></audio>
+    <audio file="Sounds/H2H REFLECTIONS MUSIC 2.wav" volume="0.8"></audio>
     <transition type="FadeToBlack" duration="0.6"></transition>
 </Ambient>
 
@@ -27,7 +27,7 @@
     <!--    casse 1 OK-->
     <scene>
         <particles count="300" type="circle" size="2.6" x="0." y="-0.2" z="0.5" scale="0.3" reflection="0" lifeTime="1.45" brightnessMin="0.5" brightnessMax="1" useKinectColor="1" colorMin="0.86,0.01,0.0" colorMax="0.4,0.6,0.4" reflection="0" opacity="0.4"></particles>
-        <media backMedia="casse1/casse1.png" frontImage="casse1/casse1Front.png" audioMedia="Sounds/pip_industrial.wav"></media>
+        <media backMedia="casse1/casse1.png" frontImage="casse1/casse1Front.png" audioMedia="Sounds/pip_industrial.wav" volume="0.1"></media>
     </scene>
     <!-- Water between trees - OK -->
     <scene>

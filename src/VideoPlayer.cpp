@@ -14,6 +14,8 @@ using namespace ci;
 using namespace ci::app;
 
 
+ThreadLoader VideoPlayer::mLoader;
+
 /*
  *  Constructor including reflection mask.
  */
@@ -62,23 +64,45 @@ void VideoPlayer::setImage( gl::Texture &aTexture )
  */
 void VideoPlayer::loadMovieFile( const fs::path &moviePath )
 {
-	try {
-		// load up the movie, set it to loop, and begin playing
-//		mMovie = qtime::MovieSurface( moviePath );
-        mMovie = qtime::MovieGl::create( moviePath );
-//        mMovie->setActiveSegment( 0.f, 1.f );
-//        mMovie->setLoop();
-	}
-	catch( ... ) {
-		console() << "Unable to load the movie." << std::endl;
-		mMovie->reset();
-	}
+//	try {
+//		// load up the movie, set it to loop, and begin playing
+////		mMovie = qtime::MovieSurface( moviePath );
+//        mMovie = qtime::MovieGl::create( moviePath );
+////        mMovie->setActiveSegment( 0.f, 1.f );
+////        mMovie->setLoop();
+//	}
+//	catch( ... ) {
+//		console() << "Unable to load the movie." << std::endl;
+//		mMovie->reset();
+//	}
+
+    mLoader.load(moviePath);
     
 	mFrameTexture.reset();
 }
 
 void VideoPlayer::update(float aTimeInterval)
 {
+    std::list< ci::qtime::MovieGlRef > lLoadedList = mLoader.getLoaded();
+    if(lLoadedList.size() > 0)
+    {
+        mMovie = *(lLoadedList.begin());
+        
+        if(mMovie->checkPlayable())
+        {
+            //        mMovie->stop();
+            mMovie->seekToStart();
+            mMovie->play();
+            mMovie->setVolume(mVolume);
+        }
+        else
+        {
+            console() << "movie not playable" << endl;
+        }
+        
+        mTimeToPlay = mDuration;
+    }
+    
 	if( mMovie )
     {
         mTimeToPlay -= aTimeInterval;
@@ -119,30 +143,23 @@ void VideoPlayer::draw(Vec2i aSize)
 void VideoPlayer::play()
 {
     loadMovieFile(mMoviePath);
-    if(mMovie->checkPlayable())
-    {
-//        mMovie->stop();
-        mMovie->seekToStart();
-        mMovie->play();
-        mMovie->setVolume(mVolume);
-    }
-    else
-    {
-        console() << "movie not playable" << endl;
-    }
-    
-    mTimeToPlay = mDuration;
 }
 
 void VideoPlayer::stop()
 {
 //    mMovie->stop();
     mMovie->reset();
+    mMovie = nullptr;
+    
     mFrameTexture = gl::Texture();
 }
 
 bool VideoPlayer::isDone()
 {
+    if(!mMovie)
+    {
+        return false;
+    }
     return ((mDuration > 0.f) && (mTimeToPlay < 0.f)) || mMovie->isDone();
 }
 

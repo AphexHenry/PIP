@@ -418,7 +418,8 @@ void StereoscopicRenderingApp::keyDown( KeyEvent event )
         mRenderMethod = TV_SIDE_2;
         createFbo();
         break;
-    default:
+    case KeyEvent::KEY_RIGHT:
+    case KeyEvent::KEY_n:
         LoadNextScene();
         break;
 	}

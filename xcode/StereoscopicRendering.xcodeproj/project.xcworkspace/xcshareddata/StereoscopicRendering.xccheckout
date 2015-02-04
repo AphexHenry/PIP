@@ -10,6 +10,8 @@
 	<string>StereoscopicRendering</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>A524EDBD5243EE0C64E00E1A11F1DA6CA58656E0</key>
+		<string>https://bitbucket.org/AphexHenry/mozza.git</string>
 		<key>DD4332FE7583744D4613C77BE138CEECF1F09F09</key>
 		<string>https://github.com/AphexHenry/PIP.git</string>
 	</dict>
@@ -17,6 +19,8 @@
 	<string>xcode/StereoscopicRendering.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>A524EDBD5243EE0C64E00E1A11F1DA6CA58656E0</key>
+		<string>../../../../-Mozza</string>
 		<key>DD4332FE7583744D4613C77BE138CEECF1F09F09</key>
 		<string>../../..</string>
 	</dict>
@@ -28,6 +32,14 @@
 	<string>DD4332FE7583744D4613C77BE138CEECF1F09F09</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A524EDBD5243EE0C64E00E1A11F1DA6CA58656E0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>-Mozza</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
