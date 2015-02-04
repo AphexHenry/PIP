@@ -25,7 +25,6 @@
 		9C3751BB1A823EFB00489DB3 /* IntroManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C37519C1A823EFB00489DB3 /* IntroManager.cpp */; };
 		9C3751BC1A823EFB00489DB3 /* KinectManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C37519E1A823EFB00489DB3 /* KinectManager.cpp */; };
 		9C3751BD1A823EFB00489DB3 /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751A01A823EFB00489DB3 /* Particle.cpp */; };
-		9C3751BE1A823EFB00489DB3 /* ParticleBillBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751A21A823EFB00489DB3 /* ParticleBillBoard.cpp */; };
 		9C3751BF1A823EFB00489DB3 /* ParticleBillBoardTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751A41A823EFB00489DB3 /* ParticleBillBoardTree.cpp */; };
 		9C3751C01A823EFB00489DB3 /* Set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751A71A823EFB00489DB3 /* Set.cpp */; };
 		9C3751C11A823EFB00489DB3 /* shared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751A91A823EFB00489DB3 /* shared.cpp */; };
@@ -93,8 +92,6 @@
 		9C37519F1A823EFB00489DB3 /* KinectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KinectManager.h; path = ../src/KinectManager.h; sourceTree = "<group>"; };
 		9C3751A01A823EFB00489DB3 /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
 		9C3751A11A823EFB00489DB3 /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../src/Particle.h; sourceTree = "<group>"; };
-		9C3751A21A823EFB00489DB3 /* ParticleBillBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleBillBoard.cpp; path = ../src/ParticleBillBoard.cpp; sourceTree = "<group>"; };
-		9C3751A31A823EFB00489DB3 /* ParticleBillBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleBillBoard.h; path = ../src/ParticleBillBoard.h; sourceTree = "<group>"; };
 		9C3751A41A823EFB00489DB3 /* ParticleBillBoardTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleBillBoardTree.cpp; path = ../src/ParticleBillBoardTree.cpp; sourceTree = "<group>"; };
 		9C3751A51A823EFB00489DB3 /* ParticleBillBoardTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleBillBoardTree.h; path = ../src/ParticleBillBoardTree.h; sourceTree = "<group>"; };
 		9C3751A61A823EFB00489DB3 /* SensorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorManager.h; path = ../src/SensorManager.h; sourceTree = "<group>"; };
@@ -179,8 +176,6 @@
 				9C37519F1A823EFB00489DB3 /* KinectManager.h */,
 				9C3751A01A823EFB00489DB3 /* Particle.cpp */,
 				9C3751A11A823EFB00489DB3 /* Particle.h */,
-				9C3751A21A823EFB00489DB3 /* ParticleBillBoard.cpp */,
-				9C3751A31A823EFB00489DB3 /* ParticleBillBoard.h */,
 				9C3751A41A823EFB00489DB3 /* ParticleBillBoardTree.cpp */,
 				9C3751A51A823EFB00489DB3 /* ParticleBillBoardTree.h */,
 				9C3751A61A823EFB00489DB3 /* SensorManager.h */,
@@ -457,7 +452,6 @@
 				9C3751C41A823EFB00489DB3 /* Subdivision.cpp in Sources */,
 				9C3751C51A823EFB00489DB3 /* Tools.cpp in Sources */,
 				9C5BA2B01A7199CD00A29EE1 /* registration.c in Sources */,
-				9C3751BE1A823EFB00489DB3 /* ParticleBillBoard.cpp in Sources */,
 				9C3751B81A823EFB00489DB3 /* CursorManager.cpp in Sources */,
 				9C3751BB1A823EFB00489DB3 /* IntroManager.cpp in Sources */,
 				9C5BA2AD1A7199CD00A29EE1 /* CinderFreenect.cpp in Sources */,

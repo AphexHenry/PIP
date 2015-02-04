@@ -9,7 +9,6 @@
 
 #include "Set.h"
 #include "Resources.h"
-#include "ParticleBillBoard.h"
 #include "ParticleBillBoardTree.h"
 #include "ImagePlayer.h"
 
