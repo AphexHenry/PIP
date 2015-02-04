@@ -569,7 +569,7 @@ void StereoscopicRenderingApp::render()
     if(mPartNiv1)
     for(int i = 0; i < mPartNiv1->size(); i++)
     {
-        mPartNiv1->at(i)->drawDebug(0);
+        mPartNiv1->at(i)->draw(0);
     }
 //    gl::enableAlphaBlending();
 //    mShaderPhong.unbind();

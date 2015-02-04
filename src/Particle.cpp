@@ -79,7 +79,7 @@ void Particle::update(float aTimeInterval)
     mPosition += mSpeed * aTimeInterval;
 }
 
-void Particle::drawDebug(int aCoeffLifeColor)
+void Particle::draw(int aCoeffLifeColor)
 {
     SceneData * lScene = Set::getScene();
 

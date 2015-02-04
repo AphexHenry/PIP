@@ -21,7 +21,7 @@ public:
     /*
      *  draw for debug purpose.
      */
-    virtual void drawDebug(int aCoeffLifeColor);
+    virtual void draw(int aCoeffLifeColor);
     
     /*
      *  Get a close target.

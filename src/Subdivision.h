@@ -87,7 +87,7 @@ public:
     void AddStrength(cinder::Vec3f aStrength, cinder::Vec3f aPosition1, cinder::Vec3f aPosition2);
     
     /*
-     * Add an Anchor in the proper content case.
+     * draw.
      */
     void drawDebug();
     

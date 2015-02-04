@@ -19,7 +19,7 @@ void Anchor::update(){
     
 }
 
-void Anchor::drawDebug()
+void Anchor::draw()
 {
 
 }

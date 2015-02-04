@@ -6,12 +6,12 @@
 <Composition>
     <!--    pinky rock ok-->
     <scene>
-        <particles count="350" type="circle" size="4.5" x="-0.1" y="-0.13" z="50.5" scale="0.48" reflection="0" lifeTime="0.35" brightnessMin="0.1" brightnessMax="1.1" colorMin="1,0.1,0.1" colorMax="0.8,0.2,0.2" useKinectColor="0" reflection="0" opacity="1."></particles>
+        <particles count="350" type="tree" size="4.5" x="-0.1" y="-0.13" z="50.5" scale="0.48" reflection="0" lifeTime="0.35" brightnessMin="0.1" brightnessMax="1.1" colorMin="1,0.1,0.1" colorMax="0.8,0.2,0.2" useKinectColor="0" reflection="0" opacity="0.4"></particles>
         <media backMedia="pinkyRock/pinkyRock.png" audioMedia="Sounds/pip_wind.wav"></media>
     </scene>
     <!--    rocher tour ok-->
     <scene>
-        <particles count="650" type="tree" size="6" x="0.2" y="-0.13" z="1" scale="0.48" reflection="0" lifeTime="0.45" brightnessMin="0.4" brightnessMax="1.2" colorMin="0,0,0" colorMax="0.1,0.9,0.2" useKinectColor="0" reflection="0" opacity="1."></particles>
+        <particles count="650" type="tree" size="6" x="0.2" y="-0.13" z="1" scale="0.48" reflection="0" lifeTime="0.45" brightnessMin="0.4" brightnessMax="1.2" colorMin="0,0,0" colorMax="0.1,0.9,0.2" useKinectColor="0" reflection="0" opacity="0.2"></particles>
         <media backMedia="rocherTour/rocherTour.png" frontImage="rocherTour/rocherTourFront.png" audioMedia="Sounds/pip_wind.wav"></media>
     </scene>
     <!--    casse 2 ok-->
@@ -25,7 +25,7 @@
     </scene>
     <!--    casse 1 OK-->
     <scene>
-        <particles count="300" type="circle" size="2.6" x="0." y="-0.2" z="0.5" scale="0.3" reflection="0" lifeTime="1.45" brightnessMin="0.5" brightnessMax="1" useKinectColor="1" colorMin="0.86,0.01,0.0" colorMax="0.4,0.6,0.4" reflection="0"></particles>
+        <particles count="300" type="circle" size="2.6" x="0." y="-0.2" z="0.5" scale="0.3" reflection="0" lifeTime="1.45" brightnessMin="0.5" brightnessMax="1" useKinectColor="1" colorMin="0.86,0.01,0.0" colorMax="0.4,0.6,0.4" reflection="0" opacity="0.4"></particles>
         <media backMedia="casse1/casse1.png" frontImage="casse1/casse1Front.png" audioMedia="Sounds/pip_industrial.wav"></media>
     </scene>
     <!-- Water between trees - OK -->

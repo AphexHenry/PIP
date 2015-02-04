@@ -13,7 +13,7 @@ public:
     /*
      *  draw for debug purpose.
      */
-    void drawDebug(int aCoeffLifeColor);
+    void draw(int aCoeffLifeColor);
     
     /*
      *  update.

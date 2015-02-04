@@ -32,7 +32,11 @@ void ParticleBillboardTree::update(float aTimeInterval)
     mRotation += mRotationSpeed * aTimeInterval;
 }
 
-void ParticleBillboardTree::drawDebug(int aCoeffLifeColor)
+/*
+ *  Draw particle.
+ *  aCoeffLifeColor : normalized age of the particle.
+ */
+void ParticleBillboardTree::draw(int aCoeffLifeColor)
 {
     SceneData * lScene = Set::getScene();
 

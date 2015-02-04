@@ -13,7 +13,7 @@ public:
     
     Anchor(int aUser);
     void update();
-    void drawDebug();
+    void draw();
     void SetPosition(ci::Vec3f aPosition){mPosition = aPosition;};
     ci::Vec3f mPosition;
     float   mSize;

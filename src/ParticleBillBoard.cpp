@@ -10,7 +10,7 @@ void ParticleBillboard::SetTexture(ci::gl::Texture aTexture)
     sTexture = aTexture;
 }
 
-void ParticleBillboard::drawDebug(int aCoeffLifeColor)
+void ParticleBillboard::draw(int aCoeffLifeColor)
 {
     SceneData * lScene = Set::getScene();
 

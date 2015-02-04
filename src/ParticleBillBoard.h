@@ -11,9 +11,9 @@ public:
     ParticleBillboard():Particle(){};
     
     /*
-     *  draw for debug purpose.
+     *  draw particle.
      */
-    void drawDebug(int aCoeffLifeColor);
+    void draw(int aCoeffLifeColor);
     
     static void SetTexture(ci::gl::Texture aTexture);
     
