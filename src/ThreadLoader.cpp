@@ -15,7 +15,6 @@
 */
 
 #include "ThreadLoader.h"
-#include "Settings.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -26,6 +25,8 @@ ThreadLoader::ThreadLoader(void)
 	mLoadedList.clear();
     mToLoadList.clear();
 
+    mEndThread = false;
+    
     mThread = make_shared< thread >(bind(&ThreadLoader::threadLoadLoop, this));
 }
 
@@ -34,6 +35,10 @@ ThreadLoader::~ThreadLoader(void)
 	// gracefully abort current threads:
 	deque<shared_ptr<thread>>::iterator itr;
 
+    mToLoadMutex.lock();
+    mEndThread = true;
+    mToLoadMutex.unlock();
+    
 	// wait for all threads to finish
     mThread->join();
 }
@@ -70,7 +75,7 @@ void ThreadLoader::threadLoadLoop()
 {
     int lToLoadSize = 0;
     fs::path lMediaPath;
-    while(1)
+    while(!mEndThread)
     {
         mToLoadMutex.lock();
         lToLoadSize = mToLoadList.size();

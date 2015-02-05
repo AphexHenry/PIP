@@ -40,6 +40,8 @@ public:
     
 protected:
 
+    bool mEndThread;
+    
     boost::signals2::mutex	mSurfaceMutex;
     boost::signals2::mutex	mToLoadMutex;
     std::shared_ptr< std::thread > mThread;
