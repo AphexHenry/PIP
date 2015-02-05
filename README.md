@@ -4,13 +4,14 @@ Art installation created by Marten Berkan and Baptiste Bohelay. The system proje
 
 Presented to :
 - [Whitehorse Art Underground Gallery](http://lebaptiste.com/#projects+html&other&pip.html).
-- [Interactive Future '14] (http://if2014.ecuad.ca/exhibition/marten-berkman-baptiste-bohelay/)
+- [Interactive Future '14] (http://if2014.ecuad.ca/exhibition/marten-berkman-baptiste-bohelay/).
 
 The applicaton has the following features:
 - Read stereoscopic images and videos.
 - multi-threaded video loading.
-- allow to chose between 4 stereoscopy rendering (anaglyph, side-by-side keep ratio, side-by-side ratio widh/2, and Alioscopy)
-- display particules in the space, interaction done with available device (Kinect, camera, mouse).
+- allow to chose between 4 stereoscopy rendering (anaglyph, side-by-side keep ratio, side-by-side ratio widh/2, and Alioscopy).
+- display particules in stereoscopy on a layer. 
+- interaction can be done with different devices (Kinect, camera, mouse). The application will pick the available one. Kinect first, then camera,  then mouse.
 - xml based scene editor.
 
 Exemple of xml file content:
