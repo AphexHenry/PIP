@@ -9,12 +9,13 @@ The applicaton has the following features:
 - xml based scene editor.
 
 Exemple of xml file content:
+```
 <Ambient>
     <audio file="Sounds/H2H REFLECTIONS MUSIC 2.wav" volume="0"></audio>
     <transition type="FadeToBlack" duration="0.6"></transition>
 </Ambient>
 
-```<Composition>
+<Composition>
     <!-- First scene-->
     <scene>
         <particles count="300" type="circle" size="1.6" x="0." y="0.f" z="0.5" scale="0.05" reflection="0" lifeTime="0.19" brightnessMin="0.1" brightnessMax="1.1" useKinectColor="0" colorMin="0.86,0.61,0.7" colorMax="0.4,0.6,0.4" reflection="0" opacity="0.2"></particles>
