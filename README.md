@@ -1,5 +1,9 @@
 # PIP
-Art installation projecting people shape into a 3D video. Based on [Cinder 0.8.6.](http://libcinder.org/download/).
+Projection Interieure Projection
+Art installation created by Marten Berkan and Baptiste Bohelay. The system project people shape into 3D videos. Based on [Cinder 0.8.6.](http://libcinder.org/download/).
+Presented to :
+[Whitehorse Art Underground Gallery](http://lebaptiste.com/#projects+html&other&pip.html).
+[Interactive Future '14] (http://if2014.ecuad.ca/exhibition/marten-berkman-baptiste-bohelay/)
 
 The applicaton has the following features:
 - Read stereoscopic images and videos.
