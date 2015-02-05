@@ -18,6 +18,7 @@
 		5323E6B60EAFCA7E003A9687 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B50EAFCA7E003A9687 /* QTKit.framework */; };
 		53E3CDFC0E86099300238D2B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E3CDFB0E86099300238D2B /* Carbon.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		9C0A63881A839B1000BDA1AE /* ThreadLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C0A63861A839B1000BDA1AE /* ThreadLoader.cpp */; };
 		9C3751B51A823EFB00489DB3 /* Anchor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751911A823EFB00489DB3 /* Anchor.cpp */; };
 		9C3751B71A823EFB00489DB3 /* CaptureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751951A823EFB00489DB3 /* CaptureManager.cpp */; };
 		9C3751B81A823EFB00489DB3 /* CursorManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751971A823EFB00489DB3 /* CursorManager.cpp */; };
@@ -34,7 +35,6 @@
 		9C3751C51A823EFB00489DB3 /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751B11A823EFB00489DB3 /* Tools.cpp */; };
 		9C3751C61A823EFB00489DB3 /* VideoPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751B31A823EFB00489DB3 /* VideoPlayer.cpp */; };
 		9C3751C91A825D5C00489DB3 /* TransitionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751C71A825D5C00489DB3 /* TransitionManager.cpp */; };
-		9C400E561A8282AC004A79E2 /* ThreadLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C400E541A8282AC004A79E2 /* ThreadLoader.cpp */; };
 		9C5BA2AD1A7199CD00A29EE1 /* CinderFreenect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA29C1A7199CD00A29EE1 /* CinderFreenect.cpp */; };
 		9C5BA2AE1A7199CD00A29EE1 /* cameras.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA29F1A7199CD00A29EE1 /* cameras.c */; };
 		9C5BA2AF1A7199CD00A29EE1 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2A11A7199CD00A29EE1 /* core.c */; };
@@ -80,6 +80,8 @@
 		53E3CDFB0E86099300238D2B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* StereoscopicRendering.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StereoscopicRendering.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C0A63861A839B1000BDA1AE /* ThreadLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ThreadLoader.cpp; path = ../src/ThreadLoader.cpp; sourceTree = "<group>"; };
+		9C0A63871A839B1000BDA1AE /* ThreadLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreadLoader.h; path = ../src/ThreadLoader.h; sourceTree = "<group>"; };
 		9C3751911A823EFB00489DB3 /* Anchor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Anchor.cpp; path = ../src/Anchor.cpp; sourceTree = "<group>"; };
 		9C3751921A823EFB00489DB3 /* Anchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Anchor.h; path = ../src/Anchor.h; sourceTree = "<group>"; };
 		9C3751951A823EFB00489DB3 /* CaptureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CaptureManager.cpp; path = ../src/CaptureManager.cpp; sourceTree = "<group>"; };
@@ -113,8 +115,6 @@
 		9C3751B41A823EFB00489DB3 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoPlayer.h; path = ../src/VideoPlayer.h; sourceTree = "<group>"; };
 		9C3751C71A825D5C00489DB3 /* TransitionManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransitionManager.cpp; path = ../src/TransitionManager.cpp; sourceTree = "<group>"; };
 		9C3751C81A825D5C00489DB3 /* TransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransitionManager.h; path = ../src/TransitionManager.h; sourceTree = "<group>"; };
-		9C400E541A8282AC004A79E2 /* ThreadLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ThreadLoader.cpp; path = "../../-Mozza/src/ThreadLoader.cpp"; sourceTree = "<group>"; };
-		9C400E551A8282AC004A79E2 /* ThreadLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreadLoader.h; path = "../../-Mozza/src/ThreadLoader.h"; sourceTree = "<group>"; };
 		9C5BA29C1A7199CD00A29EE1 /* CinderFreenect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CinderFreenect.cpp; sourceTree = "<group>"; };
 		9C5BA29D1A7199CD00A29EE1 /* CinderFreenect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinderFreenect.h; sourceTree = "<group>"; };
 		9C5BA29F1A7199CD00A29EE1 /* cameras.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cameras.c; sourceTree = "<group>"; };
@@ -201,8 +201,8 @@
 				9C3751B41A823EFB00489DB3 /* VideoPlayer.h */,
 				9C3751C71A825D5C00489DB3 /* TransitionManager.cpp */,
 				9C3751C81A825D5C00489DB3 /* TransitionManager.h */,
-				9C400E541A8282AC004A79E2 /* ThreadLoader.cpp */,
-				9C400E551A8282AC004A79E2 /* ThreadLoader.h */,
+				9C0A63861A839B1000BDA1AE /* ThreadLoader.cpp */,
+				9C0A63871A839B1000BDA1AE /* ThreadLoader.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -457,7 +457,7 @@
 				9C3751C31A823EFB00489DB3 /* StereoscopicRenderingApp.cpp in Sources */,
 				9C3751BA1A823EFB00489DB3 /* ImagePlayer.cpp in Sources */,
 				9C3751C91A825D5C00489DB3 /* TransitionManager.cpp in Sources */,
-				9C400E561A8282AC004A79E2 /* ThreadLoader.cpp in Sources */,
+				9C0A63881A839B1000BDA1AE /* ThreadLoader.cpp in Sources */,
 				9C3751BD1A823EFB00489DB3 /* Particle.cpp in Sources */,
 				9C3751B71A823EFB00489DB3 /* CaptureManager.cpp in Sources */,
 				9C5BA2AF1A7199CD00A29EE1 /* core.c in Sources */,

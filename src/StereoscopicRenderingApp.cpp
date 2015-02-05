@@ -116,6 +116,8 @@ void StereoscopicRenderingApp::LoadScenes()
     mTime = getElapsedSeconds();
     
     mSensorManager->Calibrate();
+    
+    LoadNextScene();
 }
 
 void StereoscopicRenderingApp::update()
@@ -133,13 +135,6 @@ void StereoscopicRenderingApp::update()
             {
                 if(mSensorManager->isReady())
                 {
-#ifdef MY_APP
-                    Set::LoadScene(SCENE_INTRO);
-#else
-//                    Set::LoadScene(SCENE_TUTO);
-#endif
-                    
-                    ApplySceneSettings();
                     mLoaded = true;
                     mTime = getElapsedSeconds();
                 }

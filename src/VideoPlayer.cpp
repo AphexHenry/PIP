@@ -147,9 +147,11 @@ void VideoPlayer::play()
 
 void VideoPlayer::stop()
 {
-//    mMovie->stop();
-    mMovie->reset();
-    mMovie = nullptr;
+    if(mMovie)
+    {
+        mMovie->reset();
+        mMovie = nullptr;
+    }
     
     mFrameTexture = gl::Texture();
 }

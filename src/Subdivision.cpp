@@ -168,6 +168,7 @@ vector< Anchor * > * Subdivision::GetClosestContent(float ax, float ay, int &aDi
             return NULL;
         }
     }
+    return NULL;
 }
 
 Vec2i Subdivision::GetCoordinates(float ax, float ay)
