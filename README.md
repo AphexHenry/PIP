@@ -1,5 +1,5 @@
-# PIP
-Projection Interieure Projection
+# Projection Interieure Projection
+
 Art installation created by Marten Berkan and Baptiste Bohelay. The system project people shape into 3D videos. Based on [Cinder 0.8.6.](http://libcinder.org/download/).
 
 Presented to :
