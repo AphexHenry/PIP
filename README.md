@@ -31,3 +31,12 @@ Exemple of xml file content:
         <media backMedia="ScenePlaineMouches2/ScenePlaineMouche.png" frontImage="ScenePlaineMouches2/ScenePlaineMoucheFront.png" audioMedia="Sounds/pip_boreal2.wav" volume="0.4"></media> <!-- put an image behind particles and a mask in front for better integration, audio file will be played during scene.-->
     </scene>
   </Compositon>```
+  
+  Installation:
+  - Put project into CINDER_PATH/samples.
+  - Open with Xcode and compile it.
+  - In the same directory of your application create a directory "/Assets"
+  - Put your resources : videos, images and sounds.
+  - open your_app_content/Resources/setup.xml
+  - Build the scenes like the xml example. Path are relative to /Assets.
+  - Use F2, F3, F4, etc. to switch 3D rendering.
