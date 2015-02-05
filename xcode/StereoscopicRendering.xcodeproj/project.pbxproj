@@ -43,11 +43,6 @@
 		9C5BA2B21A7199CD00A29EE1 /* usb_libusb10.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2AA1A7199CD00A29EE1 /* usb_libusb10.c */; };
 		9C5BA30E1A71A58F00A29EE1 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5BA30D1A71A58F00A29EE1 /* IOKit.framework */; };
 		9C5BA3881A71A5F800A29EE1 /* LoadingScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA32C1A71A5F800A29EE1 /* LoadingScreen.png */; };
-		9C5BA3AE1A71A5F900A29EE1 /* tutorialCamBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA35C1A71A5F800A29EE1 /* tutorialCamBack.png */; };
-		9C5BA3AF1A71A5F900A29EE1 /* tutorialCamFront.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA35D1A71A5F800A29EE1 /* tutorialCamFront.png */; };
-		9C5BA3B11A71A5F900A29EE1 /* tutorialCursorBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA35F1A71A5F800A29EE1 /* tutorialCursorBack.png */; };
-		9C5BA3B21A71A5F900A29EE1 /* tutorialCursorFront.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA3601A71A5F800A29EE1 /* tutorialCursorFront.png */; };
-		9C5BA3B41A71A5F900A29EE1 /* tutorialKinectBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA3621A71A5F800A29EE1 /* tutorialKinectBack.png */; };
 		9C5BA3C51A71A66B00A29EE1 /* anaglyph_frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA3BF1A71A66B00A29EE1 /* anaglyph_frag.glsl */; };
 		9C5BA3C61A71A66B00A29EE1 /* anaglyph_vert.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA3C01A71A66B00A29EE1 /* anaglyph_vert.glsl */; };
 		9C5BA3C71A71A66B00A29EE1 /* interlaced_frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA3C11A71A66B00A29EE1 /* interlaced_frag.glsl */; };
@@ -124,11 +119,6 @@
 		9C5BA2AA1A7199CD00A29EE1 /* usb_libusb10.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = usb_libusb10.c; sourceTree = "<group>"; };
 		9C5BA30D1A71A58F00A29EE1 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		9C5BA32C1A71A5F800A29EE1 /* LoadingScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LoadingScreen.png; sourceTree = "<group>"; };
-		9C5BA35C1A71A5F800A29EE1 /* tutorialCamBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorialCamBack.png; sourceTree = "<group>"; };
-		9C5BA35D1A71A5F800A29EE1 /* tutorialCamFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorialCamFront.png; sourceTree = "<group>"; };
-		9C5BA35F1A71A5F800A29EE1 /* tutorialCursorBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorialCursorBack.png; sourceTree = "<group>"; };
-		9C5BA3601A71A5F800A29EE1 /* tutorialCursorFront.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorialCursorFront.png; sourceTree = "<group>"; };
-		9C5BA3621A71A5F800A29EE1 /* tutorialKinectBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorialKinectBack.png; sourceTree = "<group>"; };
 		9C5BA3BF1A71A66B00A29EE1 /* anaglyph_frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anaglyph_frag.glsl; sourceTree = "<group>"; };
 		9C5BA3C01A71A66B00A29EE1 /* anaglyph_vert.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anaglyph_vert.glsl; sourceTree = "<group>"; };
 		9C5BA3C11A71A66B00A29EE1 /* interlaced_frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = interlaced_frag.glsl; sourceTree = "<group>"; };
@@ -270,7 +260,6 @@
 				9C6E49E21A78FDC700ECA994 /* _Setup.xml */,
 				9C5BA3BE1A71A66B00A29EE1 /* shaders */,
 				9C5BA32B1A71A5F800A29EE1 /* Loading */,
-				9C5BA35A1A71A5F800A29EE1 /* SceneTutorial */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				00CCAF14116A9FEE008396D5 /* CinderApp.icns */,
 			);
@@ -333,19 +322,6 @@
 			);
 			name = Loading;
 			path = ../resources/Loading;
-			sourceTree = "<group>";
-		};
-		9C5BA35A1A71A5F800A29EE1 /* SceneTutorial */ = {
-			isa = PBXGroup;
-			children = (
-				9C5BA35C1A71A5F800A29EE1 /* tutorialCamBack.png */,
-				9C5BA35D1A71A5F800A29EE1 /* tutorialCamFront.png */,
-				9C5BA35F1A71A5F800A29EE1 /* tutorialCursorBack.png */,
-				9C5BA3601A71A5F800A29EE1 /* tutorialCursorFront.png */,
-				9C5BA3621A71A5F800A29EE1 /* tutorialKinectBack.png */,
-			);
-			name = SceneTutorial;
-			path = ../resources/SceneTutorial;
 			sourceTree = "<group>";
 		};
 		9C5BA3BE1A71A66B00A29EE1 /* shaders */ = {
@@ -426,7 +402,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C6E49EA1A79AE4B00ECA994 /* particleTree.png in Resources */,
-				9C5BA3B21A71A5F900A29EE1 /* tutorialCursorFront.png in Resources */,
 				9C5BA3C51A71A66B00A29EE1 /* anaglyph_frag.glsl in Resources */,
 				9C5BA3C61A71A66B00A29EE1 /* anaglyph_vert.glsl in Resources */,
 				9C5BA3C81A71A66B00A29EE1 /* interlaced_vert.glsl in Resources */,
@@ -434,16 +409,12 @@
 				9C6E49E31A78FDC700ECA994 /* _Setup.xml in Resources */,
 				00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */,
 				9C5BA3881A71A5F800A29EE1 /* LoadingScreen.png in Resources */,
-				9C5BA3AE1A71A5F900A29EE1 /* tutorialCamBack.png in Resources */,
 				9C5BA3CA1A71A66B00A29EE1 /* phong_vert.glsl in Resources */,
 				9C5BA3C91A71A66B00A29EE1 /* phong_frag.glsl in Resources */,
-				9C5BA3AF1A71A5F900A29EE1 /* tutorialCamFront.png in Resources */,
 				9C6E49EE1A79AE4B00ECA994 /* particleTree5.png in Resources */,
-				9C5BA3B41A71A5F900A29EE1 /* tutorialKinectBack.png in Resources */,
 				9C5BA3C71A71A66B00A29EE1 /* interlaced_frag.glsl in Resources */,
 				9C6E49EB1A79AE4B00ECA994 /* particleTree2.png in Resources */,
 				9C6E49ED1A79AE4B00ECA994 /* particleTree4.png in Resources */,
-				9C5BA3B11A71A5F900A29EE1 /* tutorialCursorBack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

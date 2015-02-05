@@ -6,7 +6,7 @@
 
 bool Particle::sReflection = false;
 
-Particle::Particle():Anchor(0)
+Particle::Particle():Anchor()
 {
     mImmuneTimer = 0.f;
 //    Reset();

@@ -13,6 +13,6 @@ void Shared::setup()
 {
     for(int j = 0; j < NUM_ANCHOR; j++)
     {
-        sAnchors.push_back(new Anchor(0));
+        sAnchors.push_back(new Anchor());
     }
 }
