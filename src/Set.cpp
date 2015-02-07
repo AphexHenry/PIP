@@ -62,7 +62,7 @@ void Set::setup(SensorType aSensorType)
     
     SceneData lScene;
     
-    XmlTree lTree(loadResource(XML_SETUP));
+    XmlTree lTree(loadAsset("_Setup.xml"));
     
     if(lTree.hasChild("Ambient"))
     {
@@ -157,7 +157,7 @@ void Set::setup(SensorType aSensorType)
                 
                 if(lDuration > 0.f)
                 {
-                    lScene.video->SetDuration(lVolume);
+                    lScene.video->SetDuration(lDuration);
                 }
                 
                 lScene.video->SetVolume(lVolume);

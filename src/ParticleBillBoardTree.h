@@ -20,6 +20,9 @@ public:
      */
     void update(float aTimeInterval);
     
+    /*
+     *  Reset particle state.
+     */
     void Reset();
     
     static void AddTexture(ci::gl::Texture aTexture);

@@ -49,7 +49,6 @@
 		9C5BA3C81A71A66B00A29EE1 /* interlaced_vert.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA3C21A71A66B00A29EE1 /* interlaced_vert.glsl */; };
 		9C5BA3C91A71A66B00A29EE1 /* phong_frag.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA3C31A71A66B00A29EE1 /* phong_frag.glsl */; };
 		9C5BA3CA1A71A66B00A29EE1 /* phong_vert.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 9C5BA3C41A71A66B00A29EE1 /* phong_vert.glsl */; };
-		9C6E49E31A78FDC700ECA994 /* _Setup.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9C6E49E21A78FDC700ECA994 /* _Setup.xml */; };
 		9C6E49EA1A79AE4B00ECA994 /* particleTree.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6E49E51A79AE4A00ECA994 /* particleTree.png */; };
 		9C6E49EB1A79AE4B00ECA994 /* particleTree2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6E49E61A79AE4A00ECA994 /* particleTree2.png */; };
 		9C6E49EC1A79AE4B00ECA994 /* particleTree3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6E49E71A79AE4A00ECA994 /* particleTree3.png */; };
@@ -125,7 +124,6 @@
 		9C5BA3C21A71A66B00A29EE1 /* interlaced_vert.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = interlaced_vert.glsl; sourceTree = "<group>"; };
 		9C5BA3C31A71A66B00A29EE1 /* phong_frag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phong_frag.glsl; sourceTree = "<group>"; };
 		9C5BA3C41A71A66B00A29EE1 /* phong_vert.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = phong_vert.glsl; sourceTree = "<group>"; };
-		9C6E49E21A78FDC700ECA994 /* _Setup.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = _Setup.xml; path = ../resources/_Setup.xml; sourceTree = "<group>"; };
 		9C6E49E51A79AE4A00ECA994 /* particleTree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particleTree.png; sourceTree = "<group>"; };
 		9C6E49E61A79AE4A00ECA994 /* particleTree2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particleTree2.png; sourceTree = "<group>"; };
 		9C6E49E71A79AE4A00ECA994 /* particleTree3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particleTree3.png; sourceTree = "<group>"; };
@@ -257,7 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				9C6E49E41A79AE4A00ECA994 /* Particles */,
-				9C6E49E21A78FDC700ECA994 /* _Setup.xml */,
 				9C5BA3BE1A71A66B00A29EE1 /* shaders */,
 				9C5BA32B1A71A5F800A29EE1 /* Loading */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -406,7 +403,6 @@
 				9C5BA3C61A71A66B00A29EE1 /* anaglyph_vert.glsl in Resources */,
 				9C5BA3C81A71A66B00A29EE1 /* interlaced_vert.glsl in Resources */,
 				9C6E49EC1A79AE4B00ECA994 /* particleTree3.png in Resources */,
-				9C6E49E31A78FDC700ECA994 /* _Setup.xml in Resources */,
 				00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */,
 				9C5BA3881A71A5F800A29EE1 /* LoadingScreen.png in Resources */,
 				9C5BA3CA1A71A66B00A29EE1 /* phong_vert.glsl in Resources */,

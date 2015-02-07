@@ -9,8 +9,6 @@ bool Particle::sReflection = false;
 Particle::Particle():Anchor()
 {
     mImmuneTimer = 0.f;
-//    Reset();
-    
     mSize = 0.f;
 }
 

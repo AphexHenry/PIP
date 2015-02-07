@@ -6,7 +6,7 @@
 
 #define LOADING_SCREEN  CINDER_RESOURCE( ../resources/Loading/, LoadingScreen.png, 199, PNG )
 
-#define XML_SETUP       CINDER_RESOURCE( ../resources/, _Setup.xml, 128, XML )
+//#define XML_SETUP       CINDER_RESOURCE( ../resources/, _Setup.xml, 128, XML )
 
 #define PARTICLE_TEXT       CINDER_RESOURCE( ../resources/, particle.png, 141, PNG )
 #define PARTICLE_TREE_1     CINDER_RESOURCE( ../resources/, particleTree.png, 142, PNG )
