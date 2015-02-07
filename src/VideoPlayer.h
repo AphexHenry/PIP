@@ -54,18 +54,28 @@ public:
     
     /*
      *  set the front mask image.
+     *  @arg aSize : size of the surface to draw on.
      */
     void setFront(fs::path imgFront);
     
     /*
      *  draw front mask image.
+     *  @arg aSize : size of the surface to draw on.
      */
     void drawFront(Vec2i aSize);
     
     /*
-     *  draw reflections mask image.
+     *  draw reflection mask image from media.
+     *  @arg aSize : size of the surface to draw on.
      */
     void drawFrontReflection(Vec2i aSize);
+    
+    /*
+     *  draw texture.
+     *  @arg aSize : size of the surface to draw on.
+     *  @arg aTexture : texture to draw.
+     */
+    void drawImage(Vec2i aSize, gl::Texture aTexture);
     
     virtual void play();
     virtual void stop();

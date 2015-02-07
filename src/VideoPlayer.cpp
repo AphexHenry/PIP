@@ -127,19 +127,6 @@ void VideoPlayer::update(float aTimeInterval)
     }
 }
 
-void VideoPlayer::draw(Vec2i aSize)
-{
-    gl::enableAlphaBlending();
-    
-	if( mFrameTexture ) {
-        float lratioImg = mFrameTexture.getWidth() / mFrameTexture.getHeight();//Rectf( mFrameTexture.getBounds() );
-        float lheight = ((aSize.x / lratioImg) - aSize.y) * 0.5f;
-        Rectf centeredRect = Rectf(0, -lheight, aSize.x, aSize.y + lheight);
-//		Rectf centeredRect = Rectf( mFrameTexture.getBounds() ).getCenteredFit( Area(0, 0, aSize.x, aSize.y), true );
-		gl::draw( mFrameTexture, centeredRect );
-	}
-}
-
 void VideoPlayer::play()
 {
     loadMovieFile(mMoviePath);
@@ -197,27 +184,48 @@ float VideoPlayer::GetTimeCurrent()
     return mMovie->getCurrentTime();
 }
 
-void VideoPlayer::drawFrontReflection(Vec2i aSize)
+/*
+ *  draw texture.
+ *  @arg aSize : size of the surface to draw on.
+ *  @arg aTexture : texture to draw.
+ */
+void VideoPlayer::drawImage(Vec2i aSize, gl::Texture aTexture)
 {
-    if( mFrameTexture && mImageFrontReflection)
+    gl::enableAlphaBlending();
+    if( mFrameTexture && aTexture)
     {
-        float lratioImg = mFrameTexture.getWidth() / mFrameTexture.getHeight();//Rectf( mFrameTexture.getBounds() );
+        float lratioImg = (float)mFrameTexture.getWidth() / (float)mFrameTexture.getHeight();
         float lheight = ((aSize.x / lratioImg) - aSize.y) * 0.5f;
         Rectf centeredRect = Rectf(0, -lheight, aSize.x, aSize.y + lheight);//Rectf( mFrameTexture.getBounds() ).getCenteredFit( Area(0, 0, aSize.x, aSize.y), true );
-        gl::draw( mImageFrontReflection, centeredRect  );
+        gl::draw( aTexture, centeredRect  );
     }
 }
 
+/*
+ *  draw back image from media.
+ *  @arg aSize : size of the surface to draw on.
+ */
+void VideoPlayer::draw(Vec2i aSize)
+{
+    drawImage(aSize, mFrameTexture);
+}
+
+/*
+ *  draw reflection image from media.
+ *  @arg aSize : size of the surface to draw on.
+ */
+void VideoPlayer::drawFrontReflection(Vec2i aSize)
+{
+    drawImage(aSize, mImageFrontReflection);
+}
+
+/*
+ *  draw front image layer from media.
+ *  @arg aSize : size of the surface to draw on.
+ */
 void VideoPlayer::drawFront(Vec2i aSize)
 {
-    if( mFrameTexture && mImageFront)
-    {
-        float lratioImg = mFrameTexture.getWidth() / mFrameTexture.getHeight();//Rectf( mFrameTexture.getBounds() );
-        float lheight = ((aSize.x / lratioImg) - aSize.y) * 0.5f;
-        Rectf centeredRect = Rectf(0, -lheight, aSize.x, aSize.y + lheight);
-//        Rectf centeredRect = Rectf( mFrameTexture.getBounds() ).getCenteredFit( Area(0, 0, aSize.x, aSize.y), true );//getWindowBounds()
-        gl::draw( mImageFront, centeredRect  );
-    }
+    drawImage(aSize, mImageFront);
 }
 
 Surface8u VideoPlayer::TextureToSurface(gl::Texture aTexture)
