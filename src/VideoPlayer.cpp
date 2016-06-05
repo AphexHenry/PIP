@@ -13,96 +13,60 @@
 using namespace ci;
 using namespace ci::app;
 
-
-ThreadLoader VideoPlayer::mLoader;
-
-/*
- *  Constructor including reflection mask.
- */
 VideoPlayer::VideoPlayer(fs::path movie, fs::path img)
 {
-    mImageFrontReflection = gl::Texture(loadImage( Tools::GetOutResourcePath(img)));
-    setup(movie);
+    fs::path moviePath = Platform::get()->getResourcePath(movie);// App::getResourcePath( movie ) ;
+    loadMovieFile( moviePath );
+    mImageFrontReflection = gl::Texture::create(loadImage( Platform::get()->getResourcePath(img)));
+    
+    mTimeToPlay = 25.f;
 }
 
 VideoPlayer::VideoPlayer(fs::path movie)
 {
-    setup(movie);
+    fs::path moviePath = Platform::get()->getResourcePath( movie ) ;
+    loadMovieFile( moviePath );
+    
+    mTimeToPlay = 25.f;
 }
 
-/*
- *  set the front mask image.
- */
 void VideoPlayer::setFront(fs::path aImgFront)
 {
-    mImageFront = gl::Texture(loadImage( Tools::GetOutResourcePath(aImgFront)));
+    mImageFront = gl::Texture::create(loadImage( Platform::get()->getResourcePath(aImgFront)));
 }
 
-/*
- *  common setup function for both constructors.
- */
-void VideoPlayer::setup(fs::path movie)
+void VideoPlayer::setup()
 {
-    fs::path moviePath = Tools::GetOutResourcePath( movie ) ;
-    mMoviePath = moviePath;
-    
-    mTimeToPlay = -1.f;
-    mDuration = -1.f;
-    mVolume = 1.f;
+    //	fs::path moviePath = getOpenFilePath();
+    //	if( ! moviePath.empty() )
+    //		loadMovieFile( moviePath );
+//    fs::path moviePath = ci::getResourcePath( FILM_1 ) ;
+//    loadMovieFile( moviePath );
 }
 
-/*
- *  set the reflection mask image.
- */
 void VideoPlayer::setImage( gl::Texture &aTexture )
 {
     mImageFrontReflection = aTexture;
 }
 
-/*
- *  load movie into memory.
- */
 void VideoPlayer::loadMovieFile( const fs::path &moviePath )
 {
-//	try {
-//		// load up the movie, set it to loop, and begin playing
-////		mMovie = qtime::MovieSurface( moviePath );
-//        mMovie = qtime::MovieGl::create( moviePath );
-////        mMovie->setActiveSegment( 0.f, 1.f );
-////        mMovie->setLoop();
-//	}
-//	catch( ... ) {
-//		console() << "Unable to load the movie." << std::endl;
-//		mMovie->reset();
-//	}
-
-    mLoader.load(moviePath);
+	try {
+		// load up the movie, set it to loop, and begin playing
+//		mMovie = qtime::MovieSurface( moviePath );
+        mMovie = qtime::MovieGl::create( moviePath );
+//        mMovie->setLoop();
+	}
+	catch( ... ) {
+		console() << "Unable to load the movie." << std::endl;
+		mMovie->reset();
+	}
     
 	mFrameTexture.reset();
 }
 
 void VideoPlayer::update(float aTimeInterval)
 {
-    std::list< ci::qtime::MovieGlRef > lLoadedList = mLoader.getLoaded();
-    if(lLoadedList.size() > 0)
-    {
-        mMovie = *(lLoadedList.begin());
-        
-        if(mMovie->checkPlayable())
-        {
-            //        mMovie->stop();
-            mMovie->seekToStart();
-            mMovie->play();
-            mMovie->setVolume(mVolume);
-        }
-        else
-        {
-            console() << "movie not playable" << endl;
-        }
-        
-        mTimeToPlay = mDuration;
-    }
-    
 	if( mMovie )
     {
         mTimeToPlay -= aTimeInterval;
@@ -111,6 +75,13 @@ void VideoPlayer::update(float aTimeInterval)
         {
             mFrameTexture = mMovie->getTexture();
         }
+//        mSurface = copyWindowSurface();//TextureToSurface(mFrameTexture).clone();
+//        mFrameTexture = gl::Texture(mSurface);
+//        }
+//        else
+//        {
+//            mFrameTexture.update(mSurface);
+//        }
 #ifndef MY_APP
         if(!mSurface)
         {
@@ -119,113 +90,77 @@ void VideoPlayer::update(float aTimeInterval)
         }
         else
         {
-            Vec2i lpos = Vec2i(Rand::randInt(mSurface.getWidth()), Rand::randInt(mSurface.getHeight()));
+            ivec2 lpos = ivec2(Rand::randInt(mSurface.getWidth()), Rand::randInt(mSurface.getHeight()));
             Shared::sColorCapture[0] = mSurface.getPixel(lpos);
-            Shared::sColorCapture[1] = mSurface.getPixel(Vec2i(Rand::randInt(mSurface.getWidth()), Rand::randInt(mSurface.getHeight())));
+            Shared::sColorCapture[1] = mSurface.getPixel(ivec2(Rand::randInt(mSurface.getWidth()), Rand::randInt(mSurface.getHeight())));
         }
 #endif
     }
 }
 
+void VideoPlayer::draw(ivec2 aSize)
+{
+    gl::enableAlphaBlending();
+    
+	if( mFrameTexture ) {
+        float lratioImg = mFrameTexture.getWidth() / mFrameTexture.getHeight();//Rectf( mFrameTexture.getBounds() );
+        float lheight = ((aSize.x / lratioImg) - aSize.y) * 0.5f;
+        Rectf centeredRect = Rectf(0, -lheight, aSize.x, aSize.y + lheight);
+//		Rectf centeredRect = Rectf( mFrameTexture.getBounds() ).getCenteredFit( Area(0, 0, aSize.x, aSize.y), true );
+		gl::draw( mFrameTexture, centeredRect );
+	}
+}
+
 void VideoPlayer::play()
 {
-    loadMovieFile(mMoviePath);
+    mMovie->stop();
+    mMovie->seekToStart();
+    mMovie->play();
+    
+    mTimeToPlay = 25.f;
 }
 
 void VideoPlayer::stop()
 {
-    if(mMovie)
-    {
-        mMovie->reset();
-        mMovie = nullptr;
-    }
-    
+    mMovie->stop();
     mFrameTexture = gl::Texture();
 }
 
 bool VideoPlayer::isDone()
 {
-    if(!mMovie)
-    {
-        return false;
-    }
-    return ((mDuration > 0.f) && (mTimeToPlay < 0.f)) || mMovie->isDone();
+#ifdef MY_APP
+    return mTimeToPlay < 0.f;
+#else
+    return mMovie->isDone();
+#endif
 }
 
 void VideoPlayer::SetVolume(float aVolume)
 {
-    mVolume = aVolume;
+    mMovie->setVolume(aVolume);
 }
 
-float VideoPlayer::GetTimeLeft()
+void VideoPlayer::drawFrontReflection(ivec2 aSize)
 {
-    if(!mMovie)
+    if( mFrameTexture && mImageFrontReflection)
     {
-        return 0.f;
-    }
-    
-    if(mDuration > 0.f)
-    {
-        return mTimeToPlay;
-    }
-    else
-    {
-        return mMovie->getDuration() - mMovie->getCurrentTime();
-    }
-}
-
-float VideoPlayer::GetTimeCurrent()
-{
-    if(!mMovie)
-    {
-        return 0.f;
-    }
-    
-    return mMovie->getCurrentTime();
-}
-
-/*
- *  draw texture.
- *  @arg aSize : size of the surface to draw on.
- *  @arg aTexture : texture to draw.
- */
-void VideoPlayer::drawImage(Vec2i aSize, gl::Texture aTexture)
-{
-    gl::enableAlphaBlending();
-    if( mFrameTexture && aTexture)
-    {
-        float lratioImg = (float)mFrameTexture.getWidth() / (float)mFrameTexture.getHeight();
+        float lratioImg = mFrameTexture.getWidth() / mFrameTexture.getHeight();//Rectf( mFrameTexture.getBounds() );
         float lheight = ((aSize.x / lratioImg) - aSize.y) * 0.5f;
         Rectf centeredRect = Rectf(0, -lheight, aSize.x, aSize.y + lheight);//Rectf( mFrameTexture.getBounds() ).getCenteredFit( Area(0, 0, aSize.x, aSize.y), true );
-        gl::draw( aTexture, centeredRect  );
+        gl::draw( mImageFrontReflection, centeredRect  );
     }
 }
 
-/*
- *  draw back image from media.
- *  @arg aSize : size of the surface to draw on.
- */
-void VideoPlayer::draw(Vec2i aSize)
+void VideoPlayer::drawFront(ivec2 aSize)
 {
-    drawImage(aSize, mFrameTexture);
-}
-
-/*
- *  draw reflection image from media.
- *  @arg aSize : size of the surface to draw on.
- */
-void VideoPlayer::drawFrontReflection(Vec2i aSize)
-{
-    drawImage(aSize, mImageFrontReflection);
-}
-
-/*
- *  draw front image layer from media.
- *  @arg aSize : size of the surface to draw on.
- */
-void VideoPlayer::drawFront(Vec2i aSize)
-{
-    drawImage(aSize, mImageFront);
+    if( mFrameTexture && mImageFront)
+    {
+        float lratioImg = mFrameTexture.getWidth() / mFrameTexture.getHeight();//Rectf( mFrameTexture.getBounds() );
+        float lheight = ((aSize.x / lratioImg) - aSize.y) * 0.5f;
+        Rectf centeredRect = Rectf(0, -lheight, aSize.x, aSize.y + lheight);
+//        Rectf centeredRect = Rectf( mFrameTexture.getBounds() ).getCenteredFit( Area(0, 0, aSize.x, aSize.y), true );//getWindowBounds()
+        gl::draw( mImageFront, centeredRect  );
+    }
 }
 
 Surface8u VideoPlayer::TextureToSurface(gl::Texture aTexture)
@@ -244,26 +179,4 @@ Surface8u VideoPlayer::TextureToSurface(gl::Texture aTexture)
     lFbo.unbindFramebuffer();
     
     return fboSurf;
-}
-
-bool VideoPlayer::IsMovie(string aPath)
-{
-    vector<string> lListExtensionMovie;
-    lListExtensionMovie.push_back("avi");
-    lListExtensionMovie.push_back("AVI");
-    lListExtensionMovie.push_back("mov");
-    lListExtensionMovie.push_back("MOV");
-    lListExtensionMovie.push_back("mp4");
-    lListExtensionMovie.push_back("MP4");
-    lListExtensionMovie.push_back("m4v");
-    lListExtensionMovie.push_back("M4V");
-    string lMediaExtension = getPathExtension(aPath);
-    for(int i = 0; i < lListExtensionMovie.size(); i++)
-    {
-        if(lMediaExtension == lListExtensionMovie[i])
-        {
-            return true;
-        }
-    }
-    return false;
 }

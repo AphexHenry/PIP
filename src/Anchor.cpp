@@ -4,12 +4,22 @@
 
 using namespace ci;
 
-Anchor::Anchor()
-{
+Anchor::Anchor(int aUser) {
     mSize = 1.f;
+    if(Rand::randFloat(1.f) > 0.5)
+        mPosition = vec3(Rand::randFloat(0.1f, 0.1f), Rand::randFloat(0.1f, 0.1f / (float)Tools::getWindowRatio()), 0);
+    else
+        mPosition = vec3(Rand::randFloat(0.3f, 0.3f), Rand::randFloat(0.1f, 0.1f / (float)Tools::getWindowRatio()), 0);
+    
+    mUser = aUser;
 }
 
-void Anchor::draw()
+//--------------------------------------------------------------
+void Anchor::update(){
+    
+}
+
+void Anchor::drawDebug()
 {
 
 }

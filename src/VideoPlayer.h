@@ -11,105 +11,52 @@
 
 #include <iostream>
 
-#include "cinder/app/AppBasic.h"
+#include "cinder/app/App.h"
 #include "cinder/Surface.h"
 #include "cinder/gl/Texture.h"
-#include "cinder/qtime/QuickTime.h"
+#include "cinder/qtime/QuickTimeGl.h"
 #include "cinder/Text.h"
 #include "cinder/Utilities.h"
 #include "cinder/ImageIo.h"
 #include "cinder/Rand.h"
 #include "shared.h"
 
-#include "ThreadLoader.h"
-
 using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-
-/*
- *  Video player.
- */
 class VideoPlayer {
 public:
     
-    /*
-     *  Constructor including reflection mask.
-     */
     VideoPlayer(fs::path movie, fs::path img);
-    
-    /*
-     *  Constructor, will only load the movie file.
-     */
     VideoPlayer(fs::path movie);
-    
-    /*
-     *  Constructor, will load nothing.
-     */
     VideoPlayer(){};
     
+	void setup();
+    
 	virtual void update(float aTimeInterval);
-	virtual void draw(Vec2i aSize);
-    
-    /*
-     *  set the front mask image.
-     *  @arg aSize : size of the surface to draw on.
-     */
+	virtual void draw(ivec2 aSize);
     void setFront(fs::path imgFront);
-    
-    /*
-     *  draw front mask image.
-     *  @arg aSize : size of the surface to draw on.
-     */
-    void drawFront(Vec2i aSize);
-    
-    /*
-     *  draw reflection mask image from media.
-     *  @arg aSize : size of the surface to draw on.
-     */
-    void drawFrontReflection(Vec2i aSize);
-    
-    /*
-     *  draw texture.
-     *  @arg aSize : size of the surface to draw on.
-     *  @arg aTexture : texture to draw.
-     */
-    void drawImage(Vec2i aSize, gl::Texture aTexture);
+    void drawFront(ivec2 aSize);
+    void drawFrontReflection(ivec2 aSize);
     
     virtual void play();
     virtual void stop();
     virtual bool isDone();
     virtual void SetVolume(float aVolume);
-    virtual void SetDuration(float aDurationS){mDuration = aDurationS;};
-    
-    virtual float GetTimeLeft();
-    virtual float GetTimeCurrent();
-    
-    static bool IsMovie(std::string aPath);
     
     void setImage( gl::Texture &aTexture );
 	void loadMovieFile( const fs::path &path );
     
     Surface                 mSurface;
-	gl::Texture             mFrameTexture;
-	qtime::MovieGlRef       mMovie;
-    gl::Texture             mImageFrontReflection;
-    gl::Texture             mImageFront;
+	gl::TextureRef             mFrameTexture;
+	qtime::MovieGlRef           mMovie;
+    gl::TextureRef             mImageFrontReflection;
+    gl::TextureRef             mImageFront;
     
     float mTimeToPlay;
-    float mDuration;
-    
-    float mVolume;
-    
-    fs::path mMoviePath;
-    
-    static ThreadLoader mLoader;
     
 private:
-
-    
-    void setup(fs::path aPath);
     Surface8u TextureToSurface(gl::Texture aTexture);
 };
 

@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		006D720419952D00008149E2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006D720219952D00008149E2 /* AVFoundation.framework */; };
+		006D720519952D00008149E2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 006D720319952D00008149E2 /* CoreMedia.framework */; };
+		0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0091D8F80E81B9330029341E /* OpenGL.framework */; };
+		00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784AF0FF439BC000DE1D7 /* Accelerate.framework */; };
+		00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */; };
+		00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B10FF439BC000DE1D7 /* AudioUnit.framework */; };
+		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
+		00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995581B128DF400A5C623 /* IOKit.framework */; };
+		00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
+		342440662E3F446FAB61AF40 /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 592FF5E4C12B42149528FE7A /* CinderApp.icns */; };
+		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		9C19E2F61D0338170027DD2B /* Anchor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2D31D0338170027DD2B /* Anchor.cpp */; };
+		9C19E2F71D0338170027DD2B /* CamPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2D51D0338170027DD2B /* CamPlayer.cpp */; };
+		9C19E2F81D0338170027DD2B /* CaptureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2D71D0338170027DD2B /* CaptureManager.cpp */; };
+		9C19E2F91D0338170027DD2B /* CursorManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2D91D0338170027DD2B /* CursorManager.cpp */; };
+		9C19E2FA1D0338170027DD2B /* emulApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2DB1D0338170027DD2B /* emulApp.cpp */; };
+		9C19E2FB1D0338170027DD2B /* ImagePlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2DC1D0338170027DD2B /* ImagePlayer.cpp */; };
+		9C19E2FC1D0338170027DD2B /* IntroManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2DE1D0338170027DD2B /* IntroManager.cpp */; };
+		9C19E2FD1D0338170027DD2B /* KinectManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2E01D0338170027DD2B /* KinectManager.cpp */; };
+		9C19E2FE1D0338170027DD2B /* Particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2E21D0338170027DD2B /* Particle.cpp */; };
+		9C19E2FF1D0338170027DD2B /* ParticleBillBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2E41D0338170027DD2B /* ParticleBillBoard.cpp */; };
+		9C19E3001D0338170027DD2B /* ParticleBillBoardTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2E61D0338170027DD2B /* ParticleBillBoardTree.cpp */; };
+		9C19E3011D0338170027DD2B /* Set.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2E91D0338170027DD2B /* Set.cpp */; };
+		9C19E3021D0338170027DD2B /* shared.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2EB1D0338170027DD2B /* shared.cpp */; };
+		9C19E3031D0338170027DD2B /* StereoAutoFocuser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2ED1D0338170027DD2B /* StereoAutoFocuser.cpp */; };
+		9C19E3051D0338170027DD2B /* Subdivision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2F01D0338170027DD2B /* Subdivision.cpp */; };
+		9C19E3061D0338170027DD2B /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2F21D0338170027DD2B /* Tools.cpp */; };
+		9C19E3071D0338170027DD2B /* VideoPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C19E2F41D0338170027DD2B /* VideoPlayer.cpp */; };
+		9CC06AF21D041564009C76D8 /* CinderFreenect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CC06AE11D041564009C76D8 /* CinderFreenect.cpp */; };
+		9CC06AF31D041564009C76D8 /* cameras.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CC06AE41D041564009C76D8 /* cameras.c */; };
+		9CC06AF41D041564009C76D8 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CC06AE61D041564009C76D8 /* core.c */; };
+		9CC06AF51D041564009C76D8 /* registration.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CC06AEC1D041564009C76D8 /* registration.c */; };
+		9CC06AF61D041564009C76D8 /* tilt.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CC06AEE1D041564009C76D8 /* tilt.c */; };
+		9CC06AF71D041564009C76D8 /* usb_libusb10.c in Sources */ = {isa = PBXBuildFile; fileRef = 9CC06AEF1D041564009C76D8 /* usb_libusb10.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		006D720219952D00008149E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		006D720319952D00008149E2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		0091D8F80E81B9330029341E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		00B784AF0FF439BC000DE1D7 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		00B784B10FF439BC000DE1D7 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		00B784B20FF439BC000DE1D7 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		00B995581B128DF400A5C623 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		00B995591B128DF400A5C623 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		3AFD2BF8061D4878888DBA94 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
+		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		592FF5E4C12B42149528FE7A /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
+		82A17C0980C4464FB7DC7F54 /* PIP_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = PIP_Prefix.pch; sourceTree = "<group>"; };
+		82A970966EF44B0081197219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* PIP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PIP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C19E2D21D0330580027DD2B /* StereoAutoFocuser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StereoAutoFocuser.h; path = ../include/StereoAutoFocuser.h; sourceTree = "<group>"; };
+		9C19E2D31D0338170027DD2B /* Anchor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Anchor.cpp; path = ../src/Anchor.cpp; sourceTree = "<group>"; };
+		9C19E2D41D0338170027DD2B /* Anchor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Anchor.h; path = ../src/Anchor.h; sourceTree = "<group>"; };
+		9C19E2D51D0338170027DD2B /* CamPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CamPlayer.cpp; path = ../src/CamPlayer.cpp; sourceTree = "<group>"; };
+		9C19E2D61D0338170027DD2B /* CamPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CamPlayer.h; path = ../src/CamPlayer.h; sourceTree = "<group>"; };
+		9C19E2D71D0338170027DD2B /* CaptureManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CaptureManager.cpp; path = ../src/CaptureManager.cpp; sourceTree = "<group>"; };
+		9C19E2D81D0338170027DD2B /* CaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CaptureManager.h; path = ../src/CaptureManager.h; sourceTree = "<group>"; };
+		9C19E2D91D0338170027DD2B /* CursorManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CursorManager.cpp; path = ../src/CursorManager.cpp; sourceTree = "<group>"; };
+		9C19E2DA1D0338170027DD2B /* CursorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CursorManager.h; path = ../src/CursorManager.h; sourceTree = "<group>"; };
+		9C19E2DB1D0338170027DD2B /* emulApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = emulApp.cpp; path = ../src/emulApp.cpp; sourceTree = "<group>"; };
+		9C19E2DC1D0338170027DD2B /* ImagePlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ImagePlayer.cpp; path = ../src/ImagePlayer.cpp; sourceTree = "<group>"; };
+		9C19E2DD1D0338170027DD2B /* ImagePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImagePlayer.h; path = ../src/ImagePlayer.h; sourceTree = "<group>"; };
+		9C19E2DE1D0338170027DD2B /* IntroManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IntroManager.cpp; path = ../src/IntroManager.cpp; sourceTree = "<group>"; };
+		9C19E2DF1D0338170027DD2B /* IntroManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroManager.h; path = ../src/IntroManager.h; sourceTree = "<group>"; };
+		9C19E2E01D0338170027DD2B /* KinectManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = KinectManager.cpp; path = ../src/KinectManager.cpp; sourceTree = "<group>"; };
+		9C19E2E11D0338170027DD2B /* KinectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KinectManager.h; path = ../src/KinectManager.h; sourceTree = "<group>"; };
+		9C19E2E21D0338170027DD2B /* Particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Particle.cpp; path = ../src/Particle.cpp; sourceTree = "<group>"; };
+		9C19E2E31D0338170027DD2B /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Particle.h; path = ../src/Particle.h; sourceTree = "<group>"; };
+		9C19E2E41D0338170027DD2B /* ParticleBillBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleBillBoard.cpp; path = ../src/ParticleBillBoard.cpp; sourceTree = "<group>"; };
+		9C19E2E51D0338170027DD2B /* ParticleBillBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleBillBoard.h; path = ../src/ParticleBillBoard.h; sourceTree = "<group>"; };
+		9C19E2E61D0338170027DD2B /* ParticleBillBoardTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleBillBoardTree.cpp; path = ../src/ParticleBillBoardTree.cpp; sourceTree = "<group>"; };
+		9C19E2E71D0338170027DD2B /* ParticleBillBoardTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleBillBoardTree.h; path = ../src/ParticleBillBoardTree.h; sourceTree = "<group>"; };
+		9C19E2E81D0338170027DD2B /* SensorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SensorManager.h; path = ../src/SensorManager.h; sourceTree = "<group>"; };
+		9C19E2E91D0338170027DD2B /* Set.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Set.cpp; path = ../src/Set.cpp; sourceTree = "<group>"; };
+		9C19E2EA1D0338170027DD2B /* Set.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Set.h; path = ../src/Set.h; sourceTree = "<group>"; };
+		9C19E2EB1D0338170027DD2B /* shared.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = shared.cpp; path = ../src/shared.cpp; sourceTree = "<group>"; };
+		9C19E2EC1D0338170027DD2B /* shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = shared.h; path = ../src/shared.h; sourceTree = "<group>"; };
+		9C19E2ED1D0338170027DD2B /* StereoAutoFocuser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StereoAutoFocuser.cpp; path = ../src/StereoAutoFocuser.cpp; sourceTree = "<group>"; };
+		9C19E2F01D0338170027DD2B /* Subdivision.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Subdivision.cpp; path = ../src/Subdivision.cpp; sourceTree = "<group>"; };
+		9C19E2F11D0338170027DD2B /* Subdivision.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Subdivision.h; path = ../src/Subdivision.h; sourceTree = "<group>"; };
+		9C19E2F21D0338170027DD2B /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tools.cpp; path = ../src/Tools.cpp; sourceTree = "<group>"; };
+		9C19E2F31D0338170027DD2B /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tools.h; path = ../src/Tools.h; sourceTree = "<group>"; };
+		9C19E2F41D0338170027DD2B /* VideoPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VideoPlayer.cpp; path = ../src/VideoPlayer.cpp; sourceTree = "<group>"; };
+		9C19E2F51D0338170027DD2B /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoPlayer.h; path = ../src/VideoPlayer.h; sourceTree = "<group>"; };
+		9CC06AE11D041564009C76D8 /* CinderFreenect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CinderFreenect.cpp; sourceTree = "<group>"; };
+		9CC06AE21D041564009C76D8 /* CinderFreenect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinderFreenect.h; sourceTree = "<group>"; };
+		9CC06AE41D041564009C76D8 /* cameras.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cameras.c; sourceTree = "<group>"; };
+		9CC06AE51D041564009C76D8 /* cameras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameras.h; sourceTree = "<group>"; };
+		9CC06AE61D041564009C76D8 /* core.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = core.c; sourceTree = "<group>"; };
+		9CC06AE71D041564009C76D8 /* freenect_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = freenect_internal.h; sourceTree = "<group>"; };
+		9CC06AE81D041564009C76D8 /* libfreenect-registration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "libfreenect-registration.h"; sourceTree = "<group>"; };
+		9CC06AE91D041564009C76D8 /* libfreenect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libfreenect.h; sourceTree = "<group>"; };
+		9CC06AEA1D041564009C76D8 /* libusb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libusb.h; sourceTree = "<group>"; };
+		9CC06AEB1D041564009C76D8 /* loader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loader.h; sourceTree = "<group>"; };
+		9CC06AEC1D041564009C76D8 /* registration.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = registration.c; sourceTree = "<group>"; };
+		9CC06AED1D041564009C76D8 /* registration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registration.h; sourceTree = "<group>"; };
+		9CC06AEE1D041564009C76D8 /* tilt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tilt.c; sourceTree = "<group>"; };
+		9CC06AEF1D041564009C76D8 /* usb_libusb10.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = usb_libusb10.c; sourceTree = "<group>"; };
+		9CC06AF01D041564009C76D8 /* usb_libusb10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usb_libusb10.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				006D720419952D00008149E2 /* AVFoundation.framework in Frameworks */,
+				006D720519952D00008149E2 /* CoreMedia.framework in Frameworks */,
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				0091D8F90E81B9330029341E /* OpenGL.framework in Frameworks */,
+				5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */,
+				00B784B30FF439BC000DE1D7 /* Accelerate.framework in Frameworks */,
+				00B784B40FF439BC000DE1D7 /* AudioToolbox.framework in Frameworks */,
+				00B784B50FF439BC000DE1D7 /* AudioUnit.framework in Frameworks */,
+				00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */,
+				00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */,
+				00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01B97315FEAEA392516A2CEA /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				9CC06ADC1D041564009C76D8 /* Cinder-Freenect */,
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
+		080E96DDFE201D6D7F000001 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				9C19E2D31D0338170027DD2B /* Anchor.cpp */,
+				9C19E2D41D0338170027DD2B /* Anchor.h */,
+				9C19E2D51D0338170027DD2B /* CamPlayer.cpp */,
+				9C19E2D61D0338170027DD2B /* CamPlayer.h */,
+				9C19E2D71D0338170027DD2B /* CaptureManager.cpp */,
+				9C19E2D81D0338170027DD2B /* CaptureManager.h */,
+				9C19E2D91D0338170027DD2B /* CursorManager.cpp */,
+				9C19E2DA1D0338170027DD2B /* CursorManager.h */,
+				9C19E2DB1D0338170027DD2B /* emulApp.cpp */,
+				9C19E2DC1D0338170027DD2B /* ImagePlayer.cpp */,
+				9C19E2DD1D0338170027DD2B /* ImagePlayer.h */,
+				9C19E2DE1D0338170027DD2B /* IntroManager.cpp */,
+				9C19E2DF1D0338170027DD2B /* IntroManager.h */,
+				9C19E2E01D0338170027DD2B /* KinectManager.cpp */,
+				9C19E2E11D0338170027DD2B /* KinectManager.h */,
+				9C19E2E21D0338170027DD2B /* Particle.cpp */,
+				9C19E2E31D0338170027DD2B /* Particle.h */,
+				9C19E2E41D0338170027DD2B /* ParticleBillBoard.cpp */,
+				9C19E2E51D0338170027DD2B /* ParticleBillBoard.h */,
+				9C19E2E61D0338170027DD2B /* ParticleBillBoardTree.cpp */,
+				9C19E2E71D0338170027DD2B /* ParticleBillBoardTree.h */,
+				9C19E2E81D0338170027DD2B /* SensorManager.h */,
+				9C19E2E91D0338170027DD2B /* Set.cpp */,
+				9C19E2EA1D0338170027DD2B /* Set.h */,
+				9C19E2EB1D0338170027DD2B /* shared.cpp */,
+				9C19E2EC1D0338170027DD2B /* shared.h */,
+				9C19E2ED1D0338170027DD2B /* StereoAutoFocuser.cpp */,
+				9C19E2F01D0338170027DD2B /* Subdivision.cpp */,
+				9C19E2F11D0338170027DD2B /* Subdivision.h */,
+				9C19E2F21D0338170027DD2B /* Tools.cpp */,
+				9C19E2F31D0338170027DD2B /* Tools.h */,
+				9C19E2F41D0338170027DD2B /* VideoPlayer.cpp */,
+				9C19E2F51D0338170027DD2B /* VideoPlayer.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				006D720219952D00008149E2 /* AVFoundation.framework */,
+				006D720319952D00008149E2 /* CoreMedia.framework */,
+				00B784AF0FF439BC000DE1D7 /* Accelerate.framework */,
+				00B784B00FF439BC000DE1D7 /* AudioToolbox.framework */,
+				00B784B10FF439BC000DE1D7 /* AudioUnit.framework */,
+				00B784B20FF439BC000DE1D7 /* CoreAudio.framework */,
+				5323E6B10EAFCA74003A9687 /* CoreVideo.framework */,
+				0091D8F80E81B9330029341E /* OpenGL.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				00B995581B128DF400A5C623 /* IOKit.framework */,
+				00B995591B128DF400A5C623 /* IOSurface.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* PIP.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* PIP */ = {
+			isa = PBXGroup;
+			children = (
+				01B97315FEAEA392516A2CEA /* Blocks */,
+				29B97315FDCFA39411CA2CEA /* Headers */,
+				080E96DDFE201D6D7F000001 /* Source */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = PIP;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				9C19E2D21D0330580027DD2B /* StereoAutoFocuser.h */,
+				3AFD2BF8061D4878888DBA94 /* Resources.h */,
+				82A17C0980C4464FB7DC7F54 /* PIP_Prefix.pch */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				592FF5E4C12B42149528FE7A /* CinderApp.icns */,
+				82A970966EF44B0081197219 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9CC06ADC1D041564009C76D8 /* Cinder-Freenect */ = {
+			isa = PBXGroup;
+			children = (
+				9CC06AE01D041564009C76D8 /* src */,
+			);
+			name = "Cinder-Freenect";
+			path = "../blocks/Cinder-Freenect";
+			sourceTree = "<group>";
+		};
+		9CC06AE01D041564009C76D8 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				9CC06AE11D041564009C76D8 /* CinderFreenect.cpp */,
+				9CC06AE21D041564009C76D8 /* CinderFreenect.h */,
+				9CC06AE31D041564009C76D8 /* freenect */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		9CC06AE31D041564009C76D8 /* freenect */ = {
+			isa = PBXGroup;
+			children = (
+				9CC06AE41D041564009C76D8 /* cameras.c */,
+				9CC06AE51D041564009C76D8 /* cameras.h */,
+				9CC06AE61D041564009C76D8 /* core.c */,
+				9CC06AE71D041564009C76D8 /* freenect_internal.h */,
+				9CC06AE81D041564009C76D8 /* libfreenect-registration.h */,
+				9CC06AE91D041564009C76D8 /* libfreenect.h */,
+				9CC06AEA1D041564009C76D8 /* libusb.h */,
+				9CC06AEB1D041564009C76D8 /* loader.h */,
+				9CC06AEC1D041564009C76D8 /* registration.c */,
+				9CC06AED1D041564009C76D8 /* registration.h */,
+				9CC06AEE1D041564009C76D8 /* tilt.c */,
+				9CC06AEF1D041564009C76D8 /* usb_libusb10.c */,
+				9CC06AF01D041564009C76D8 /* usb_libusb10.h */,
+			);
+			path = freenect;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* PIP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "PIP" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PIP;
+			productInstallPath = "$(HOME)/Applications";
+			productName = PIP;
+			productReference = 8D1107320486CEB800E47090 /* PIP.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PIP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* PIP */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* PIP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				342440662E3F446FAB61AF40 /* CinderApp.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC06AF41D041564009C76D8 /* core.c in Sources */,
+				9C19E3031D0338170027DD2B /* StereoAutoFocuser.cpp in Sources */,
+				9CC06AF51D041564009C76D8 /* registration.c in Sources */,
+				9C19E3011D0338170027DD2B /* Set.cpp in Sources */,
+				9C19E2FB1D0338170027DD2B /* ImagePlayer.cpp in Sources */,
+				9C19E3001D0338170027DD2B /* ParticleBillBoardTree.cpp in Sources */,
+				9CC06AF21D041564009C76D8 /* CinderFreenect.cpp in Sources */,
+				9C19E2FE1D0338170027DD2B /* Particle.cpp in Sources */,
+				9CC06AF61D041564009C76D8 /* tilt.c in Sources */,
+				9C19E3071D0338170027DD2B /* VideoPlayer.cpp in Sources */,
+				9CC06AF71D041564009C76D8 /* usb_libusb10.c in Sources */,
+				9C19E2F81D0338170027DD2B /* CaptureManager.cpp in Sources */,
+				9CC06AF31D041564009C76D8 /* cameras.c in Sources */,
+				9C19E2F71D0338170027DD2B /* CamPlayer.cpp in Sources */,
+				9C19E2FD1D0338170027DD2B /* KinectManager.cpp in Sources */,
+				9C19E3021D0338170027DD2B /* shared.cpp in Sources */,
+				9C19E2FA1D0338170027DD2B /* emulApp.cpp in Sources */,
+				9C19E2FC1D0338170027DD2B /* IntroManager.cpp in Sources */,
+				9C19E2FF1D0338170027DD2B /* ParticleBillBoard.cpp in Sources */,
+				9C19E2F61D0338170027DD2B /* Anchor.cpp in Sources */,
+				9C19E2F91D0338170027DD2B /* CursorManager.cpp in Sources */,
+				9C19E3051D0338170027DD2B /* Subdivision.cpp in Sources */,
+				9C19E3061D0338170027DD2B /* Tools.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PIP_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(CINDER_PATH)/include\"",
+					"\"../blocks/Cinder-Freenect/src/freenect\"",
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"\"$(CINDER_PATH)/lib/libcinder_d.a\"",
+					"\"../blocks/Cinder-Freenect/lib/macosx/libusb-1.0.a\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = PIP;
+				SYMROOT = ./build;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../blocks/Cinder-Freenect/src\"";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_FAST_MATH = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PIP_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"NDEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(CINDER_PATH)/include\"",
+					"\"../blocks/Cinder-Freenect/src/freenect\"",
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"\"$(CINDER_PATH)/lib/libcinder.a\"",
+					"\"../blocks/Cinder-Freenect/lib/macosx/libusb-1.0.a\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.libcinder.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = PIP;
+				STRIP_INSTALLED_PRODUCT = YES;
+				SYMROOT = ./build;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include \"../blocks/Cinder-Freenect/src\"";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CINDER_PATH = ../../../../cinder_0.9.0_mac;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_TESTABILITY = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include";
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CINDER_PATH = ../../../../cinder_0.9.0_mac;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
+				CLANG_CXX_LIBRARY = "libc++";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\"";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "\"$(CINDER_PATH)/include\" ../include";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "PIP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PIP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

@@ -1,5 +1,5 @@
-#ifndef MY_SHARED
-#define MY_SHARED
+#ifndef _SHARED
+#define _SHARED
 
 #include "Anchor.h"
 #include <vector>

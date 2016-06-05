@@ -16,9 +16,9 @@ class CursorManager : public SensorManager {
     
     void UpdateAnchors();
     
-    Vec3f mPositionMouse;
+    vec3 mPositionMouse;
     
-    list<Vec3f> mPositionsPart;
+    list<vec3> mPositionsPart;
 };
 
 #endif

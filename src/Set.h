@@ -15,7 +15,6 @@
 #include "Cinder/Vector.h"
 #include "cinder/Utilities.h"
 #include "VideoPlayer.h"
-#include "SoundPlayer.h"
 #include "Particle.h"
 
 enum ParticleType
@@ -36,8 +35,8 @@ enum SensorType
 struct SceneData
 {
     float      scale;
-    ci::Vec3f  position;
-    ci::Vec3f  movement;
+    ci::vec3  position;
+    ci::vec3  movement;
     float  particleDuration;
     ci::Color  colorMin;
     ci::Color  colorMax;
@@ -46,12 +45,32 @@ struct SceneData
     bool       reflection;
     float      reflectionHeight;
     float      eyesSeparation;
-    float      opacity;
     bool       useVideoColor;
-    bool       useKinectColor;
     ParticleType particleType;
     VideoPlayer *   video;
     vector<Particle * > * particles;
+};
+
+enum SceneType
+{
+    SCENE_TUTO  = -2,
+    SCENE_INTRO = -1,
+#ifndef STILL_IMAGES_ONLY
+    SCENE_WATER = 0,
+#endif
+    SCENE_BOULEAUX,
+    SCENE_CASSE,
+    SCENE_STILL_WATER,
+    SCENE_PLAINE,
+    SCENE_CASSE_2,
+    SCENE_ROCHER_AIGUE,
+    SCENE_ROCK,
+    SCENE_FIELD_TREES,
+    SCENE_ROCK_2,
+//#ifndef STILL_IMAGES_ONLY
+    SCENE_MONTAIN_FOG,
+//#endif
+    SCENE_COUNT
 };
 
 class Set
@@ -63,7 +82,7 @@ public:
     static void update();
     static void ToggleHide();
     static SceneData * getScene();
-    static void LoadScene(int aScene);
+    static void LoadScene(SceneType aScene);
     static void NextScene();
     static bool IsFirst();
     
@@ -80,16 +99,12 @@ public:
     static  int    bodyTracked;
     static  bool   mirror;
     static  bool   seeSkeleton;
-    static  float  compression;
-    
-    static SoundPlayer * sSoundPlayer;
-    
-    static std::map<string, ParticleType> particleMapper;
+    static  bool   explosion;
     
 protected:
     
-    static int     currentScene;
-    static std::vector<SceneData> scenes;
+    static SceneType     currentScene;
+    static std::map<SceneType, SceneData> scenes;
     
     static bool hide;
     

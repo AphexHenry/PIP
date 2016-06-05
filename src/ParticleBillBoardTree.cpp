@@ -32,34 +32,32 @@ void ParticleBillboardTree::update(float aTimeInterval)
     mRotation += mRotationSpeed * aTimeInterval;
 }
 
-/*
- *  Draw particle.
- *  aCoeffLifeColor : normalized age of the particle.
- */
-void ParticleBillboardTree::draw(int aCoeffLifeColor)
+void ParticleBillboardTree::drawDebug(int aCoeffLifeColor)
 {
     SceneData * lScene = Set::getScene();
 
     if(!lScene->reflection && sReflection)
         return;
     
-    gl::color(mColor.r, mColor.g, mColor.b, mAlpha * lScene->opacity);
+    gl::color(mColor.r, mColor.g, mColor.b, mAlpha);
     gl::pushMatrices();
     
     if(sReflection)
     {
         // reflection
-        gl::translate(Vec3f(0, lScene->reflectionHeight, 0));
+        gl::translate(vec3(0, lScene->reflectionHeight, 0));
         gl::scale( 0.95f, -.95f, .95f );
     }
 
-    Vec3f lPos = GetPositionScene();
+    vec3 lPos = GetPositionScene();
     lPos.z -= mSize * 0.01;
     
-    sTextures[mTextureIndex].enableAndBind();
+    // doute
+//    sTextures[mTextureIndex].enableAndBind();
+        sTextures[mTextureIndex].bind();
+
     
-    gl::scale( 1.f, 1.f / Set::compression, 1.f);
-    gl::drawBillboard( lPos, Vec2f(Set::particleSize * mSize * lScene->scale, Set::particleSize * mSize * lScene->scale), mRotation, Vec3f(1,0,0), Vec3f(0,1,0) );
+    gl::drawBillboard( lPos, vec2(Set::particleSize * mSize * lScene->scale, Set::particleSize * mSize * lScene->scale), mRotation, vec3(1,0,0), vec3(0,1,0) );
     
     sTextures[mTextureIndex].unbind();
     

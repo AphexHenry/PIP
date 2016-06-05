@@ -14,8 +14,8 @@ bool CursorManager::setup()
 void CursorManager::update(float aTimeInterval)
 {
     float lDelta = AppBasic::get()->getFpsSampleInterval();
-    Vec2i lPosTemp = AppBasic::getMousePos();
-    Vec3f lPos;
+    ivec2 lPosTemp = AppBasic::getMousePos();
+    vec3 lPos;
     lPos.x = lPosTemp.x;
     lPos.y = lPosTemp.y;
     float lSpeed = fmin((lPos - mPositionMouse).lengthSquared() / (lDelta * AppBasic::get()->getWindowWidth()), 2.f);
@@ -23,14 +23,14 @@ void CursorManager::update(float aTimeInterval)
     mPositionMouse.y = lPos.y;
     
     int lNumPart = fmin((lSpeed * 10), 10);
-    Vec3f lPositionToAdd;
+    vec3 lPositionToAdd;
     for(int i = 0; i < lNumPart; i++)
     {
         console() << lNumPart << endl;
         if(mPositionsPart.size() < 1.5 / aTimeInterval)
         {
             float lLargeness = lSpeed * 0.02f;
-            lPositionToAdd = (mPositionMouse / AppBasic::get()->getWindowWidth()) + Vec3f(Rand::randFloat(-lLargeness, lLargeness), Rand::randFloat(-lLargeness, lLargeness), 0);
+            lPositionToAdd = (mPositionMouse / AppBasic::get()->getWindowWidth()) + vec3(Rand::randFloat(-lLargeness, lLargeness), Rand::randFloat(-lLargeness, lLargeness), 0);
             lPositionToAdd.x = 1.f - lPositionToAdd.x;
             mPositionsPart.push_back(lPositionToAdd);
         }
@@ -38,7 +38,7 @@ void CursorManager::update(float aTimeInterval)
     
     if(mPositionsPart.size() > 0)
     {
-        list<Vec3f>::iterator it = std::next(mPositionsPart.begin(), Rand::randInt(mPositionsPart.size() - 1));
+        list<vec3>::iterator it = std::next(mPositionsPart.begin(), Rand::randInt(mPositionsPart.size() - 1));
         mPositionsPart.erase(it);
     }
 }
@@ -53,7 +53,7 @@ void CursorManager::UpdateAnchors()
     // draw anchors
     if(mPositionsPart.size() > 0)
     {
-        list<Vec3f>::iterator it = mPositionsPart.begin();
+        list<vec3>::iterator it = mPositionsPart.begin();
         float gap = (float)mPositionsPart.size() / (float)Shared::sAnchors.size();
         int prev = 0;
         int now;
@@ -69,7 +69,7 @@ void CursorManager::UpdateAnchors()
     {
         for(int i = 0; (i < Shared::sAnchors.size()); i++)
         {
-            Shared::sAnchors[i]->SetPosition(Vec3f(0.5f + Rand::randFloat(1.f), 10.f, 0.f));
+            Shared::sAnchors[i]->SetPosition(vec3(0.5f + Rand::randFloat(1.f), 10.f, 0.f));
         }
     }
 }

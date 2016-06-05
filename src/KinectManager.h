@@ -1,4 +1,4 @@
-#include "cinder/app/AppBasic.h"
+#include "cinder/app/App.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
 #include "cinder/Surface.h"
@@ -28,7 +28,7 @@ public:
     bool isReady();
 	
 	KinectRef		mKinect;
-    Surface mDepthSurface, mVideoSurface;
+    ImageSourceRef mDepthSurface;
     
     void drawDebug(float x, float y, float w, float h);
     void exit();
@@ -37,15 +37,13 @@ public:
     void UpdateAnchors();
     void UpdateOSC();
     
-    bool isCalibrated(){return mCalibCount <= 0;};
-    
     float mCalibrationDelay;
     
 private:
     
     int   mCalibCount;
     float mLastTick;
-    Vec2f mMousePos;
+    vec2 mMousePos;
     
     bool  mKinectWorking;
 };

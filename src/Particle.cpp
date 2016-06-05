@@ -6,46 +6,36 @@
 
 bool Particle::sReflection = false;
 
-Particle::Particle():Anchor()
+Particle::Particle():Anchor(0)
 {
     mImmuneTimer = 0.f;
+    Reset();
+    mLifeTime = Rand::randFloat(0., 7.) * 0.3f * Set::getScene()->particleDuration;
     mSize = 0.f;
 }
 
 void Particle::Reset()
 {
-    mLifeTime = Rand::randFloat(0., 7.) * 0.3f * Set::getScene()->particleDuration;
     mPositionLast = GetPositionScene();
-    int lIndex = (int)Rand::randInt(Shared::sAnchors.size() * 0.99);
-    mPosition = Shared::sAnchors.at(lIndex)->mPosition;
+    mPosition = Shared::sAnchors.at((int)Rand::randInt(Shared::sAnchors.size() * 0.99))->mPosition;
     mPosition.x = mPosition.x * 2.f - 1.f;
     mPosition.y = -mPosition.y * 2.f + 1.f;
     float speed = 0.13f;
-    mSpeed = Vec3f(Rand::randFloat(-speed, speed), Rand::randFloat(-speed, speed), 0.f);
+    mSpeed = vec3(Rand::randFloat(-speed, speed), Rand::randFloat(-speed, speed), 0.f);
     SceneData * lScene = Set::getScene();
     mLifeTime = Rand::randFloat(7., 12.) * 0.3f * lScene->particleDuration;
     mLifeTimeInit = mLifeTime;
     mSize = Rand::randFloat(0.5f, 2.f) * 1.9 * lScene->scale;
     
-    if(lScene->useKinectColor)
-    {
-        mColor = Shared::sAnchors.at(lIndex)->mColor;
-    }
-    else if(!lScene->useVideoColor)
+    if(!lScene->useVideoColor)
     {
         float colorCoeff = Rand::randFloat(1.f);
-        mColor = (colorCoeff * lScene->colorMin + (1.f - colorCoeff) * lScene->colorMax);
-        float luminosity = Shared::sAnchors.at(lIndex)->mColor.length();
-        mColor *= (0.5f + 0.5f * luminosity);;
+        mColorInit = mColor = (colorCoeff * lScene->colorMin + (1.f - colorCoeff) * lScene->colorMax) * Rand::randFloat(lScene->intensityMin, lScene->intensityMax);;
     }
     else
     {
-        float luminosity = Shared::sAnchors.at(lIndex)->mColor.length();
-        mColor = Shared::sColorCapture[Rand::randInt(2)] * (0.5f + 0.5f * luminosity);
+        mColorInit = mColor = Shared::sColorCapture[Rand::randInt(2)] * Rand::randFloat(lScene->intensityMin, lScene->intensityMax);//colorCoeff *
     }
-    
-    mColor = mColor * Rand::randFloat(lScene->intensityMin, lScene->intensityMax);
-    mColor.a = lScene->opacity;
 }
 
 void Particle::updateGrid()
@@ -71,13 +61,13 @@ void Particle::update(float aTimeInterval)
 //    float lExplosionStr = 0.4f;
 //    if(Set::explosion)
 //    {
-//        mSpeed += Vec3f(Rand::randFloat(-lExplosionStr, lExplosionStr), Rand::randFloat(-lExplosionStr, lExplosionStr), Rand::randFloat(-lExplosionStr, lExplosionStr));
+//        mSpeed += vec3(Rand::randFloat(-lExplosionStr, lExplosionStr), Rand::randFloat(-lExplosionStr, lExplosionStr), Rand::randFloat(-lExplosionStr, lExplosionStr));
 //    }
 //    
     mPosition += mSpeed * aTimeInterval;
 }
 
-void Particle::draw(int aCoeffLifeColor)
+void Particle::drawDebug(int aCoeffLifeColor)
 {
     SceneData * lScene = Set::getScene();
 
@@ -85,16 +75,16 @@ void Particle::draw(int aCoeffLifeColor)
         return;
     
     gl::color(mColor);
-    gl::pushModelView();
+    gl::pushMatrices();
+    
     if(sReflection)
     {
         // reflection
-        gl::translate(Vec3f(0, lScene->reflectionHeight / Set::compression, 0));
+        gl::translate(vec3(0, lScene->reflectionHeight, 0));
         gl::scale( 0.95f, -0.95f, 0.95f );
     }
 
-    Vec3f lPos = GetPositionScene();
-    lPos.y = lPos.y / Set::compression;
+    vec3 lPos = GetPositionScene();
     float lScale = mSize * Set::particleSize * lScene->scale;
     
     switch (lScene->particleType)
@@ -102,8 +92,8 @@ void Particle::draw(int aCoeffLifeColor)
         case PARTICLE_TYPE_SPHERE:
             gl::translate(lPos);
 //            gl::drawSphere(lPos, mSize * Set::particleSize * lScene->scale, 5);
-            gl::scale( lScale, lScale / Set::compression, 1.f );
-            glBegin(GL_POLYGON);
+            gl::scale( lScale, lScale, 1.f );
+            gl::begin(GL_POLYGON);
             for(int i = 0; i < 6; ++i) {
                 glVertex2d(sin(i/6.0*2*M_PI) + 0.5f * cos(mLifeTime * (1.f + 2.f * mPosition.x) + (mPosition.y * (2 * i + 1))),
                            cos(i/6.0*2*M_PI) + 0.5f * sin(mLifeTime * (1.f + 2.f * mPosition.y) + (mPosition.x * (2 * i + 1))));
@@ -114,19 +104,19 @@ void Particle::draw(int aCoeffLifeColor)
             gl::drawLine(mPositionLast, lPos);
             break;
         case PARTICLE_TYPE_IMG:
-            gl::drawBillboard( lPos, Vec2f(1,1), 0, Vec3f(1,0,0), Vec3f(0,1,0) );
+            gl::drawBillboard( lPos, vec2(1,1), 0, vec3(1,0,0), vec3(0,1,0) );
         default:
             break;
     }
     
-    gl::popModelView();
+    gl::popMatrices();
 }
 
-Vec3f Particle::GetPositionScene()
+vec3 Particle::GetPositionScene()
 {
     SceneData * lScene = Set::getScene();
 //    float lWindowWidth = 1.f;
     return (mPosition * lScene->movement) + lScene->position;
-//   return Vec3f((mPosition.x + lTranslate.x + lScene->position.x) * lWindowWidth * lScene->movement.x, (mPosition.y + lTranslate.y + lScene->position.y) * lWindowWidth * lScene->movement.y, (mPosition.z + lScene->position.z) * lWindowWidth * lScene->movement.z);
+//   return vec3((mPosition.x + lTranslate.x + lScene->position.x) * lWindowWidth * lScene->movement.x, (mPosition.y + lTranslate.y + lScene->position.y) * lWindowWidth * lScene->movement.y, (mPosition.z + lScene->position.z) * lWindowWidth * lScene->movement.z);
 }
 

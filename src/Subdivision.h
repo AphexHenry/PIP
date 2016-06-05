@@ -8,12 +8,12 @@
 class Content
 {
 public:
-    Content(){anchors = new std::vector< Anchor * >(); particles1 = new std::vector< Particle * >(); strength = cinder::Vec3f::zero();};
+    Content(){anchors = new std::vector< Anchor * >(); particles1 = new std::vector< Particle * >(); strength = ci::vec3();};
     void Update(float aTimeInterval);
-    void AddStrength(ci::Vec3f aStrength);
+    void AddStrength(ci::vec3 aStrength);
     std::vector< Anchor * > * anchors;
     std::vector< Particle * > * particles1;
-    ci::Vec3f strength;
+    ci::vec3 strength;
     bool mIsInitialized;
 };
 
@@ -59,7 +59,7 @@ public:
     /*
      *  get strength at specific position.
      */
-    cinder::Vec3f GetStrength(float ax, float ay);
+    cinder::vec3 GetStrength(float ax, float ay);
     
     /*
      *  get num part.
@@ -84,10 +84,10 @@ public:
     /*
      * Add a strength at a position.
      */
-    void AddStrength(cinder::Vec3f aStrength, cinder::Vec3f aPosition1, cinder::Vec3f aPosition2);
+    void AddStrength(cinder::vec3 aStrength, cinder::vec3 aPosition1, cinder::vec3 aPosition2);
     
     /*
-     * draw.
+     * Add an Anchor in the proper content case.
      */
     void drawDebug();
     
@@ -101,7 +101,7 @@ private:
     /*
      *  Get coordinates of the positions in the grid.
      */
-    cinder::Vec2i GetCoordinates(float ax, float ay);
+    cinder::ivec2 GetCoordinates(float ax, float ay);
     
     std::vector< Content * > mContent;
     

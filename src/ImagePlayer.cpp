@@ -6,100 +6,108 @@
 //
 //
 
-#include "cinder/app/AppBasic.h"
+#include "cinder/app/App.h"
 #include "ImagePlayer.h"
 #include "Resources.h"
 #include "cinder/Utilities.h"
 
-#include "cinder/audio/Context.h"
-#include "cinder/audio/NodeEffects.h"
-#include "cinder/audio/SamplePlayerNode.h"
-
 using namespace ci;
 using namespace ci::app;
 
-ImagePlayer::ImagePlayer(fs::path img, fs::path imgFront)
+ImagePlayer::ImagePlayer(fs::path img, fs::path imgFront, float aDuration)
 {
-    SetupImages(img, imgFront );
 
-    mSoundPlayer = NULL;
+    auto ctx = audio::Context::master();
     
-}
-
-ImagePlayer::ImagePlayer(fs::path img, fs::path imgFront, std::string aSoundFile)
-{
-    SetupImages(img, imgFront );
+    // create a SourceFile and set its output samplerate to match the Context.
+    audio::SourceFileRef sourceFile = audio::load( loadResource( RES_DRAIN_OGG ), ctx->getSampleRate() );
     
-    if(aSoundFile.length() > 0)
+    // load the entire sound file into a BufferRef, and construct a BufferPlayerNode with this.
+    audio::BufferRef buffer = sourceFile->loadBuffer();
+    mBufferPlayerNode = ctx->makeNode( new audio::BufferPlayerNode( buffer ) );
+    
+    // add a Gain to reduce the volume
+    mGain = ctx->makeNode( new audio::GainNode( 0.5f ) );
+    
+    // connect and enable the Context
+    mBufferPlayerNode >> mGain >> ctx->getOutput();
+    ctx->enable();
+    
+    
+    mFrameTexture = gl::Texture(loadImage( App::getResourcePath(img)));
+    if(!imgFront.empty())
     {
-        mSoundPlayer = new SoundPlayer(aSoundFile);
+        mImageFront = gl::Texture(loadImage( App::getResourcePath(imgFront)));
     }
+    mSurface = Surface(mFrameTexture);
+    mTimeToPlay = aDuration;
+    mDuration = aDuration;
+
 }
 
-void ImagePlayer::SetupImages(fs::path img, fs::path imgFront)
+ImagePlayer::ImagePlayer(fs::path img, fs::path imgFront, std::string aSoundFile, float aDuration)
 {
     console() << "img " << img << endl;
     console() << imgFront << endl;
     //add the audio track the default audio output
+	mTrack = audio::Output::addTrack( audio::load( loadResource( aSoundFile ) ), false );
+    mTrack->setLooping(true);
     
-    mFrameTexture = gl::Texture(loadImage( Tools::GetOutResourcePath(img)));
+    mFrameTexture = gl::Texture(loadImage( App::getResourcePath(img)));
     if(!imgFront.empty())
     {
-        mImageFront = gl::Texture(loadImage( Tools::GetOutResourcePath(imgFront)));
+        mImageFront = gl::Texture(loadImage( App::getResourcePath(imgFront)));
     }
     mSurface = Surface(mFrameTexture);
-    mTimeToPlay = -1.f;
-    mDuration = 10.f;
+    mTimeToPlay = aDuration;
+    mDuration = aDuration;
+#ifdef MY_APP
+    mDuration *= 0.75f;
+#endif
 }
 
 void ImagePlayer::SetVolume(float aVolume)
 {
-    if(mSoundPlayer)
-    {
-        mSoundPlayer->setVolume( aVolume );
-    }
+    mTrack->setVolume(aVolume);
 }
 
 void ImagePlayer::update(float aTimeInterval)
 {
-    Vec2i lpos = Vec2i(Rand::randInt(mSurface.getWidth()), Rand::randInt(mSurface.getHeight()));
+    ivec2 lpos = ivec2(Rand::randInt(mSurface.getWidth()), Rand::randInt(mSurface.getHeight()));
     Shared::sColorCapture[0] = mSurface.getPixel(lpos);
-    Shared::sColorCapture[1] = mSurface.getPixel(Vec2i(Rand::randInt(mSurface.getWidth()), Rand::randInt(mSurface.getHeight())));
+    Shared::sColorCapture[1] = mSurface.getPixel(ivec2(Rand::randInt(mSurface.getWidth()), Rand::randInt(mSurface.getHeight())));
     mTimeToPlay -= aTimeInterval;
 }
 
 void ImagePlayer::play()
 {
     mTimeToPlay = mDuration;
-    
-    if(mSoundPlayer)
+    if(mTrack)
     {
-        mSoundPlayer->play( );
+        mTrack->play();
     }
 }
 
 void ImagePlayer::stop()
 {
-    if(mSoundPlayer)
+    if(mTrack)
     {
-        mSoundPlayer->stop( );
+        mTrack->stop();
     }
-}
-
-float ImagePlayer::GetTimeCurrent()
-{
-    return mDuration - mTimeToPlay;
-}
-
-/*
- *  Return the time left before the end of the media.
- */
-float ImagePlayer::GetTimeLeft()
-{
-    return mTimeToPlay;
 }
 
 bool ImagePlayer::isDone()
 {
+#ifdef MY_APP
    return mTimeToPlay < 0.f;
+#else
+    if(mTrack)
+    {
+        return !mTrack->isPlaying();
+    }
+    else
+    {
+        return mTimeToPlay < 0.f;
+    }
+#endif
 }

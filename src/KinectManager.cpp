@@ -30,9 +30,6 @@ void KinectManager::update(float aTimeInterval)
 	if( mKinect->checkNewDepthFrame() )
 		mDepthSurface = mKinect->getDepthImage();
     
-    if( mKinect->checkNewVideoFrame() )
-		mVideoSurface = mKinect->getVideoImage();
-    
     if(mCalibCount > 0)
     {
         UpdateCalibrate(aTimeInterval);
@@ -41,53 +38,44 @@ void KinectManager::update(float aTimeInterval)
 
 void KinectManager::UpdateAnchors()
 {
-    vector<Vec3f> lPositionsAll;
-    vector<Color> lColorsAll;
+    vector<vec3> lPositionsAll;
     
     float lDistanceCalib, lDistanceCurrent;
     
-    if(!mDepthSurface || !mPixelsCalib || !mVideoSurface)
+    if(!mDepthSurface || !mPixelsCalib)
     {
         return;
     }
     
     // we'll need to iterate the inputSurface as well as the output surface
     Surface::Iter inputIter( mDepthSurface.getIter() );
-    Surface::Iter videoIter( mVideoSurface.getIter(  ) );
     Surface::Iter calibIter( mPixelsCalib.getIter(  ) );
 
-    while( inputIter.line() && calibIter.line() && videoIter.line() ) {
-        while( inputIter.pixel() && calibIter.pixel() && videoIter.pixel() ) {
-            Vec2f current = inputIter.getPos();
+    while( inputIter.line() && calibIter.line() ) {
+        while( inputIter.pixel() && calibIter.pixel() ) {
+            vec2 current = inputIter.getPos();
  
             lDistanceCalib = calibIter.r();
             lDistanceCurrent = inputIter.r();
-            if(lDistanceCurrent >= 254)
-                lDistanceCurrent = 0;
             
             if(lDistanceCurrent > (lDistanceCalib * 1.4))
             {
-                lPositionsAll.push_back(Vec3f(current.x / (float)mKinect->getWidth(),(float)current.y / (float)mKinect->getWidth(),lDistanceCalib * Set::coeffZKinect));
-                lColorsAll.push_back(Color((float)videoIter.r() / 255.f, (float)videoIter.g() / 255.f, (float)videoIter.b() / 255.f));
+                lPositionsAll.push_back(vec3(current.x / (float)mKinect->getWidth(),(float)current.y / (float)mKinect->getWidth(),lDistanceCalib * Set::coeffZKinect));
             }
         }
     }
     
     // draw anchors
     float gap = lPositionsAll.size() / Shared::sAnchors.size();
-    int lIndex;
     for(int i = 0; (i < lPositionsAll.size()) && (i < Shared::sAnchors.size()); i++)
     {
-        lIndex = floor((float)i * gap);
-        Shared::sAnchors[i]->SetPosition(lPositionsAll[lIndex]);
-        Shared::sAnchors[i]->mColor = lColorsAll[lIndex];
+        Shared::sAnchors[i]->SetPosition(lPositionsAll[floor((float)i * gap)]);
     }
 }
 
 void KinectManager::Calibrate()
 {
     mCalibCount = 74;
-    console() << "calibrate kinect" << endl;
 }
 
 void KinectManager::UpdateCalibrate(float aTimeInterval)
@@ -105,10 +93,6 @@ void KinectManager::UpdateCalibrate(float aTimeInterval)
     if(mCalibrationDelay < 0)
     {
         mCalibCount--;
-        if(mCalibCount <= 0)
-        {
-            console() << "calibration done" << endl;
-        }
         float lDistanceCalib, lDistanceCurrent;
         
         // we'll need to iterate the inputSurface as well as the output surface
@@ -119,14 +103,7 @@ void KinectManager::UpdateCalibrate(float aTimeInterval)
             while( inputIter.pixel() && calibIter.pixel() ) {
                 lDistanceCalib = calibIter.r();
                 lDistanceCurrent = inputIter.r();
-                if(lDistanceCurrent >= 254)
-                {
-                    calibIter.r() = 0;
-                }
-                else
-                {
-                    calibIter.r() = max(lDistanceCalib, lDistanceCurrent);
-                }
+                calibIter.r() = max(lDistanceCalib, lDistanceCurrent);
 //                if(lDistanceCalib > lDistanceCurrent)
 //                {
 //                    calibIter.r() -= 1;//lDistanceCurrent + (float)(lDistanceCalib - lDistanceCurrent) * 0.05f;
@@ -143,10 +120,7 @@ void KinectManager::UpdateCalibrate(float aTimeInterval)
 void KinectManager::draw(){
     
     //    mBackground.draw(0, 0,Tools::getWindowWidth(), Tools::getWindowHeight());
-    if(!isCalibrated())
-    {
-        gl::drawString("CALIBRATING", Vec2f(Tools::getWindowWidth(),Tools::getWindowHeight()) * 0.5f);
-    }
+    
     drawDebug(0,0,Tools::getWindowWidth(),Tools::getWindowHeight());
     
     Set::draw();

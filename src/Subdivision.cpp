@@ -86,7 +86,7 @@ vector< Anchor * > * Subdivision::GetClosestContent(float ax, float ay, int &aDi
     bool lIsSearching = true;;
     int ly, lx;
     Content * lContent;
-    Vec2i lPositionGrid = GetCoordinates(math<float>::clamp(ax, 0.f, 1.f), math<float>::clamp(ay, 0.f, 1.f));
+    ivec2 lPositionGrid = GetCoordinates(math<float>::clamp(ax, 0.f, 1.f), math<float>::clamp(ay, 0.f, 1.f));
     int lMaxPart = 73;
     int lMinPartIn = 100;
     vector< Anchor * > * lMinPartInContent = NULL;
@@ -168,12 +168,11 @@ vector< Anchor * > * Subdivision::GetClosestContent(float ax, float ay, int &aDi
             return NULL;
         }
     }
-    return NULL;
 }
 
-Vec2i Subdivision::GetCoordinates(float ax, float ay)
+ivec2 Subdivision::GetCoordinates(float ax, float ay)
 {
-    Vec2i lPositionGrid;
+    ivec2 lPositionGrid;
     lPositionGrid.x = floor(ax * (float)NUM_SUBDIVISION_SIDE);
     lPositionGrid.y = floor(ay * (float)NUM_SUBDIVISION_SIDE);
 
@@ -182,7 +181,7 @@ Vec2i Subdivision::GetCoordinates(float ax, float ay)
 
 int Subdivision::GetIndex(float ax, float ay)
 {
-    Vec2i lPositionGrid = GetCoordinates(ax, ay);
+    ivec2 lPositionGrid = GetCoordinates(ax, ay);
     return GetIndex(lPositionGrid.x, lPositionGrid.y);
 }
        
@@ -199,7 +198,7 @@ int Subdivision::GetIndex(int aX, int aY)
 int Subdivision::GetNumPart(float aX, float aY)
 {
 //    Content * lContent;// = GetContent(aX, aY);
-    Vec2i lCenter = GetCoordinates(aX, aY);
+    ivec2 lCenter = GetCoordinates(aX, aY);
     int partSize = 0;
     int range = 5;
     Content * lContent;
@@ -251,16 +250,16 @@ void Subdivision::drawDebug()
     {
         for(int y = 0; y < NUM_SUBDIVISION_SIDE; y++)
         {
-            Vec3f strength = GetContent(x, y)->strength;
+            vec3 strength = GetContent(x, y)->strength;
         }
     }
 }
 
-void Subdivision::AddStrength(Vec3f aStrength, Vec3f aPosition1, Vec3f aPosition2)
+void Subdivision::AddStrength(vec3 aStrength, vec3 aPosition1, vec3 aPosition2)
 {
-    Vec2i lCenter1 = GetCoordinates(aPosition1.x, aPosition1.y);
-    Vec2i lCenter2 = GetCoordinates(aPosition2.x, aPosition2.y);
-    Vec2i lCenter;
+    ivec2 lCenter1 = GetCoordinates(aPosition1.x, aPosition1.y);
+    ivec2 lCenter2 = GetCoordinates(aPosition2.x, aPosition2.y);
+    ivec2 lCenter;
     
     int stepCount = max(abs(lCenter1.x - lCenter2.x), abs(lCenter1.y - lCenter2.y));
     float lStepCoeff;
@@ -289,13 +288,13 @@ void Subdivision::AddStrength(Vec3f aStrength, Vec3f aPosition1, Vec3f aPosition
     }
 }
 
-Vec3f Subdivision::GetStrength(float ax, float ay)
+vec3 Subdivision::GetStrength(float ax, float ay)
 {
     Content * lContent = GetContent(ax, ay);
     if(lContent != NULL)
         return lContent->strength;
     else
-        return Vec3f::zero();
+        return vec3::zero();
 }
 
 void Content::Update(float aTimeInterval)
@@ -303,7 +302,7 @@ void Content::Update(float aTimeInterval)
     strength *= Set::frictionStr;
 }
 
-void Content::AddStrength(Vec3f aStrength)
+void Content::AddStrength(vec3 aStrength)
 {
     strength += aStrength;
 }

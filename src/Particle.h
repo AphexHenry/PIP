@@ -21,7 +21,7 @@ public:
     /*
      *  draw for debug purpose.
      */
-    virtual void draw(int aCoeffLifeColor);
+    virtual void drawDebug(int aCoeffLifeColor);
     
     /*
      *  Get a close target.
@@ -37,16 +37,17 @@ private:
     bool CheckY(int y);
     bool CheckX(int x);
     
-    ci::Vec3f mSpeed;
-    ci::Vec3f mPositionLast;
+    ci::vec3 mSpeed;
+    ci::vec3 mPositionLast;
     
     float mImmuneTimer;
     std::vector< std::vector< Anchor * > > * mSubdivisions;
 
 protected:
     virtual void Reset();
-    ci::Vec3f GetPositionScene();
+    ci::vec3 GetPositionScene();
     
+    ci::Color mColor, mColorInit;
     static bool    sReflection;
     float     mLifeTime, mLifeTimeInit;
 };

@@ -747,7 +747,6 @@ static int write_register(freenect_device *dev, uint16_t reg, uint16_t data)
 }
 
 // This function is here for completeness.  We don't actually use it for anything right now.
-#if 0   // cinder: silence unused function warning
 static uint16_t read_register(freenect_device *dev, uint16_t reg)
 {
 	freenect_context *ctx = dev->parent;
@@ -766,7 +765,6 @@ static uint16_t read_register(freenect_device *dev, uint16_t reg)
 
 	return reply[1];
 }
-#endif
 
 static int freenect_fetch_reg_info(freenect_device *dev)
 {

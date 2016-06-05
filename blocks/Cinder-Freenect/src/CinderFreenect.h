@@ -90,7 +90,7 @@ class Kinect {
 	//! Returns the height of the captured image in pixels.
 	int32_t		getHeight() const { return 480; }
 	//! Returns the size of the captured image in pixels.
-	Vec2i		getSize() const { return Vec2i( getWidth(), getHeight() ); }
+	ivec2		getSize() const { return ivec2( getWidth(), getHeight() ); }
 	//! Returns the aspect ratio of the capture imagee, which is its width / height
 	float		getAspectRatio() const { return getWidth() / (float)getHeight(); }
 	//! Returns the bounding rectangle of the capture imagee, which is Area( 0, 0, width, height )
@@ -101,7 +101,7 @@ class Kinect {
 	void		setLedColor( LedColor ledColorCode );
 
 	//! Returns the current accelerometer data, measured as meters/second<sup>2</sup>.
-	Vec3f		getAccel() const;
+	vec3		getAccel() const;
 	
 	ImageSourceRef			getVideoImage();
 	ImageSourceRef			getDepthImage();
@@ -146,7 +146,7 @@ class Kinect {
 		template<typename T>
 		struct BufferManager {
 			BufferManager( size_t allocationSize, Obj *kinectObj )
-				: mKinectObj( kinectObj ), mAllocationSize( allocationSize ), mActiveBuffer( 0 )
+				: mAllocationSize( allocationSize ), mKinectObj( kinectObj ), mActiveBuffer( 0 )
 			{}
 			~BufferManager();
 			
@@ -158,7 +158,7 @@ class Kinect {
 
 			Obj						*mKinectObj;
 			size_t					mAllocationSize;
-			// map from pointer to reference count
+			// map from pointer to reference count			
 			std::map<T*,size_t>		mBuffers;
 			T						*mActiveBuffer;
 		};
