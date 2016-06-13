@@ -34,6 +34,9 @@ ImagePlayer::ImagePlayer(fs::path img, fs::path imgFront, std::string aSoundFile
     {
         mSoundPlayer = new SoundPlayer(aSoundFile);
     }
+    else {
+        mSoundPlayer = NULL;
+    }
 }
 
 void ImagePlayer::SetupImages(fs::path img, fs::path imgFront)

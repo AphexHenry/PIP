@@ -38,6 +38,7 @@ struct SceneData
     float      scale;
     ci::Vec3f  position;
     ci::Vec3f  movement;
+    float      distanceSensitivity;
     float  particleDuration;
     ci::Color  colorMin;
     ci::Color  colorMax;
@@ -45,7 +46,7 @@ struct SceneData
     float      intensityMax;
     bool       reflection;
     float      reflectionHeight;
-    float      eyesSeparation;
+//    float      eyesSeparation;
     float      opacity;
     bool       useVideoColor;
     bool       useKinectColor;

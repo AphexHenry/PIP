@@ -15,7 +15,7 @@ Particle::Particle():Anchor()
 void Particle::Reset()
 {
     mLifeTime = Rand::randFloat(0., 7.) * 0.3f * Set::getScene()->particleDuration;
-    mPositionLast = GetPositionScene();
+    mPositionLast = GetPositionScene(true);
     int lIndex = (int)Rand::randInt(Shared::sAnchors.size() * 0.99);
     mPosition = Shared::sAnchors.at(lIndex)->mPosition;
     mPosition.x = mPosition.x * 2.f - 1.f;
@@ -77,7 +77,7 @@ void Particle::update(float aTimeInterval)
     mPosition += mSpeed * aTimeInterval;
 }
 
-void Particle::draw(int aCoeffLifeColor)
+void Particle::draw(bool aIsLeft)
 {
     SceneData * lScene = Set::getScene();
 
@@ -93,15 +93,17 @@ void Particle::draw(int aCoeffLifeColor)
         gl::scale( 0.95f, -0.95f, 0.95f );
     }
 
-    Vec3f lPos = GetPositionScene();
+    Vec3f lPos = GetPositionScene(aIsLeft);
+    
     lPos.y = lPos.y / Set::compression;
     float lScale = mSize * Set::particleSize * lScene->scale;
     
     switch (lScene->particleType)
     {
         case PARTICLE_TYPE_SPHERE:
+//            lPos.z = 0.5f;
+            lPos.z = 0.5f + lPos.z * 0.1f;
             gl::translate(lPos);
-//            gl::drawSphere(lPos, mSize * Set::particleSize * lScene->scale, 5);
             gl::scale( lScale, lScale / Set::compression, 1.f );
             glBegin(GL_POLYGON);
             for(int i = 0; i < 6; ++i) {
@@ -122,11 +124,13 @@ void Particle::draw(int aCoeffLifeColor)
     gl::popModelView();
 }
 
-Vec3f Particle::GetPositionScene()
+Vec3f Particle::GetPositionScene(bool aIsLeft)
 {
     SceneData * lScene = Set::getScene();
 //    float lWindowWidth = 1.f;
-    return (mPosition * lScene->movement) + lScene->position;
-//   return Vec3f((mPosition.x + lTranslate.x + lScene->position.x) * lWindowWidth * lScene->movement.x, (mPosition.y + lTranslate.y + lScene->position.y) * lWindowWidth * lScene->movement.y, (mPosition.z + lScene->position.z) * lWindowWidth * lScene->movement.z);
+    float lDistanceSensibility = lScene->distanceSensitivity;
+    Vec3f lPos = (mPosition * lScene->movement) + lScene->position;
+    lPos.x += (lScene->position.z + mPosition.z * lDistanceSensibility) * (aIsLeft ? -1.f : 1.f);
+    return lPos;
 }
 

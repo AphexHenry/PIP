@@ -73,6 +73,15 @@ void KinectManager::UpdateAnchors()
         }
     }
     
+    float lZ = 0.f;
+    for(int i = 0; i < lPositionsAll.size(); i++)
+    {
+        lZ += lPositionsAll[i].z;
+    }
+    
+    lZ = lZ / (float)lPositionsAll.size();
+    console() << lZ << std::endl;
+    
     // draw anchors
     float gap = lPositionsAll.size() / Shared::sAnchors.size();
     int lIndex;
@@ -86,7 +95,7 @@ void KinectManager::UpdateAnchors()
 
 void KinectManager::Calibrate()
 {
-    mCalibCount = 74;
+    mCalibCount = 4;
     console() << "calibrate kinect" << endl;
 }
 

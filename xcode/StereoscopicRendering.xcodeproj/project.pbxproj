@@ -471,8 +471,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
-					"\"$(SRCROOT)/../blocks/Cinder-Freenect/lib/macosx/libusb-1.0.a\"",
 					../../../lib/libcinder_d.a,
+					"\"$(SRCROOT)/../blocks/Cinder-Freenect/lib/macosx/libusb-1.0.a\"",
 				);
 				PRODUCT_NAME = StereoscopicRendering;
 				SDKROOT = macosx;
@@ -505,8 +505,8 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
-					"\"$(SRCROOT)/../blocks/Cinder-Freenect/lib/macosx/libusb-1.0.a\"",
 					../../../lib/libcinder_d.a,
+					"\"$(SRCROOT)/../blocks/Cinder-Freenect/lib/macosx/libusb-1.0.a\"",
 				);
 				PRODUCT_NAME = StereoscopicRendering;
 				SDKROOT = macosx;

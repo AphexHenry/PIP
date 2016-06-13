@@ -369,7 +369,7 @@ void StereoscopicRenderingApp::DrawParticles(Vec2i aSize)
         case MONO:
             // render mono camera
             mCamera.disableStereo();
-            render();
+            render(true);
             break;
         case TV_SIDE_2:
         case ANAGLYPH_RED_CYAN:
@@ -437,7 +437,7 @@ void StereoscopicRenderingApp::ApplySceneSettings()
     {
         mVideoPlayer = lScene->video;
         mPartNiv1 = lScene->particles;
-        mCamera.setEyeSeparation( lScene->eyesSeparation );
+        mCamera.setEyeSeparation( 0.f );
     }
 }
 
@@ -515,20 +515,20 @@ void StereoscopicRenderingApp::renderSideBySide( const Vec2i &size )
 
 	// render left camera
 	mCamera.enableStereoLeft();
-	render();
+	render(true);
 
 	// draw to right half of window only
 	gl::setViewport( Area(size.x / 2, 0, size.x, size.y) );
 
 	// render right camera
 	mCamera.enableStereoRight();
-	render();
+	render(false);
 
 	// restore viewport
 	glPopAttrib();
 }
 
-void StereoscopicRenderingApp::render()
+void StereoscopicRenderingApp::render(bool aIsLeft)
 {
     // setup the camera
 	mCamera.setEyePoint( Vec3f(0.f, 0.f, -1.f ));
@@ -549,7 +549,7 @@ void StereoscopicRenderingApp::render()
     if(mPartNiv1)
     for(int i = 0; i < mPartNiv1->size(); i++)
     {
-        mPartNiv1->at(i)->draw(0);
+        mPartNiv1->at(i)->draw(aIsLeft);
     }
 //    gl::enableAlphaBlending();
 //    mShaderPhong.unbind();

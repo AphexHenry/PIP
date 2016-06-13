@@ -52,7 +52,7 @@ private:
 	void renderAnaglyph( const Vec2i &size, const ColorA &left, const ColorA &right );
 	void renderSideBySide( const Vec2i &size );
 
-	void render();
+	void render(bool aIsLeft);
 	void renderUI();
 
 	bool					mLoaded;

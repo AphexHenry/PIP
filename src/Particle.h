@@ -21,7 +21,7 @@ public:
     /*
      *  draw for debug purpose.
      */
-    virtual void draw(int aCoeffLifeColor);
+    virtual void draw(bool aIsLeft);
     
     /*
      *  Get a close target.
@@ -45,7 +45,7 @@ private:
 
 protected:
     virtual void Reset();
-    ci::Vec3f GetPositionScene();
+    ci::Vec3f GetPositionScene(bool aIsLeft);
     
     static bool    sReflection;
     float     mLifeTime, mLifeTimeInit;

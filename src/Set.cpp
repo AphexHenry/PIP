@@ -27,7 +27,7 @@ float Set::heratic2;
 float Set::lineVisibility;
 float Set::particleSize = 0.007f;
 float Set::particleStrCoeff;
-float Set::coeffZKinect = -1.f / 250.f;
+float Set::coeffZKinect = -1.f / 25.f;
 bool  Set::mirror;
 float  Set::compression = 1.f;
 map<string, ParticleType> Set::particleMapper;
@@ -106,8 +106,8 @@ void Set::setup(SensorType aSensorType)
                 lScene.particleType = particleMapper[lSceneChild->getAttributeValue<string>( "type", "circle" )];
                 lScene.position.x = lSceneChild->getAttributeValue<float>( "x", 0 );
                 lScene.position.y = lSceneChild->getAttributeValue<float>( "y", 0 );
-                lScene.position.z = 0.5;
-                lScene.eyesSeparation = lSceneChild->getAttributeValue<float>( "z", 0 ) / 1000.f;
+                lScene.position.z = lSceneChild->getAttributeValue<float>( "z", 0 );
+//                lScene.eyesSeparation = lSceneChild->getAttributeValue<float>( "z", 0 ) / 1000.f;
                 lScene.scale = lSceneChild->getAttributeValue<float>( "size", 0 );
                 lScene.opacity = lSceneChild->getAttributeValue<float>( "opacity", 1.f );
                 lScene.movement = Vec3f(1.f, 1.f, 1.f) * lSceneChild->getAttributeValue<float>( "scale", 1.f );
@@ -119,6 +119,7 @@ void Set::setup(SensorType aSensorType)
                 lScene.colorMax = Tools::stringToColor(lSceneChild->getAttributeValue<string>( "colorMax", "1,1,1" ));
                 lScene.useKinectColor = lSceneChild->getAttributeValue<bool>( "useKinectColor", false );
                 lScene.useVideoColor = lSceneChild->getAttributeValue<bool>( "useVideoColor", false );
+                lScene.distanceSensitivity = lSceneChild->getAttributeValue<float>( "distanceSensitivity", 0.25f );
                 
                 lScene.particles = new vector<Particle *>();
                 for(int i = 0; i < count; i++)
