@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "444753798.584056"
+            timestampString = "487540204.904509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "Set::setup(SensorType aSensorType)"
             landmarkType = "5">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "444753798.584056"
+            timestampString = "487540204.904509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "Set::setup(SensorType aSensorType)"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "487452788.93729"
+            timestampString = "487540204.904509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "Set::LoadScene(int aScene)"
             landmarkType = "5">
          </BreakpointContent>
@@ -477,11 +477,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "487452788.93729"
+            timestampString = "487540204.904509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "Set::NextScene()"
             landmarkType = "5">
          </BreakpointContent>
@@ -493,11 +493,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "487452788.93729"
+            timestampString = "487540204.904509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
             landmarkName = "Set::LoadScene(int aScene)"
             landmarkType = "5">
          </BreakpointContent>
@@ -509,12 +509,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/StereoscopicRenderingApp.cpp"
-            timestampString = "444832806.341874"
+            timestampString = "487538857.428625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
-            landmarkName = "StereoscopicRenderingApp::keyDown( KeyEvent event )"
+            startingLineNumber = "438"
+            endingLineNumber = "438"
+            landmarkName = "StereoscopicRenderingApp::ApplySceneSettings()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -563,38 +563,6 @@
             startingLineNumber = "204"
             endingLineNumber = "204"
             landmarkName = "StereoscopicRenderingApp::update()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/ParticleBillBoardTree.cpp"
-            timestampString = "444828837.883057"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "ParticleBillboardTree::update(float aTimeInterval)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../src/ParticleBillBoardTree.cpp"
-            timestampString = "444828867.15102"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "ParticleBillboardTree::Reset()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -669,12 +637,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/StereoscopicRenderingApp.cpp"
-            timestampString = "444832806.341874"
+            timestampString = "487538857.428625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "427"
-            endingLineNumber = "427"
-            landmarkName = "StereoscopicRenderingApp::LoadNextScene()"
+            startingLineNumber = "445"
+            endingLineNumber = "445"
+            landmarkName = "StereoscopicRenderingApp::resize()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -748,28 +716,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../src/ParticleBillBoardTree.cpp"
-            timestampString = "445030602.7188"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
-            landmarkName = "ParticleBillboardTree::Reset()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "445030667.774342"
+            timestampString = "487540204.904509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "Set::setup(SensorType aSensorType)"
             landmarkType = "5">
          </BreakpointContent>
@@ -829,12 +781,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/StereoscopicRenderingApp.cpp"
-            timestampString = "487448148.140238"
+            timestampString = "487538857.428625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "440"
-            endingLineNumber = "440"
-            landmarkName = "StereoscopicRenderingApp::ApplySceneSettings()"
+            startingLineNumber = "458"
+            endingLineNumber = "458"
+            landmarkName = "StereoscopicRenderingApp::createFbo()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -845,11 +797,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "487452932.12536"
+            timestampString = "487540204.904509"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "Set::setup(SensorType aSensorType)"
             landmarkType = "5">
          </BreakpointContent>
@@ -867,6 +819,150 @@
             startingLineNumber = "132"
             endingLineNumber = "132"
             landmarkName = "Particle::GetPositionScene(bool aIsLeft)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/StereoscopicRenderingApp.cpp"
+            timestampString = "487538857.428625"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
+            landmarkName = "StereoscopicRenderingApp::DrawParticles(Vec2i aSize)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/StereoscopicRenderingApp.cpp"
+            timestampString = "487538919.042067"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "392"
+            endingLineNumber = "392"
+            landmarkName = "StereoscopicRenderingApp::keyDown( KeyEvent event )"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/Set.cpp"
+            timestampString = "487540271.370701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "Set::setup(SensorType aSensorType)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/Set.cpp"
+            timestampString = "487540285.587054"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "Set::setup(SensorType aSensorType)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/ParticleBillBoardV2.cpp"
+            timestampString = "487542091.855474"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "ParticleBillboardV2::draw(bool aIsLeft)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/Particle.cpp"
+            timestampString = "487542130.196545"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "Particle::draw(bool aIsLeft)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/StereoscopicRenderingApp.cpp"
+            timestampString = "487542157.601873"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "511"
+            endingLineNumber = "511"
+            landmarkName = "StereoscopicRenderingApp::renderSideBySide( const Vec2i &amp;size )"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/ParticleBillBoardTree.cpp"
+            timestampString = "487542192.02891"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "ParticleBillboardTree::draw(bool aIsLeft)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/ParticleBillBoardTree.cpp"
+            timestampString = "487542198.920471"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "ParticleBillboardTree::draw(bool aIsLeft)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

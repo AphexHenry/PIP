@@ -54,6 +54,9 @@
 		9C6E49EC1A79AE4B00ECA994 /* particleTree3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6E49E71A79AE4A00ECA994 /* particleTree3.png */; };
 		9C6E49ED1A79AE4B00ECA994 /* particleTree4.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6E49E81A79AE4A00ECA994 /* particleTree4.png */; };
 		9C6E49EE1A79AE4B00ECA994 /* particleTree5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C6E49E91A79AE4A00ECA994 /* particleTree5.png */; };
+		9C881F241D0F43A500F02EEF /* particleBlured.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C881F221D0F43A500F02EEF /* particleBlured.png */; };
+		9C881F251D0F43A500F02EEF /* particleBlured2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C881F231D0F43A500F02EEF /* particleBlured2.png */; };
+		9C881F281D0F44A300F02EEF /* ParticleBillBoardV2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C881F261D0F44A300F02EEF /* ParticleBillBoardV2.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +132,10 @@
 		9C6E49E71A79AE4A00ECA994 /* particleTree3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particleTree3.png; sourceTree = "<group>"; };
 		9C6E49E81A79AE4A00ECA994 /* particleTree4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particleTree4.png; sourceTree = "<group>"; };
 		9C6E49E91A79AE4A00ECA994 /* particleTree5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particleTree5.png; sourceTree = "<group>"; };
+		9C881F221D0F43A500F02EEF /* particleBlured.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particleBlured.png; sourceTree = "<group>"; };
+		9C881F231D0F43A500F02EEF /* particleBlured2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particleBlured2.png; sourceTree = "<group>"; };
+		9C881F261D0F44A300F02EEF /* ParticleBillBoardV2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParticleBillBoardV2.cpp; path = ../src/ParticleBillBoardV2.cpp; sourceTree = "<group>"; };
+		9C881F271D0F44A300F02EEF /* ParticleBillBoardV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParticleBillBoardV2.h; path = ../src/ParticleBillBoardV2.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +163,8 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				9C881F261D0F44A300F02EEF /* ParticleBillBoardV2.cpp */,
+				9C881F271D0F44A300F02EEF /* ParticleBillBoardV2.h */,
 				9C3751911A823EFB00489DB3 /* Anchor.cpp */,
 				9C3751921A823EFB00489DB3 /* Anchor.h */,
 				9C3751951A823EFB00489DB3 /* CaptureManager.cpp */,
@@ -343,6 +352,8 @@
 				9C6E49E71A79AE4A00ECA994 /* particleTree3.png */,
 				9C6E49E81A79AE4A00ECA994 /* particleTree4.png */,
 				9C6E49E91A79AE4A00ECA994 /* particleTree5.png */,
+				9C881F221D0F43A500F02EEF /* particleBlured.png */,
+				9C881F231D0F43A500F02EEF /* particleBlured2.png */,
 			);
 			name = Particles;
 			path = ../resources/Particles;
@@ -403,9 +414,11 @@
 				9C5BA3C61A71A66B00A29EE1 /* anaglyph_vert.glsl in Resources */,
 				9C5BA3C81A71A66B00A29EE1 /* interlaced_vert.glsl in Resources */,
 				9C6E49EC1A79AE4B00ECA994 /* particleTree3.png in Resources */,
+				9C881F241D0F43A500F02EEF /* particleBlured.png in Resources */,
 				00CCAF15116A9FEE008396D5 /* CinderApp.icns in Resources */,
 				9C5BA3881A71A5F800A29EE1 /* LoadingScreen.png in Resources */,
 				9C5BA3CA1A71A66B00A29EE1 /* phong_vert.glsl in Resources */,
+				9C881F251D0F43A500F02EEF /* particleBlured2.png in Resources */,
 				9C5BA3C91A71A66B00A29EE1 /* phong_frag.glsl in Resources */,
 				9C6E49EE1A79AE4B00ECA994 /* particleTree5.png in Resources */,
 				9C5BA3C71A71A66B00A29EE1 /* interlaced_frag.glsl in Resources */,
@@ -428,6 +441,7 @@
 				9C3751BD1A823EFB00489DB3 /* Particle.cpp in Sources */,
 				9C3751B71A823EFB00489DB3 /* CaptureManager.cpp in Sources */,
 				9C5BA2AF1A7199CD00A29EE1 /* core.c in Sources */,
+				9C881F281D0F44A300F02EEF /* ParticleBillBoardV2.cpp in Sources */,
 				9C3751C41A823EFB00489DB3 /* Subdivision.cpp in Sources */,
 				9C3751C51A823EFB00489DB3 /* Tools.cpp in Sources */,
 				9C5BA2B01A7199CD00A29EE1 /* registration.c in Sources */,

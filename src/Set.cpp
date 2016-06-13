@@ -10,6 +10,7 @@
 #include "Set.h"
 #include "Resources.h"
 #include "ParticleBillBoardTree.h"
+#include "ParticleBillboardV2.h"
 #include "ImagePlayer.h"
 #include "TransitionManager.h"
 
@@ -56,9 +57,13 @@ void Set::setup(SensorType aSensorType)
     ParticleBillboardTree::AddTexture(gl::Texture(loadImage( loadResource(PARTICLE_TREE_4))));
     ParticleBillboardTree::AddTexture(gl::Texture(loadImage( loadResource(PARTICLE_TREE_5))));
     
+    ParticleBillboardV2::AddTexture(gl::Texture(loadImage( loadResource(PARTICLE_BLUR_1))));
+    ParticleBillboardV2::AddTexture(gl::Texture(loadImage( loadResource(PARTICLE_BLUR_2))));
+    
     particleMapper["circle"] = PARTICLE_TYPE_SPHERE;
     particleMapper["line"] = PARTICLE_TYPE_LINE;
     particleMapper["tree"] = PARTICLE_TYPE_IMG;
+    particleMapper["type3"] = PARTICLE_TYPE_IMG_2;
     
     SceneData lScene;
     
@@ -127,6 +132,10 @@ void Set::setup(SensorType aSensorType)
                     if(lScene.particleType == PARTICLE_TYPE_IMG)
                     {
                         lScene.particles->push_back(new ParticleBillboardTree());
+                    }
+                    else if(lScene.particleType == PARTICLE_TYPE_IMG_2)
+                    {
+                        lScene.particles->push_back(new ParticleBillboardV2());
                     }
                     else
                     {

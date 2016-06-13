@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DD4332FE7583744D4613C77BE138CEECF1F09F09",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DD4332FE7583744D4613C77BE138CEECF1F09F09" : 0,
+    "A524EDBD5243EE0C64E00E1A11F1DA6CA58656E0" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "097608C3-55E1-4C5E-A1A4-B6A1F3B447DB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DD4332FE7583744D4613C77BE138CEECF1F09F09" : "-PIP",
+    "A524EDBD5243EE0C64E00E1A11F1DA6CA58656E0" : "-Mozza"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "StereoscopicRendering",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "xcode\/StereoscopicRendering.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/AphexHenry\/mozza.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A524EDBD5243EE0C64E00E1A11F1DA6CA58656E0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/AphexHenry\/PIP.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DD4332FE7583744D4613C77BE138CEECF1F09F09"
+    }
+  ]
+}
