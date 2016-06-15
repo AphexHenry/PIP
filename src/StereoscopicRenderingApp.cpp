@@ -75,6 +75,8 @@ void StereoscopicRenderingApp::setup()
     mLoadingScreen = gl::Texture(loadImage(getResourcePath(LOADING_SCREEN)));
     
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
+    mDebugDisplay = false;
 }
 
 void StereoscopicRenderingApp::LoadScenes()
@@ -358,6 +360,14 @@ void StereoscopicRenderingApp::draw()
     }
     
     TransitionManager::draw();
+
+    if(mDebugDisplay)
+    {
+        for(int i = 0; i < Shared::sAnchors.size(); i++)
+        {
+            Shared::sAnchors[i]->draw();
+        }
+    }
 }
 
 
@@ -393,6 +403,9 @@ void StereoscopicRenderingApp::keyDown( KeyEvent event )
 	case KeyEvent::KEY_ESCAPE:
 		quit();
 		break;
+    case KeyEvent::KEY_d:
+        mDebugDisplay = !mDebugDisplay;
+        break;
 	case KeyEvent::KEY_UP:
             mCamera.setEyeSeparation( mCamera.getEyeSeparation() - 0.003);
             cout << "mCamera.getEyeSeparation() " << mCamera.getEyeSeparation() << endl;
@@ -413,9 +426,25 @@ void StereoscopicRenderingApp::keyDown( KeyEvent event )
         mRenderMethod = TV_SIDE_2;
         createFbo();
         break;
+    case KeyEvent::KEY_z:
+        {
+        SceneData * lScene = Set::getScene();
+        lScene->position.z += 0.03;
+        std::cout << lScene->position.z << std::endl;
+        }
+        break;
+    case KeyEvent::KEY_x:
+        {
+        SceneData * lScene = Set::getScene();
+        lScene->position.z -= 0.03;
+        std::cout << lScene->position.z << std::endl;
+        }
+        break;
     case KeyEvent::KEY_RIGHT:
-    case KeyEvent::KEY_n:
         LoadNextScene();
+        break;
+    case KeyEvent::KEY_LEFT:
+        LoadPrevScene();
         break;
 	}
 }
@@ -427,7 +456,15 @@ void StereoscopicRenderingApp::LoadNextScene()
 {
     Set::NextScene();
     ApplySceneSettings();
-    
+}
+
+/*
+ *  Load prev scene and apply all its settings.
+ */
+void StereoscopicRenderingApp::LoadPrevScene()
+{
+    Set::PrevScene();
+    ApplySceneSettings();
 }
 
 void StereoscopicRenderingApp::ApplySceneSettings()

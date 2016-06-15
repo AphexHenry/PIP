@@ -116,6 +116,7 @@ void Set::setup(SensorType aSensorType)
                 lScene.scale = lSceneChild->getAttributeValue<float>( "size", 0 );
                 lScene.opacity = lSceneChild->getAttributeValue<float>( "opacity", 1.f );
                 lScene.movement = Vec3f(1.f, 1.f, 1.f) * lSceneChild->getAttributeValue<float>( "scale", 1.f );
+                lScene.compressionY = lSceneChild->getAttributeValue<float>( "compressionY", 1.f );
                 lScene.reflection = lSceneChild->getAttributeValue<bool>( "reflection", false );
                 lScene.particleDuration = lSceneChild->getAttributeValue<float>("lifeTime", 0.5f);
                 lScene.intensityMin = lSceneChild->getAttributeValue<float>( "brightnessMin", 0.f );
@@ -124,7 +125,7 @@ void Set::setup(SensorType aSensorType)
                 lScene.colorMax = Tools::stringToColor(lSceneChild->getAttributeValue<string>( "colorMax", "1,1,1" ));
                 lScene.useKinectColor = lSceneChild->getAttributeValue<bool>( "useKinectColor", false );
                 lScene.useVideoColor = lSceneChild->getAttributeValue<bool>( "useVideoColor", false );
-                lScene.distanceSensitivity = lSceneChild->getAttributeValue<float>( "distanceSensitivity", 0.25f );
+                lScene.distanceSensitivity = lSceneChild->getAttributeValue<float>( "distanceSensitivity", 0.f );
                 
                 lScene.particles = new vector<Particle *>();
                 for(int i = 0; i < count; i++)
@@ -227,4 +228,9 @@ void Set::LoadScene(int aScene)
 void Set::NextScene()
 {
     LoadScene(currentScene + 1);
+}
+
+void Set::PrevScene()
+{
+    LoadScene(currentScene - 1);
 }

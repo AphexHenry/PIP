@@ -29,6 +29,7 @@ public:
     
 private:
     
+    float   mSizeInit;
     float   mAlpha;
     float   mRotation;
     float   mRotationSpeed;

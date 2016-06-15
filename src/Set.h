@@ -39,6 +39,7 @@ struct SceneData
     float      scale;
     ci::Vec3f  position;
     ci::Vec3f  movement;
+    float      compressionY;
     float      distanceSensitivity;
     float  particleDuration;
     ci::Color  colorMin;
@@ -67,6 +68,7 @@ public:
     static SceneData * getScene();
     static void LoadScene(int aScene);
     static void NextScene();
+    static void PrevScene();
     static bool IsFirst();
     
     static 	float  frictionStr;

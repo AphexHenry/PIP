@@ -45,6 +45,7 @@ private:
     void drawLoading();
     
     void LoadNextScene();
+    void LoadPrevScene();
     void ApplySceneSettings();
     
 	void createFbo();
@@ -58,6 +59,7 @@ private:
 	bool					mLoaded;
     bool					mScenesLoaded;
 	bool					mLoadingDrawn;
+    bool                    mDebugDisplay;
 
 	FocusMethod				mFocusMethod;
 	RenderMethod			mRenderMethod;

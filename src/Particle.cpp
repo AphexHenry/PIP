@@ -10,6 +10,8 @@ Particle::Particle():Anchor()
 {
     mImmuneTimer = 0.f;
     mSize = 0.f;
+    mLifeTime = 0.f;
+    Reset();
 }
 
 void Particle::Reset()
@@ -129,8 +131,9 @@ Vec3f Particle::GetPositionScene(bool aIsLeft)
     SceneData * lScene = Set::getScene();
 //    float lWindowWidth = 1.f;
     float lDistanceSensibility = lScene->distanceSensitivity;
-    Vec3f lPos = (mPosition * lScene->movement) + lScene->position;
-    lPos.x += (lScene->position.z + mPosition.z * lDistanceSensibility) * (aIsLeft ? -1.f : 1.f);
+    Vec3f lPos = (mPosition * lScene->movement * Vec3f(1.f / lScene->compressionY, lScene->compressionY, 1.f)) + lScene->position;
+    lPos.x += (lScene->position.z + mPosition.z * lDistanceSensibility) * (aIsLeft ? -1.f : 1.f) * 0.01f;
+    lPos.z = -0.2f;
     return lPos;
 }
 

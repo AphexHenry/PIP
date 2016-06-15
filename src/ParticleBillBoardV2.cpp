@@ -11,6 +11,7 @@ void ParticleBillboardV2::Reset()
     mTextureIndex = Rand::randInt(sTextures.size());
     Particle::Reset();
     mSize = Rand::randFloat(0.8f, 1.3f);
+    mSizeInit = mSize;
     mRotation = Rand::randFloat(360.f);
     mRotationSpeed = Rand::randFloat(-10.f, 10.f);
 }
@@ -30,6 +31,8 @@ void ParticleBillboardV2::update(float aTimeInterval)
     float lCoeffLife = mLifeTime / mLifeTimeInit;
     mAlpha = fmin(2.f * sin(lCoeffLife * 3.14), 1.f);
     mRotation += mRotationSpeed * aTimeInterval;
+    mSize = mSizeInit * (0.2 + lCoeffLife * 0.8);
+    mPosition.y += 2.f * aTimeInterval * 0.03 / (mSize * mLifeTimeInit);
 }
 
 /*
@@ -43,18 +46,19 @@ void ParticleBillboardV2::draw(bool aIsLeft)
     if(!lScene->reflection && sReflection)
         return;
     
-    gl::color(mColor.r, mColor.g, mColor.b, mAlpha * lScene->opacity);
+    float lAlpha = sReflection ? mAlpha * lScene->opacity * 0.4f : mAlpha * lScene->opacity;
+    gl::color(mColor.r, mColor.g, mColor.b, lAlpha);
     gl::pushMatrices();
     
     if(sReflection)
     {
         // reflection
         gl::translate(Vec3f(0, lScene->reflectionHeight, 0));
-        gl::scale( 0.95f, -.95f, .95f );
+        gl::scale( 1.f, -1.f, 1.f );
     }
 
     Vec3f lPos = GetPositionScene(aIsLeft);
-    lPos.z -= mSize * 0.01;
+//    lPos.z -= mSize * 0.01;
     
     sTextures[mTextureIndex].enableAndBind();
     
