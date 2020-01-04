@@ -14,3 +14,6 @@
 #define PARTICLE_TREE_3     CINDER_RESOURCE( ../resources/, particleTree3.png, 144, PNG )
 #define PARTICLE_TREE_4     CINDER_RESOURCE( ../resources/, particleTree4.png, 144, PNG )
 #define PARTICLE_TREE_5     CINDER_RESOURCE( ../resources/, particleTree5.png, 144, PNG )
+
+#define PARTICLE_BLUR_1     CINDER_RESOURCE( ../resources/, particleBlured.png, 142, PNG )
+#define PARTICLE_BLUR_2     CINDER_RESOURCE( ../resources/, particleBlured2.png, 143, PNG )

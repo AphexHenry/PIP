@@ -23,6 +23,7 @@ enum ParticleType
     PARTICLE_TYPE_SPHERE = 0,
     PARTICLE_TYPE_LINE,
     PARTICLE_TYPE_IMG,
+    PARTICLE_TYPE_IMG_2,
     PARTICLE_TYPE_COUNT
 };
 
@@ -38,6 +39,8 @@ struct SceneData
     float      scale;
     ci::Vec3f  position;
     ci::Vec3f  movement;
+    float      compressionY;
+    float      distanceSensitivity;
     float  particleDuration;
     ci::Color  colorMin;
     ci::Color  colorMax;
@@ -45,7 +48,7 @@ struct SceneData
     float      intensityMax;
     bool       reflection;
     float      reflectionHeight;
-    float      eyesSeparation;
+//    float      eyesSeparation;
     float      opacity;
     bool       useVideoColor;
     bool       useKinectColor;
@@ -65,6 +68,7 @@ public:
     static SceneData * getScene();
     static void LoadScene(int aScene);
     static void NextScene();
+    static void PrevScene();
     static bool IsFirst();
     
     static 	float  frictionStr;

@@ -13,17 +13,17 @@ public:
     /*
      *  draw for debug purpose.
      */
-    void draw(int aCoeffLifeColor);
+    void draw(bool aIsLeft) override;
     
     /*
      *  update.
      */
-    void update(float aTimeInterval);
+    void update(float aTimeInterval) override;
     
     /*
      *  Reset particle state.
      */
-    void Reset();
+    void Reset() override;
     
     static void AddTexture(ci::gl::Texture aTexture);
     

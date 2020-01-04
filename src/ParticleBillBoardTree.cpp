@@ -36,7 +36,7 @@ void ParticleBillboardTree::update(float aTimeInterval)
  *  Draw particle.
  *  aCoeffLifeColor : normalized age of the particle.
  */
-void ParticleBillboardTree::draw(int aCoeffLifeColor)
+void ParticleBillboardTree::draw(bool aIsLeft)
 {
     SceneData * lScene = Set::getScene();
 
@@ -53,7 +53,7 @@ void ParticleBillboardTree::draw(int aCoeffLifeColor)
         gl::scale( 0.95f, -.95f, .95f );
     }
 
-    Vec3f lPos = GetPositionScene();
+    Vec3f lPos = GetPositionScene(aIsLeft);
     lPos.z -= mSize * 0.01;
     
     sTextures[mTextureIndex].enableAndBind();

@@ -46,6 +46,7 @@ private:
     void drawLoading();
     
     void LoadNextScene();
+    void LoadPrevScene();
     void ApplySceneSettings();
     
 	void createFbo();
@@ -53,12 +54,13 @@ private:
 	void renderAnaglyph( const Vec2i &size, const ColorA &left, const ColorA &right );
 	void renderSideBySide( const Vec2i &size );
 
-	void render();
+	void render(bool aIsLeft);
 	void renderUI();
 
 	bool					mLoaded;
     bool					mScenesLoaded;
 	bool					mLoadingDrawn;
+    bool                    mDebugDisplay;
 
 	FocusMethod				mFocusMethod;
 	static RenderMethod		sRenderMethod;

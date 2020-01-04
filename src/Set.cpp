@@ -10,6 +10,7 @@
 #include "Set.h"
 #include "Resources.h"
 #include "ParticleBillBoardTree.h"
+#include "ParticleBillboardV2.h"
 #include "ImagePlayer.h"
 #include "TransitionManager.h"
 #include "StereoscopicRenderingApp.h"
@@ -28,7 +29,7 @@ float Set::heratic2;
 float Set::lineVisibility;
 float Set::particleSize = 0.007f;
 float Set::particleStrCoeff;
-float Set::coeffZKinect = -1.f / 250.f;
+float Set::coeffZKinect = -1.f / 25.f;
 bool  Set::mirror;
 float  Set::compression = 1.f;
 map<string, ParticleType> Set::particleMapper;
@@ -57,9 +58,13 @@ void Set::setup(SensorType aSensorType)
     ParticleBillboardTree::AddTexture(gl::Texture(loadImage( loadResource(PARTICLE_TREE_4))));
     ParticleBillboardTree::AddTexture(gl::Texture(loadImage( loadResource(PARTICLE_TREE_5))));
     
+    ParticleBillboardV2::AddTexture(gl::Texture(loadImage( loadResource(PARTICLE_BLUR_1))));
+    ParticleBillboardV2::AddTexture(gl::Texture(loadImage( loadResource(PARTICLE_BLUR_2))));
+    
     particleMapper["circle"] = PARTICLE_TYPE_SPHERE;
     particleMapper["line"] = PARTICLE_TYPE_LINE;
     particleMapper["tree"] = PARTICLE_TYPE_IMG;
+    particleMapper["type3"] = PARTICLE_TYPE_IMG_2;
     
     SceneData lScene;
     
@@ -112,11 +117,16 @@ void Set::setup(SensorType aSensorType)
                 lScene.particleType = particleMapper[lSceneChild->getAttributeValue<string>( "type", "circle" )];
                 lScene.position.x = lSceneChild->getAttributeValue<float>( "x", 0 );
                 lScene.position.y = lSceneChild->getAttributeValue<float>( "y", 0 );
-                lScene.position.z = 0.5;
-                lScene.eyesSeparation = lSceneChild->getAttributeValue<float>( "z", 0 ) / 1000.f;
+                lScene.position.z = lSceneChild->getAttributeValue<float>( "z", 0 );
+//                lScene.eyesSeparation = lSceneChild->getAttributeValue<float>( "z", 0 ) / 1000.f;
                 lScene.scale = lSceneChild->getAttributeValue<float>( "size", 0 );
                 lScene.opacity = lSceneChild->getAttributeValue<float>( "opacity", 1.f );
+<<<<<<< HEAD
                 lScene.movement = Vec3f(1.83f, 1.f, 1.f) * lSceneChild->getAttributeValue<float>( "scale", 1.f );
+=======
+                lScene.movement = Vec3f(1.f, 1.f, 1.f) * lSceneChild->getAttributeValue<float>( "scale", 1.f );
+                lScene.compressionY = lSceneChild->getAttributeValue<float>( "compressionY", 1.f );
+>>>>>>> origin/master
                 lScene.reflection = lSceneChild->getAttributeValue<bool>( "reflection", false );
                 lScene.particleDuration = lSceneChild->getAttributeValue<float>("lifeTime", 0.5f);
                 lScene.intensityMin = lSceneChild->getAttributeValue<float>( "brightnessMin", 0.f );
@@ -125,6 +135,7 @@ void Set::setup(SensorType aSensorType)
                 lScene.colorMax = Tools::stringToColor(lSceneChild->getAttributeValue<string>( "colorMax", "1,1,1" ));
                 lScene.useKinectColor = lSceneChild->getAttributeValue<bool>( "useKinectColor", false );
                 lScene.useVideoColor = lSceneChild->getAttributeValue<bool>( "useVideoColor", false );
+                lScene.distanceSensitivity = lSceneChild->getAttributeValue<float>( "distanceSensitivity", 0.f );
                 
                 lScene.particles = new vector<Particle *>();
                 for(int i = 0; i < count; i++)
@@ -132,6 +143,10 @@ void Set::setup(SensorType aSensorType)
                     if(lScene.particleType == PARTICLE_TYPE_IMG)
                     {
                         lScene.particles->push_back(new ParticleBillboardTree());
+                    }
+                    else if(lScene.particleType == PARTICLE_TYPE_IMG_2)
+                    {
+                        lScene.particles->push_back(new ParticleBillboardV2());
                     }
                     else
                     {
@@ -223,4 +238,9 @@ void Set::LoadScene(int aScene)
 void Set::NextScene()
 {
     LoadScene(currentScene + 1);
+}
+
+void Set::PrevScene()
+{
+    LoadScene(currentScene - 1);
 }
