@@ -36,7 +36,7 @@ void Particle::Reset()
         float colorCoeff = Rand::randFloat(1.f);
         mColor = (colorCoeff * lScene->colorMin + (1.f - colorCoeff) * lScene->colorMax);
         float luminosity = Shared::sAnchors.at(lIndex)->mColor.length();
-        mColor *= (0.5f + 0.5f * luminosity);;
+        mColor *= (0.5f + 0.5f * luminosity);
     }
     else
     {
@@ -57,6 +57,12 @@ void Particle::update(float aTimeInterval)
 {
     mLifeTime -= aTimeInterval;
     mImmuneTimer -= aTimeInterval;
+    Color lColorA = SensorManager::getInstance()->getColorPixel(Vec2f(mPosition.x, mPosition.y));
+    float lDistanceColor = lColorA.distanceSquared((Color)mColor);
+    if(lDistanceColor > 0.1)
+    {
+        mLifeTime *= 0.7f;
+    }
     if(mLifeTime <= 0.f)
     {
         Reset();

@@ -196,7 +196,8 @@ void VideoPlayer::drawImage(Vec2i aSize, gl::Texture aTexture)
     {
         float lratioImg = (float)mFrameTexture.getWidth() / (float)mFrameTexture.getHeight();
         float lheight = ((aSize.x / lratioImg) - aSize.y) * 0.5f;
-        Rectf centeredRect = Rectf(0, -lheight, aSize.x, aSize.y + lheight);//Rectf( mFrameTexture.getBounds() ).getCenteredFit( Area(0, 0, aSize.x, aSize.y), true );
+        Rectf centeredRect = Rectf(0, -lheight, aSize.x, aSize.y + lheight);
+        //Rectf( mFrameTexture.getBounds() ).getCenteredFit( Area(0, 0, aSize.x, aSize.y), true );
         gl::draw( aTexture, centeredRect  );
     }
 }

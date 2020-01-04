@@ -12,6 +12,7 @@
 #include "ParticleBillBoardTree.h"
 #include "ImagePlayer.h"
 #include "TransitionManager.h"
+#include "StereoscopicRenderingApp.h"
 
 #include "cinder/Xml.h"
 
@@ -90,6 +91,11 @@ void Set::setup(SensorType aSensorType)
                     TransitionManager::SetTransition(TRANSITION_TYPE_FADE_TO_BLACK, lDuration);
                 }
             }
+            else if(child->getTag() == "3D")
+            {
+                int lTransitionType = child->getAttributeValue<int>( "type", (int)StereoscopicRenderingApp::TV_SIDE_2 );
+                StereoscopicRenderingApp::SetRenderMethod((StereoscopicRenderingApp::RenderMethod)lTransitionType);
+            }
         }
     }
     
@@ -110,7 +116,7 @@ void Set::setup(SensorType aSensorType)
                 lScene.eyesSeparation = lSceneChild->getAttributeValue<float>( "z", 0 ) / 1000.f;
                 lScene.scale = lSceneChild->getAttributeValue<float>( "size", 0 );
                 lScene.opacity = lSceneChild->getAttributeValue<float>( "opacity", 1.f );
-                lScene.movement = Vec3f(1.f, 1.f, 1.f) * lSceneChild->getAttributeValue<float>( "scale", 1.f );
+                lScene.movement = Vec3f(1.83f, 1.f, 1.f) * lSceneChild->getAttributeValue<float>( "scale", 1.f );
                 lScene.reflection = lSceneChild->getAttributeValue<bool>( "reflection", false );
                 lScene.particleDuration = lSceneChild->getAttributeValue<float>("lifeTime", 0.5f);
                 lScene.intensityMin = lSceneChild->getAttributeValue<float>( "brightnessMin", 0.f );

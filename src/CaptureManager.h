@@ -15,7 +15,7 @@ using namespace ci::app;
  *  This sensor is the camera of your computer.
  *  It will process the movements of the video and put the anchors to the moving pixels.
  */
-class CaptureManager : public SensorManager {
+class CaptureManager : public Sensor {
   public:
     
     /*

@@ -7,7 +7,7 @@
 
 #include "SensorManager.h"
 
-class CursorManager : public SensorManager {
+class CursorManager : public Sensor {
   public:
 	bool setup();
 	

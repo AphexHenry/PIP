@@ -17,10 +17,16 @@ using namespace std;
 #define NUM_USER 1
 #define DISTANCE_MAX 10000.
 
-class KinectManager : public SensorManager {
+class KinectManager : public Sensor {
 public:
+    /*
+     * Destructor.
+     */
     ~KinectManager();
     
+    /*
+     * Return true if Kinect detected.
+     */
     static bool IsAvailable();
 	bool setup();
 	void update(float aTimeInterval);
@@ -36,6 +42,8 @@ public:
     void UpdateCalibrate(float aTimeInterval);
     void UpdateAnchors();
     void UpdateOSC();
+    
+    ColorA getColorPixel(Vec2f aPosition);
     
     bool isCalibrated(){return mCalibCount <= 0;};
     

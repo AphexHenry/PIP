@@ -31,6 +31,7 @@ public:
 
 	void setup();	
 	void update();
+    static void SetRenderMethod(RenderMethod aMethod){sRenderMethod = aMethod;};
     void UpdateSubdivisions(float aTimeInterval);
 	void draw();
     void DrawParticles(Vec2i aSize);
@@ -60,7 +61,7 @@ private:
 	bool					mLoadingDrawn;
 
 	FocusMethod				mFocusMethod;
-	RenderMethod			mRenderMethod;
+	static RenderMethod		sRenderMethod;
 
 	MayaCamUI				mMayaCam;
 	CameraStereo			mCamera;
@@ -84,6 +85,4 @@ private:
     vector<Particle *> *    mPartNiv1;
     
     float                   mTime;
-    
-    SensorManager * mSensorManager;
 };

@@ -65,9 +65,9 @@ void KinectManager::UpdateAnchors()
             if(lDistanceCurrent >= 254)
                 lDistanceCurrent = 0;
             
-            if(lDistanceCurrent > (lDistanceCalib * 1.4))
+            if(lDistanceCurrent > (lDistanceCalib * 1.1))
             {
-                lPositionsAll.push_back(Vec3f(current.x / (float)mKinect->getWidth(),(float)current.y / (float)mKinect->getWidth(),lDistanceCalib * Set::coeffZKinect));
+                lPositionsAll.push_back(Vec3f(1.f - (current.x / (float)mKinect->getWidth()),(float)current.y / (float)mKinect->getWidth(),lDistanceCalib * Set::coeffZKinect));
                 lColorsAll.push_back(Color((float)videoIter.r() / 255.f, (float)videoIter.g() / 255.f, (float)videoIter.b() / 255.f));
             }
         }
@@ -86,7 +86,7 @@ void KinectManager::UpdateAnchors()
 
 void KinectManager::Calibrate()
 {
-    mCalibCount = 74;
+    mCalibCount = 6;
     console() << "calibrate kinect" << endl;
 }
 
@@ -138,6 +138,11 @@ void KinectManager::UpdateCalibrate(float aTimeInterval)
             }
         }
     }
+}
+
+ColorA KinectManager::getColorPixel(Vec2f aPosition)
+{
+    return mVideoSurface.getPixel(Vec2f(aPosition.x * mVideoSurface.getSize().x, aPosition.y * mVideoSurface.getSize().y));
 }
 
 void KinectManager::draw(){

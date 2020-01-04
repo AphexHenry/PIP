@@ -35,6 +35,7 @@
 		9C3751C51A823EFB00489DB3 /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751B11A823EFB00489DB3 /* Tools.cpp */; };
 		9C3751C61A823EFB00489DB3 /* VideoPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751B31A823EFB00489DB3 /* VideoPlayer.cpp */; };
 		9C3751C91A825D5C00489DB3 /* TransitionManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C3751C71A825D5C00489DB3 /* TransitionManager.cpp */; };
+		9C39BDEB1A879F9D000A8E08 /* SensorManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C39BDEA1A879F9D000A8E08 /* SensorManager.cpp */; };
 		9C5BA2AD1A7199CD00A29EE1 /* CinderFreenect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA29C1A7199CD00A29EE1 /* CinderFreenect.cpp */; };
 		9C5BA2AE1A7199CD00A29EE1 /* cameras.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA29F1A7199CD00A29EE1 /* cameras.c */; };
 		9C5BA2AF1A7199CD00A29EE1 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BA2A11A7199CD00A29EE1 /* core.c */; };
@@ -109,6 +110,7 @@
 		9C3751B41A823EFB00489DB3 /* VideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoPlayer.h; path = ../src/VideoPlayer.h; sourceTree = "<group>"; };
 		9C3751C71A825D5C00489DB3 /* TransitionManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TransitionManager.cpp; path = ../src/TransitionManager.cpp; sourceTree = "<group>"; };
 		9C3751C81A825D5C00489DB3 /* TransitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TransitionManager.h; path = ../src/TransitionManager.h; sourceTree = "<group>"; };
+		9C39BDEA1A879F9D000A8E08 /* SensorManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SensorManager.cpp; path = ../src/SensorManager.cpp; sourceTree = "<group>"; };
 		9C5BA29C1A7199CD00A29EE1 /* CinderFreenect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CinderFreenect.cpp; sourceTree = "<group>"; };
 		9C5BA29D1A7199CD00A29EE1 /* CinderFreenect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CinderFreenect.h; sourceTree = "<group>"; };
 		9C5BA29F1A7199CD00A29EE1 /* cameras.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cameras.c; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				9C3751A11A823EFB00489DB3 /* Particle.h */,
 				9C3751A41A823EFB00489DB3 /* ParticleBillBoardTree.cpp */,
 				9C3751A51A823EFB00489DB3 /* ParticleBillBoardTree.h */,
+				9C39BDEA1A879F9D000A8E08 /* SensorManager.cpp */,
 				9C3751A61A823EFB00489DB3 /* SensorManager.h */,
 				9C3751A71A823EFB00489DB3 /* Set.cpp */,
 				9C3751A81A823EFB00489DB3 /* Set.h */,
@@ -444,6 +447,7 @@
 				9C3751B51A823EFB00489DB3 /* Anchor.cpp in Sources */,
 				9C5BA2B21A7199CD00A29EE1 /* usb_libusb10.c in Sources */,
 				9C5BA2AE1A7199CD00A29EE1 /* cameras.c in Sources */,
+				9C39BDEB1A879F9D000A8E08 /* SensorManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "444753798.584056"
+            timestampString = "445047067.622398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "Set::setup(SensorType aSensorType)"
             landmarkType = "5">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "444753798.584056"
+            timestampString = "445047067.622398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "Set::setup(SensorType aSensorType)"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "444753798.584056"
+            timestampString = "445047067.622398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "Set::LoadScene(int aScene)"
             landmarkType = "5">
          </BreakpointContent>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "444753798.584056"
+            timestampString = "445047067.622398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "Set::setup(SensorType aSensorType)"
             landmarkType = "5">
          </BreakpointContent>
@@ -372,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/VideoPlayer.cpp"
-            timestampString = "445034753.472033"
+            timestampString = "445040380.653588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "VideoPlayer::stop()"
             landmarkType = "5">
          </BreakpointContent>
@@ -468,11 +468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/VideoPlayer.cpp"
-            timestampString = "445034753.472033"
+            timestampString = "445040380.653588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "VideoPlayer::play()"
             landmarkType = "5">
          </BreakpointContent>
@@ -484,11 +484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "444827247.213452"
+            timestampString = "445047067.622398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "225"
+            endingLineNumber = "225"
             landmarkName = "Set::NextScene()"
             landmarkType = "5">
          </BreakpointContent>
@@ -500,11 +500,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "444827248.891246"
+            timestampString = "445047067.622398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
             landmarkName = "Set::LoadScene(int aScene)"
             landmarkType = "5">
          </BreakpointContent>
@@ -516,12 +516,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/StereoscopicRenderingApp.cpp"
-            timestampString = "444832806.341874"
+            timestampString = "599853553.359063"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
-            landmarkName = "StereoscopicRenderingApp::keyDown( KeyEvent event )"
+            startingLineNumber = "424"
+            endingLineNumber = "424"
+            landmarkName = "StereoscopicRenderingApp::ApplySceneSettings()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -532,11 +532,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/VideoPlayer.cpp"
-            timestampString = "445034753.472033"
+            timestampString = "445040380.653588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "VideoPlayer::isDone()"
             landmarkType = "5">
          </BreakpointContent>
@@ -548,12 +548,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/StereoscopicRenderingApp.cpp"
-            timestampString = "444832806.341874"
+            timestampString = "599853553.359063"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "StereoscopicRenderingApp::update()"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "StereoscopicRenderingApp::UpdateSubdivisions(float aTimeInterval)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -564,12 +564,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/StereoscopicRenderingApp.cpp"
-            timestampString = "444832806.341874"
+            timestampString = "599853553.359063"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "StereoscopicRenderingApp::update()"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "StereoscopicRenderingApp::UpdateSubdivisions(float aTimeInterval)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -660,13 +660,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/StereoscopicRenderingApp.cpp"
-            timestampString = "444832806.341874"
+            timestampString = "599853553.359063"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
-            landmarkName = "StereoscopicRenderingApp::update()"
-            landmarkType = "5">
+            startingLineNumber = "221"
+            endingLineNumber = "221">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -676,12 +674,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/StereoscopicRenderingApp.cpp"
-            timestampString = "444832806.341874"
+            timestampString = "599853553.359063"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "427"
-            endingLineNumber = "427"
-            landmarkName = "StereoscopicRenderingApp::LoadNextScene()"
+            startingLineNumber = "431"
+            endingLineNumber = "431"
+            landmarkName = "StereoscopicRenderingApp::resize()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -706,6 +704,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Shared::setup()"
                   moduleName = "StereoscopicRendering"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baptistebohelay/Dev/cinder/cinder_0.8.6_mac/samples/-PIP/src/shared.cpp"
                   timestampString = "444831657.67179"
                   startingColumnNumber = "9223372036854775807"
@@ -720,6 +719,7 @@
                   continueAfterRunningActions = "No"
                   symbolName = "Shared::setup()"
                   moduleName = "StereoscopicRendering"
+                  usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/baptistebohelay/Dev/cinder/cinder_0.8.6_mac/samples/-PIP/src/shared.cpp"
                   timestampString = "444831657.671943"
                   startingColumnNumber = "9223372036854775807"
@@ -770,11 +770,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../src/Set.cpp"
-            timestampString = "445030667.774342"
+            timestampString = "445047067.622398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "Set::setup(SensorType aSensorType)"
             landmarkType = "5">
          </BreakpointContent>
@@ -792,6 +792,86 @@
             startingLineNumber = "59"
             endingLineNumber = "59"
             landmarkName = "ParticleBillboardTree::draw(int aCoeffLifeColor)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/StereoscopicRenderingApp.cpp"
+            timestampString = "599853553.359063"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "263"
+            endingLineNumber = "263"
+            landmarkName = "StereoscopicRenderingApp::draw()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/StereoscopicRenderingApp.cpp"
+            timestampString = "599853553.359063"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "StereoscopicRenderingApp::draw()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/StereoscopicRenderingApp.cpp"
+            timestampString = "599854059.263788"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "423"
+            endingLineNumber = "423"
+            landmarkName = "StereoscopicRenderingApp::ApplySceneSettings()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/StereoscopicRenderingApp.cpp"
+            timestampString = "599854076.6938601"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "StereoscopicRenderingApp::update()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../src/StereoscopicRenderingApp.cpp"
+            timestampString = "599854145.556523"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "422"
+            endingLineNumber = "422"
+            landmarkName = "StereoscopicRenderingApp::ApplySceneSettings()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

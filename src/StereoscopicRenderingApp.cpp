@@ -27,17 +27,19 @@
 #include "CursorManager.h"
 #include "TransitionManager.h"
 #include "Shared.h"
+#include "Subdivision.h"
 
 using namespace ci;
 using namespace ci::app;
 using namespace std;
 
+StereoscopicRenderingApp::RenderMethod		StereoscopicRenderingApp::sRenderMethod = ANAGLYPH_RED_CYAN;
 
 void StereoscopicRenderingApp::prepareSettings( Settings *settings )
 {
     console() << "prepareSettings" << endl;
 	settings->setWindowSize(1200, 900);
-    settings->setFullScreen();
+//    settings->setFullScreen();
 	settings->setTitle("Stereoscopic Rendering");
 
 	// allow high frame rates to test performance
@@ -46,10 +48,11 @@ void StereoscopicRenderingApp::prepareSettings( Settings *settings )
 
 void StereoscopicRenderingApp::setup()
 {
-	mRenderMethod = TV_SIDE_2;
-    
     app::addAssetDirectory	(	app::getAppPath().string() + "/../Assets/"	 );
 
+    mVideoPlayer = nullptr;
+    mPartNiv1 = nullptr;
+    
 	// enable auto-focussing
     mFocusMethod = SET_CONVERGENCE;
 
@@ -91,31 +94,11 @@ void StereoscopicRenderingApp::LoadScenes()
 		quit();
 	}
     
-    SensorType lSensorType;
-    if(KinectManager::IsAvailable())
-    {
-        mSensorManager = new KinectManager();
-        lSensorType = SENSOR_TYPE_KINECT;
-    }
-    else if(CaptureManager::IsAvailable())
-    {
-        // if no kinect is connected, use video.
-        mSensorManager = new CaptureManager();
-        lSensorType = SENSOR_TYPE_CAM;
-    }
-    else
-    {
-        mSensorManager = new CursorManager();
-        lSensorType = SENSOR_TYPE_CURSOR;
-    }
-    
-    mSensorManager->setup();
-    
-    Set::setup(lSensorType);
+    SensorManager::getInstance()->setup();
     
     mTime = getElapsedSeconds();
     
-    mSensorManager->Calibrate();
+    SensorManager::getInstance()->Calibrate();
     
     LoadNextScene();
 }
@@ -133,7 +116,7 @@ void StereoscopicRenderingApp::update()
             }
             else
             {
-                if(mSensorManager->isReady())
+                if(SensorManager::getInstance()->isReady())
                 {
                     mLoaded = true;
                     mTime = getElapsedSeconds();
@@ -176,7 +159,7 @@ void StereoscopicRenderingApp::update()
 		// Depending on the rendering method, we can sample different area's of the screen
 		// to optimally detect details. This is not required, however.
 		// Use the UP and DOWN keys to adjust the intensity of the parallax effect.
-		switch( mRenderMethod ) 
+		switch( sRenderMethod ) 
 		{
 		case MONO:
 			break;
@@ -206,8 +189,8 @@ void StereoscopicRenderingApp::update()
         LoadNextScene();
     }
 
-    mSensorManager->update(lTimeElapsed);
-    mSensorManager->UpdateAnchors();
+    SensorManager::getInstance()->update(lTimeElapsed);
+    SensorManager::getInstance()->UpdateAnchors();
     
     if(mPartNiv1)
     for(int i = 0; i < mPartNiv1->size(); i++)
@@ -257,7 +240,7 @@ void StereoscopicRenderingApp::draw()
     Vec2i canvasSize;
     Vec2i partSize;
     
-    if(mRenderMethod == ANAGLYPH_RED_CYAN)
+    if(sRenderMethod == ANAGLYPH_RED_CYAN)
     {
         // bind the FBO and clear its buffer
         mFbo.bindFramebuffer();
@@ -266,7 +249,7 @@ void StereoscopicRenderingApp::draw()
         canvasSize = getWindowSize();
         partSize = mFbo.getSize();
     }
-    else if(mRenderMethod == TV_SIDE_2)
+    else if(sRenderMethod == TV_SIDE_2)
     {
        canvasSize = mFbo.getSize();
        partSize = getWindowSize();
@@ -278,9 +261,11 @@ void StereoscopicRenderingApp::draw()
         partSize = mFbo.getSize();
     }
 
-    mVideoPlayer->draw(canvasSize);
+    if(mVideoPlayer) {
+        mVideoPlayer->draw(canvasSize);
+    }
     
-    if(mRenderMethod == ANAGLYPH_RED_CYAN)
+    if(sRenderMethod == ANAGLYPH_RED_CYAN)
     {
         gl::setViewport( getWindowBounds() );
     }
@@ -289,14 +274,16 @@ void StereoscopicRenderingApp::draw()
     gl::enableAlphaBlending();
     DrawParticles(partSize);
     
-    if(mRenderMethod == ANAGLYPH_RED_CYAN)
+    if(sRenderMethod == ANAGLYPH_RED_CYAN)
     {
         gl::setViewport( mFbo.getBounds() );
     }
     
-    mVideoPlayer->drawFrontReflection(canvasSize);
-    
-    if(mRenderMethod == ANAGLYPH_RED_CYAN)
+    if(mVideoPlayer) {
+        mVideoPlayer->drawFrontReflection(canvasSize);
+    }
+        
+    if(sRenderMethod == ANAGLYPH_RED_CYAN)
     {
         gl::setViewport( getWindowBounds() );
     }
@@ -304,19 +291,21 @@ void StereoscopicRenderingApp::draw()
     Particle::SetReflection(false);
     DrawParticles(partSize);
     
-    if(mRenderMethod == ANAGLYPH_RED_CYAN)
+    if(sRenderMethod == ANAGLYPH_RED_CYAN)
     {
         gl::setViewport( mFbo.getBounds() );
     }
     
+    if(mVideoPlayer) {
     mVideoPlayer->drawFront(canvasSize);
-    
-    if(mRenderMethod == ANAGLYPH_RED_CYAN)
+    }
+        
+    if(sRenderMethod == ANAGLYPH_RED_CYAN)
     {
         // unbind the FBO
         mFbo.unbindFramebuffer();
         gl::setViewport( getWindowBounds() );
-        if(mRenderMethod == ANAGLYPH_RED_CYAN)
+        if(sRenderMethod == ANAGLYPH_RED_CYAN)
         {
             // enable the anaglyph shader
             mShaderAnaglyph.bind();
@@ -341,7 +330,7 @@ void StereoscopicRenderingApp::draw()
         centeredRect.y1 *= 1.5f;
         gl::draw( mFbo.getTexture(), centeredRect );
         
-        if(mRenderMethod == ANAGLYPH_RED_CYAN)
+        if(sRenderMethod == ANAGLYPH_RED_CYAN)
         {
             // disable the anaglyph shader
             mShaderAnaglyph.unbind();
@@ -349,7 +338,7 @@ void StereoscopicRenderingApp::draw()
     }
     gl::popMatrices();
     
-    if(!mSensorManager->isCalibrated())
+    if(!SensorManager::getInstance()->isCalibrated())
     {
         gl::color(Color::black());
         gl::drawSolidRect(getWindowBounds());
@@ -364,7 +353,7 @@ void StereoscopicRenderingApp::draw()
 void StereoscopicRenderingApp::DrawParticles(Vec2i aSize)
 {
     // stereoscopic rendering
-	switch( mRenderMethod )
+	switch( sRenderMethod )
 	{
         case MONO:
             // render mono camera
@@ -387,7 +376,7 @@ void StereoscopicRenderingApp::keyDown( KeyEvent event )
 	{
 #ifndef MY_APP
     case KeyEvent::KEY_c:
-        mSensorManager->Calibrate();
+        SensorManager::getInstance()->Calibrate();
         break;
 #endif
 	case KeyEvent::KEY_ESCAPE:
@@ -402,15 +391,15 @@ void StereoscopicRenderingApp::keyDown( KeyEvent event )
             cout << "mCamera.getEyeSeparation() " << mCamera.getEyeSeparation() << endl;
 		break;
 	case KeyEvent::KEY_F2:
-		mRenderMethod = ANAGLYPH_RED_CYAN;
+		sRenderMethod = ANAGLYPH_RED_CYAN;
 		createFbo();
 		break;
 	case KeyEvent::KEY_F3:
-		mRenderMethod = SIDE_BY_SIDE;
+		sRenderMethod = SIDE_BY_SIDE;
 		createFbo();
 		break;
     case KeyEvent::KEY_F4:
-        mRenderMethod = TV_SIDE_2;
+        sRenderMethod = TV_SIDE_2;
         createFbo();
         break;
     case KeyEvent::KEY_RIGHT:
@@ -462,7 +451,7 @@ void StereoscopicRenderingApp::createFbo()
 
     Set::compression = 1.f;
     
-	switch( mRenderMethod )
+	switch( sRenderMethod )
 	{
     case TV_SIDE_2:
         Set::compression = 0.5f;
@@ -547,9 +536,17 @@ void StereoscopicRenderingApp::render()
     
     // draw part
     if(mPartNiv1)
-    for(int i = 0; i < mPartNiv1->size(); i++)
     {
-        mPartNiv1->at(i)->draw(0);
+        for(int i = 0; i < mPartNiv1->size(); i++)
+        {
+            mPartNiv1->at(i)->draw(0);
+        }
+//        gl::enableAdditiveBlending();
+//        for(int i = 0; i < mPartNiv1->size(); i++)
+//        {
+//            mPartNiv1->at(i)->draw(0);
+//        }
+//        gl::disableAlphaBlending();
     }
 //    gl::enableAlphaBlending();
 //    mShaderPhong.unbind();
